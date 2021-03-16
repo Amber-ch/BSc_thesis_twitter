@@ -8,14 +8,15 @@ import math
 #importing other python files:
 #from folder.subfolder.file import class
 
-
 class HateBaseFilter(object):
     ## Attributes
     __lexicon = []
-    __all_tweets = []
-    __filtered_tweets = []
+    __all_tweets = None
+    __filtered_tweets = None
     __filename = None
     __tweet_columns = []
+    __tweet_id = []
+    __full_text = []
 
     ## Constructor
     def __init__(self):
@@ -30,10 +31,14 @@ class HateBaseFilter(object):
         self.__lexicon = self.__lexicon.result__term.to_list()
 
         # Set column names for the tweet files
-        self.__tweet_columns = ["created_at", "id", "id_str", "full_text"]
+        self.__tweet_columns = ["id_str", "full_text"]
 
     ## Methods
     def set_filename(self, value):
+        # Add ".csv" if not added yet, otherwise it will open the file with IDs only
+        extension = ".csv"
+        if extension not in value:
+            value = value + extension
         self.__filename = value
 
     # returns a pandas dataframe containing all the tweets from a .csv file
@@ -49,32 +54,56 @@ class HateBaseFilter(object):
         # invalid filename entered
         if len(result) == 0:
             print("File not found!")
-        # valid filename entered
         else:
             print("File found!")
-            all_tweets = pandas.read_csv(open(result[0]))
-        #print(result)
-        #print(self.__all_tweets)
+            all_tweets_list = list(csv.reader(open(result[0])))
+
+            # loop over all tweets from the dataset to extract IDs and full texts
+            for tweet in all_tweets_list:
+                tweet_elements = str(tweet)
+                tweet_elements_list = []
+                current_tweet__id = []
+                current_tweet__full_text = []
+
+                tweet_elements_list = tweet_elements.split(', ')
+                for element in tweet_elements_list:
+                    if "'id_str:" in element:
+                        current_tweet__id.append(element)
+                    elif 'full_text' in element:
+                        current_tweet__full_text.append(element)
+
+                # only take the first tweet from this list, as this is the id linked to the text
+                tweet_id = str(current_tweet__id[0]).replace('id_str:"', '')
+
+                # remove unwanted substrings
+                tweet_id = tweet_id.replace('"', '')
+                tweet_id = tweet_id.replace("'", '')
+
+                tweet_text = str(current_tweet__full_text[0]).split('"')
+                tweet_text = str(tweet_text[1]).replace("'", '')
+
+                self.__tweet_id.append(tweet_id)
+                self.__full_text.append(tweet_text)
+            
+            if(len(self.__tweet_id) != len(self.__full_text)):
+                print("Warning: number of tweet IDs do not correspond with number of texts")
+                
+            # turn lists of IDs and texts into pandas dataframe
+            self.__all_tweets = pandas.DataFrame(list(zip(self.__tweet_id, self.__full_text)), columns=['id_str', 'full_text'])
+            print(self.__all_tweets)
 
 
-    # returns a .csv file of the tweets ran through the hatebase filter
-    #def get_hate_tweets(self):
-    #   return 
+
+    # TODO return a .csv file of the tweets ran through the hatebase filter (ID + full text)
+    def get_hate_tweets(self):
+        
 
 if __name__ == "__main__":
     filter = HateBaseFilter()
 
     while True:
-        # Write what to do here
-        # User input: name of the csv tweet file
         find_filename = input("Enter filename (yyyymmdd):\n")
-
-        # Add ".csv" if not added yet
-        substring = ".csv"
-        if substring not in find_filename:
-            find_filename = find_filename + substring
-
-        print(find_filename)
+        
         filter.set_filename(find_filename)
         filter.get_all_tweets()
 
