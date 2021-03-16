@@ -17,6 +17,9 @@ class HateBaseFilter(object):
     __tweet_columns = []
     __tweet_id = []
     __full_text = []
+    __filter_tweet_id = []
+    __filter_full_text = []
+    __month = None
 
     ## Constructor
     def __init__(self):
@@ -34,6 +37,7 @@ class HateBaseFilter(object):
         self.__tweet_columns = ["id_str", "full_text"]
 
     ## Methods
+
     def set_filename(self, value):
         # Add ".csv" if not added yet, otherwise it will open the file with IDs only
         extension = ".csv"
@@ -90,12 +94,32 @@ class HateBaseFilter(object):
                 
             # turn lists of IDs and texts into pandas dataframe
             self.__all_tweets = pandas.DataFrame(list(zip(self.__tweet_id, self.__full_text)), columns=['id_str', 'full_text'])
-            print(self.__all_tweets)
+            #print(self.__all_tweets)
 
 
 
     # TODO return a .csv file of the tweets ran through the hatebase filter (ID + full text)
     def get_hate_tweets(self):
+        index = 0
+        for tweet in self.__full_text:
+            for keyword in self.__lexicon:
+                if keyword in tweet:
+                    self.__filter_full_text.append(tweet)
+                    self.__filter_tweet_id.append(self.__tweet_id[index])
+
+            index = index + 1
+        self.__filtered_tweets = pandas.DataFrame(list(zip(self.__filter_tweet_id, self.__filter_full_text)), columns=['id_str', 'full_text'])
+        
+        # give it a new name to distinguish from the original file
+        new_filename = self.__filename.replace('.csv', '')
+        new_filename = new_filename + '_filtered.csv'
+        self.set_filename(new_filename)
+
+        base_path = Path(__file__).parent
+        path = (base_path / "data/tweets/filtered" / new_filename).resolve()
+
+        self.__filtered_tweets.to_csv(path_or_buf=path, index=False)
+        print(self.__filtered_tweets)
         
 
 if __name__ == "__main__":
@@ -106,4 +130,5 @@ if __name__ == "__main__":
         
         filter.set_filename(find_filename)
         filter.get_all_tweets()
+        filter.get_hate_tweets()
 
