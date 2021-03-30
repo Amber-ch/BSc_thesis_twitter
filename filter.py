@@ -3,6 +3,10 @@ import os
 from pathlib import Path
 import pandas
 import glob
+from google_trans_new import google_translator
+import numpy as np
+from tqdm import tqdm
+import re
 
 #importing other python files:
 #from folder.subfolder.file import class
@@ -19,38 +23,47 @@ class HateBaseFilter(object):
     __tweet_columns = []
     __tweet_id = []
     __full_text = []
+    __text_translation = []
     __filter_tweet_id = []
     __filter_full_text = []
+    __filter_text_translation = []
+    __filter_keyword_translation = []
     __contains_keyword = []
+    __translation_contains_keyword = []
+    __translator = google_translator()
+    __filter_keywords = []
+    __filter_text_and_id = {}
 
     ## Constructor
     def __init__(self):
-        # Set path to Hatebase lexicon
+        # Set limits & timeout for Google translate API
+        self.limit_before_timeout = 100
+        self.timeout = 60
+
+        # Set path to Dutch Hatebase lexicon
         data_folder = Path(__file__).parent
         hatebase_path = (data_folder / "data/hatebase/hatebase_dutch_full_manual_filtering.csv").resolve()
         hatebase_column_names = ["result__vocabulary_id", "result__term", "result__hateful_meaning", "result__number_of_sightings", "relevance"]
         self.__hatebase_lexicon = pandas.read_csv(open(hatebase_path, encoding="utf-8"), names=hatebase_column_names)
 
         # Set path to Davidson et al. (2017) refined Hatebase lexicon
-        davidson_path = (data_folder / "davidson_github/lexicons/refined_ngram_dict_translated.csv").resolve()
-        davidson_column_names = ["english", "dutch"]
+        davidson_path = (data_folder / "davidson_github/lexicons/refined_ngram_dict_trans.csv").resolve()
+        davidson_column_names = ["keyword"]
         self.__davidson_lexicon = pandas.read_csv(open(davidson_path, encoding="utf-8"), names=davidson_column_names)
 
         # Return the lexicons as lists
         self.__hatebase_lexicon.drop([0])
         self.__hatebase_lexicon = self.__hatebase_lexicon.result__term.to_list()
+        # Removes the first element (csv header)
+        del self.__hatebase_lexicon[0]
         self.__davidson_lexicon.drop([0])
-        self.__english_davidson_lexicon = self.__davidson_lexicon.english.to_list()
-        del self.__english_davidson_lexicon[0]
-        self.__dutch_davidson_lexicon = self.__davidson_lexicon.dutch.to_list()
-        del self.__dutch_davidson_lexicon[0]
-        self.__davidson_lexicon = self.__english_davidson_lexicon + self.__dutch_davidson_lexicon
-        self.__full_lexicon = self.__hatebase_lexicon + self.__davidson_lexicon
-
-        print(self.__full_lexicon)
+        self.__davidson_lexicon = self.__davidson_lexicon.keyword.to_list()
+        del self.__davidson_lexicon[0]
+        self.__full_lexicon = list(set(self.__hatebase_lexicon + self.__davidson_lexicon))
+    
 
         # Set column names for the tweet files
-        self.__tweet_columns = ["id_str", "full_text"]
+        self.__tweet_columns = ["id_str", "full_text", "text_translation"]
 
     ## Methods
     def reset(self):
@@ -62,6 +75,7 @@ class HateBaseFilter(object):
         self.__filter_tweet_id = []
         self.__filter_full_text = []
         self.__contains_keyword = []
+        self.__filter_keywords = []
 
     def set_filename(self, value):
         # Add ".csv" if not added yet, otherwise it will open the file with IDs only
@@ -69,6 +83,12 @@ class HateBaseFilter(object):
         if extension not in value:
             value = value + extension
         self.__filename = value
+
+    # uses Google translate API to give the English translation of a Dutch tweet
+    def get_translation(self, value):
+        translation = self.__translator.translate(value, lang_src='nl', lang_tgt='en')
+        return translation
+
 
     # returns a pandas dataframe containing all the tweets from a .csv file
     def get_all_tweets(self):
@@ -88,11 +108,13 @@ class HateBaseFilter(object):
             all_tweets_list = list(csv.reader(open(result[0])))
 
             # loop over all tweets from the dataset to extract IDs and full texts
-            for tweet in all_tweets_list:
+            translate_counter = 0
+            for tweet in tqdm(all_tweets_list):
                 tweet_elements = str(tweet)
                 tweet_elements_list = []
                 current_tweet__id = []
                 current_tweet__full_text = []
+                current_tweet__translated = []
 
                 tweet_elements_list = tweet_elements.split(', ')
                 for element in tweet_elements_list:
@@ -100,6 +122,7 @@ class HateBaseFilter(object):
                         current_tweet__id.append(element)
                     elif 'full_text' in element:
                         current_tweet__full_text.append(element)
+
 
                 # only take the first tweet from this list, as this is the id linked to the text
                 tweet_id = str(current_tweet__id[0]).replace('id_str:"', '')
@@ -114,44 +137,56 @@ class HateBaseFilter(object):
                 self.__tweet_id.append(tweet_id)
                 self.__full_text.append(tweet_text)
             
+        
             if(len(self.__tweet_id) != len(self.__full_text)):
                 print("Warning: number of tweet IDs do not correspond with number of texts")
                 
-            # turn lists of IDs and texts into pandas dataframe
-            self.__all_tweets = pandas.DataFrame(list(zip(self.__tweet_id, self.__full_text)), columns=['id_str', 'full_text'])
-            #print(self.__all_tweets)
+        # turn lists of IDs and texts into pandas dataframe
+        # dictionary of lists, then turn dictionary into dataframe
+        #dict = {'id_str': self.__tweet_id, 'full_text': self.__full_text, 'text_translation': self.__text_translation}
+        #self.__all_tweets = pandas.DataFrame(dict)
 
+        self.__all_tweets = pandas.DataFrame(np.column_stack([self.__tweet_id, self.__full_text]), columns=['id_str', 'full_text'])
 
 
     # return a .csv file of the tweets ran through the hatebase filter (ID + full text)
+    # reads a .csv file with tweet IDs, full text, and translation. Returns a .csv file with the tweets/translations that contain keywords from the lexicon
     def get_hate_tweets(self):
         index = 0
         for tweet in self.__full_text:
             for keyword in self.__full_lexicon:
-                if (' '+keyword+' ') in tweet:
-                    print("contains:", keyword)
+                if ' '+keyword+' ' in tweet:
+                    text_plus_id = []
                     self.__filter_full_text.append(tweet)
                     self.__filter_tweet_id.append(self.__tweet_id[index])
-                    self.__contains_keyword.append(keyword)
-
+                    # TODO write keywords to .csv file so we can count them later
+                    self.__filter_keywords.append(keyword)
             index = index + 1
-        self.__filtered_tweets = pandas.DataFrame(list(zip(self.__filter_tweet_id, self.__filter_full_text, self.__contains_keyword)), columns=['id_str', 'full_text', 'keyword'])
-        
-        # give it a new name to distinguish from the original file
-        new_filename = self.__filename.replace('.csv', '')
-        split_filename = list(new_filename)
-        print(len(split_filename))
 
-        new_filename = new_filename + '_filtered.csv'
-        self.set_filename(new_filename)
+        print(self.__filter_text_and_id)
+
+        self.__filtered_tweets = pandas.DataFrame(list(zip(self.__filter_tweet_id, self.__filter_full_text)), columns=['id_str', 'full_text'])
+        self.__filtered_tweets.drop_duplicates(inplace=True)
+
+        self.__filter_keywords = pandas.DataFrame(list(zip(self.__filter_keywords)), columns=['keywords'])
 
         base_path = Path(__file__).parent
+        keyword_path = (base_path / "data/tweets/filtered/keywords" / filename).resolve()
+        self.__filter_keywords.to_csv(path_or_buf=keyword_path, index=False)
+
+        # give it a new name to distinguish from the original file
+        new_filename = self.__filename.replace('.csv', '')
+        new_filename = new_filename + '_filtered.csv'
+        split_filename = list(new_filename)
+        self.set_filename(new_filename)
+
         if split_filename[5] == '2':
-            path = path = (base_path / "data/tweets/filtered/february" / new_filename)
+            path = (base_path / "data/tweets/filtered/february" / new_filename).resolve()
         elif split_filename[5] == '3':
             path = (base_path / "data/tweets/filtered/march" / new_filename).resolve()
         elif split_filename[5] == '4':
             path = (base_path / "data/tweets/filtered/april" / new_filename).resolve()
+
 
         self.__filtered_tweets.to_csv(path_or_buf=path, index=False)
         print(self.__filtered_tweets)
@@ -168,6 +203,10 @@ class HateBaseFilter(object):
         elif value == '4':        
             file_path = (data_folder / "data/tweets/filtered/april/").resolve()
             filename = "filtered+combined_april.csv"
+        elif value == 'k':
+            # TODO merge keyword files
+            file_path = (data_folder / "data/tweets/filtered/keywords").resolve()
+            filename = "combined_keywords.csv"
         
         os.chdir(file_path)
         extension = 'csv'
@@ -178,19 +217,26 @@ class HateBaseFilter(object):
         combined_csv.to_csv(filename, index=False, encoding='utf-8-sig')
         
 
+
+    def print_lexicon(self):
+        print(self.__full_lexicon)
+        
+
 if __name__ == "__main__":
     filter = HateBaseFilter()
 
     while True:
-        find_filename = input("Enter filename (yyyymmdd) or command (m=merge files):\n")
-        
-        if(find_filename == 'm'):
-            month = input("Which month? (2=feb, 3=march, 4=april)")
+        #filter.print_lexicon()
+        command = input("Enter command (m=merge files, f=filter):\n")
+        if(command == 'm'):
+            month = input("Which month? (2=feb, 3=march, 4=april, k=keywords)")
             filter.merge_files(month)
-            # TODO merge
-        else:
-            filter.set_filename(find_filename)
-            filter.get_all_tweets()
-            filter.get_hate_tweets()
-            filter.reset()
+        elif(command == 'f'):
+            while True:
+            # create csv file for specific date
+                filename = input("Enter filename (yyyymmdd):")
+                filter.set_filename(filename)
+                filter.get_all_tweets()
+                filter.get_hate_tweets()
+                filter.reset()
 
