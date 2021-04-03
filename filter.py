@@ -36,9 +36,6 @@ class HateBaseFilter(object):
 
     ## Constructor
     def __init__(self):
-        # Set limits & timeout for Google translate API
-        self.limit_before_timeout = 100
-        self.timeout = 60
 
         # Set path to Dutch Hatebase lexicon
         data_folder = Path(__file__).parent
@@ -77,11 +74,14 @@ class HateBaseFilter(object):
         self.__contains_keyword = []
         self.__filter_keywords = []
 
-    def set_filename(self, value):
+    def set_csv_filename(self, value):
         # Add ".csv" if not added yet, otherwise it will open the file with IDs only
         extension = ".csv"
         if extension not in value:
             value = value + extension
+        self.__filename = value
+
+    def set_filename(self, value):
         self.__filename = value
 
     # uses Google translate API to give the English translation of a Dutch tweet
@@ -103,12 +103,11 @@ class HateBaseFilter(object):
         # invalid filename entered
         if len(result) == 0:
             print("File not found!")
-        else:
+        elif int(list(self.__filename)[5])<5:
             print("File found!")
             all_tweets_list = list(csv.reader(open(result[0])))
 
             # loop over all tweets from the dataset to extract IDs and full texts
-            translate_counter = 0
             for tweet in tqdm(all_tweets_list):
                 tweet_elements = str(tweet)
                 tweet_elements_list = []
@@ -136,17 +135,45 @@ class HateBaseFilter(object):
 
                 self.__tweet_id.append(tweet_id)
                 self.__full_text.append(tweet_text)
-            
-        
-            if(len(self.__tweet_id) != len(self.__full_text)):
-                print("Warning: number of tweet IDs do not correspond with number of texts")
-                
-        # turn lists of IDs and texts into pandas dataframe
-        # dictionary of lists, then turn dictionary into dataframe
-        #dict = {'id_str': self.__tweet_id, 'full_text': self.__full_text, 'text_translation': self.__text_translation}
-        #self.__all_tweets = pandas.DataFrame(dict)
+            self.__all_tweets = pandas.DataFrame(np.column_stack([self.__tweet_id, self.__full_text]), columns=['id_str', 'full_text'])
 
-        self.__all_tweets = pandas.DataFrame(np.column_stack([self.__tweet_id, self.__full_text]), columns=['id_str', 'full_text'])
+        # tweet files may-december
+        else:
+            all_tweets_df = pandas.read_csv(filepath_or_buffer=result[0], header=0, quotechar='"', delimiter=',', 
+                        quoting=csv.QUOTE_ALL, skipinitialspace=True, error_bad_lines=False, engine='python')
+            subset_df = all_tweets_df[['id', 'text']]
+            subset_df = subset_df.dropna(axis=0)
+            #for index in range(subset_df.shape[1]):
+            #    subset_df.at[index, 'text'].replace('"', '')
+            self.__all_tweets = subset_df.rename(columns={'id':'id_str', 'text':'full_text'})
+            self.__tweet_id = self.__all_tweets['id_str'].tolist()
+            self.__full_text = self.__all_tweets['full_text'].tolist()
+            clean_tweets = []
+            for tweet in self.__full_text:
+                if "," in tweet:
+                    tweet = str(tweet).replace(",", '')
+                if "\n" in tweet:
+                    tweet = str(tweet).replace("\n", '')
+                if "'" in tweet:
+                    tweet = str(tweet).replace("'", '')
+                if '"' in tweet:
+                    tweet = str(tweet).replace('"', '')
+                clean_tweets.append(tweet)
+            #    elif '"' in tweet:
+            #        tweet = str(tweet).replace('"', '')
+            #    elif "''" in tweet:
+            #        tweet = str(tweet).replace("''", '')
+                #print(tweet)
+                #tweet_text = str(tweet_text[0]).replace('"', '')
+                #clean_tweets.append(tweet)
+            self.__full_text = []
+            self.__full_text = clean_tweets
+            #print(self.__full_text)
+
+        if(len(self.__tweet_id) != len(self.__full_text)):
+            print("Warning: number of tweet IDs do not correspond with number of texts")
+                
+
 
 
     # return a .csv file of the tweets ran through the hatebase filter (ID + full text)
@@ -163,7 +190,9 @@ class HateBaseFilter(object):
                     self.__filter_keywords.append(keyword)
             index = index + 1
 
-        print(self.__filter_text_and_id)
+        #for tweet in self.__filter_full_text:
+        #    tweet.replace('"', '')
+        print(self.__filter_full_text)
 
         self.__filtered_tweets = pandas.DataFrame(list(zip(self.__filter_tweet_id, self.__filter_full_text)), columns=['id_str', 'full_text'])
         self.__filtered_tweets.drop_duplicates(inplace=True)
@@ -186,10 +215,16 @@ class HateBaseFilter(object):
             path = (base_path / "data/tweets/filtered/march" / new_filename).resolve()
         elif split_filename[5] == '4':
             path = (base_path / "data/tweets/filtered/april" / new_filename).resolve()
-
-
+        elif split_filename[5] == '5':
+            path = (base_path / "data/tweets/filtered/may" / new_filename).resolve()
+        elif split_filename[5] == '6':
+            path = (base_path / "data/tweets/filtered/june" / new_filename).resolve()
+        elif split_filename[5] == '7':
+            path = (base_path / "data/tweets/filtered/july" / new_filename).resolve()
+        
+        #self.__filtered_tweets.to_csv(path_or_buf=path, index=False, quoting=csv.QUOTE_NONE, quotechar='', escapechar=' ')
         self.__filtered_tweets.to_csv(path_or_buf=path, index=False)
-        print(self.__filtered_tweets)
+        print("Filtered:\n", self.__filtered_tweets)
 
     # merges all files from a folder into a combined csv file
     def merge_files(self, value):
@@ -203,6 +238,30 @@ class HateBaseFilter(object):
         elif value == '4':        
             file_path = (data_folder / "data/tweets/filtered/april/").resolve()
             filename = "filtered+combined_april.csv"
+        elif value == '5':        
+            file_path = (data_folder / "data/tweets/filtered/may/").resolve()
+            filename = "filtered+combined_may.csv"
+        elif value == '6':        
+            file_path = (data_folder / "data/tweets/filtered/june/").resolve()
+            filename = "filtered+combined_june.csv"
+        elif value == '7':        
+            file_path = (data_folder / "data/tweets/filtered/july/").resolve()
+            filename = "filtered+combined_july.csv"
+        elif value == '8':        
+            file_path = (data_folder / "data/tweets/filtered/august/").resolve()
+            filename = "filtered+combined_august.csv"
+        elif value == '9':        
+            file_path = (data_folder / "data/tweets/filtered/september/").resolve()
+            filename = "filtered+combined_september.csv"
+        elif value == '10':        
+            file_path = (data_folder / "data/tweets/filtered/october/").resolve()
+            filename = "filtered+combined_october.csv"
+        elif value == '11':        
+            file_path = (data_folder / "data/tweets/filtered/november/").resolve()
+            filename = "filtered+combined_november.csv"
+        elif value == '12':        
+            file_path = (data_folder / "data/tweets/filtered/december/").resolve()
+            filename = "filtered+combined_december.csv"
         elif value == 'k':
             # TODO merge keyword files
             file_path = (data_folder / "data/tweets/filtered/keywords").resolve()
@@ -213,6 +272,9 @@ class HateBaseFilter(object):
         all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
         #combine all files in the list
         combined_csv = pandas.concat([pandas.read_csv(f) for f in all_filenames ])
+        print(combined_csv)
+        #combined_df = pandas.DataFrame(zip([pandas.read_csv(f) for f in all_filenames]))
+        #print(combined_df)
         #export to csv
         combined_csv.to_csv(filename, index=False, encoding='utf-8-sig')
         
@@ -229,7 +291,7 @@ if __name__ == "__main__":
         #filter.print_lexicon()
         command = input("Enter command (m=merge files, f=filter):\n")
         if(command == 'm'):
-            month = input("Which month? (2=feb, 3=march, 4=april, k=keywords)")
+            month = input("Which month? (2=feb, 3=march, etc., k=keywords)")
             filter.merge_files(month)
         elif(command == 'f'):
             while True:
