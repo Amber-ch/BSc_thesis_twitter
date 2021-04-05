@@ -103,7 +103,7 @@ class HateBaseFilter(object):
         # invalid filename entered
         if len(result) == 0:
             print("File not found!")
-        elif int(list(self.__filename)[5])<5:
+        elif int(list(self.__filename)[5])<0:
             print("File found!")
             all_tweets_list = list(csv.reader(open(result[0])))
 
@@ -209,7 +209,7 @@ class HateBaseFilter(object):
         split_filename = list(new_filename)
         self.set_filename(new_filename)
 
-        if split_filename[5] == '2':
+        if split_filename[4] == '0' and split_filename[5] == '2':
             path = (base_path / "data/tweets/filtered/february" / new_filename).resolve()
         elif split_filename[5] == '3':
             path = (base_path / "data/tweets/filtered/march" / new_filename).resolve()
@@ -221,6 +221,16 @@ class HateBaseFilter(object):
             path = (base_path / "data/tweets/filtered/june" / new_filename).resolve()
         elif split_filename[5] == '7':
             path = (base_path / "data/tweets/filtered/july" / new_filename).resolve()
+        elif split_filename[5] == '8':
+            path = (base_path / "data/tweets/filtered/august" / new_filename).resolve()
+        elif split_filename[5] == '9':
+            path = (base_path / "data/tweets/filtered/september" / new_filename).resolve()
+        elif split_filename[4] == '1' and split_filename[5] == '0':
+            path = (base_path / "data/tweets/filtered/october" / new_filename).resolve()
+        elif split_filename[4] == '1' and split_filename[5] == '1':
+            path = (base_path / "data/tweets/filtered/november" / new_filename).resolve()
+        elif split_filename[4] == '1' and split_filename[5] == '2':
+            path = (base_path / "data/tweets/filtered/december" / new_filename).resolve()
         
         #self.__filtered_tweets.to_csv(path_or_buf=path, index=False, quoting=csv.QUOTE_NONE, quotechar='', escapechar=' ')
         self.__filtered_tweets.to_csv(path_or_buf=path, index=False)
@@ -266,11 +276,16 @@ class HateBaseFilter(object):
             # TODO merge keyword files
             file_path = (data_folder / "data/tweets/filtered/keywords").resolve()
             filename = "combined_keywords.csv"
+        elif value == 't':
+            # merge all texts
+            file_path = (data_folder / "data/tweets/filtered/fulltext").resolve()
+            filename = "filtered+combined_ALL.csv"
         
         os.chdir(file_path)
         extension = 'csv'
-        all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
+        all_filenames = [i for i in glob.glob('*')]
         #combine all files in the list
+
         combined_csv = pandas.concat([pandas.read_csv(f) for f in all_filenames ])
         print(combined_csv)
         #combined_df = pandas.DataFrame(zip([pandas.read_csv(f) for f in all_filenames]))
@@ -282,6 +297,20 @@ class HateBaseFilter(object):
 
     def print_lexicon(self):
         print(self.__full_lexicon)
+
+    def keyword_analysis(self):
+        data_folder = Path(__file__).parent
+        file_name = "combined_keywords.csv"
+        new_name = "analyzed_keywords.csv"
+        file_path = (data_folder / "data/tweets/filtered/keywords" / file_name).resolve()
+        new_path = (data_folder / "data/tweets/filtered/keywords" / new_name).resolve()
+
+        keywords_df = pandas.read_csv(filepath_or_buffer=file_path, header=0)
+        keywords_df = pandas.pivot_table(keywords_df, index='keywords', aggfunc='size')
+        print(keywords_df.head())
+        keywords_df.to_csv(path_or_buf=new_path)
+        #print(keywords_df)
+
         
 
 if __name__ == "__main__":
@@ -293,6 +322,9 @@ if __name__ == "__main__":
         if(command == 'm'):
             month = input("Which month? (2=feb, 3=march, etc., k=keywords)")
             filter.merge_files(month)
+        # run keyword analysis
+        elif(command == 'a'):
+            filter.keyword_analysis()
         elif(command == 'f'):
             while True:
             # create csv file for specific date
