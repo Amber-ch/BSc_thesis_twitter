@@ -1,0 +1,2528 @@
+{
+    "name": "validation_set_0_1",
+    "interface": {
+      "type": "text_classification",
+      "labels": [
+        {
+          "id": "0",
+          "displayName": "0_hatespeech",
+          "description": "language used to discriminate a group or individual"
+        },
+        {
+          "id": "1",
+          "displayName": "1_offensive",
+          "description": "swearing (directed or undirected), but not hate. can also be positive ('fucking happy)"
+        },
+        {
+          "id": "2",
+          "displayName": "2_neither"
+        },
+        {
+          "id": "3",
+          "displayName": "3_duplicate"
+        }
+      ]
+    },
+    "samples": [
+      {
+        "_id": "s0d97xdqh",
+        "custom_id": 1272573718628388900,
+        "document": "@SanneVanGalen @MinPres @rivm Hahaha ja debiel hè? Die auto-regel vind ik echt te gek voor woorden."
+      },
+      {
+        "_id": "s5sq3saw4",
+        "custom_id": 1272568309225906200,
+        "document": "Verpleegster in tranen: Patiënten sterven niet aan corona ze worden vermoord https://t.co/hz97f7xUxQ"
+      },
+      {
+        "_id": "s432u35bm",
+        "custom_id": 1272563047664582700,
+        "document": "@DaanDeWit Uit de oude doos van de Volkskrant.Het RIVM was altijd al een leugenachtig onbetrouwbaar en onwetenschappelijk instituut dat kolder publiceerde op bestelling van de overheid.https://t.co/tndnxqyB1h"
+      },
+      {
+        "_id": "s3i1xl9y9",
+        "custom_id": 1272565997707370500,
+        "document": "Propagandazender NOS op NED 1 laat uw weten:U bent als blanke autochtone Nederlander een racist &amp; u discrimineert u bent zich daarvan bewust.Jaja zwartjes zijn per definitie liev intelligent nooit crimineel op planeet Andromeda-covid-19.Blijkt uit een poll 🤣😆😼😇😉 https://t.co/jVQXICkFTU"
+      },
+      {
+        "_id": "sm0v700sx",
+        "custom_id": 1272569470414979000,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’ https://t.co/Pa4De18WUY via @telegraaf .Ik ben er alleen maar meer racist van geworden. Waarom omdat ik het spuugzat ben van deze demonstraties. Het geeft alleen maar meer haat dit is geen protest maar bezetting."
+      },
+      {
+        "_id": "souqw928k",
+        "custom_id": 1272566207393210400,
+        "document": "Sommige zwarten maar ageren tegen die “slechte blanke man”... alles wat van hem is zijn geschiedenis zijn realisaties enz moet verdwijnen.Wat als die nu een Coronavaccin ontwikkelt ? Laat ze dat dan liggen 🤔?"
+      },
+      {
+        "_id": "sl1l0qwxn",
+        "custom_id": 1272569604628459500,
+        "document": "Onze minister van #gezondheid ofzo heeft 400 rottende vissen aan een Duits ziekenhuis gegeven als dank voor hun hulp bij ons #Corona probleemWay to say thank youHeres some pois(s)onTry not to kill yourself after eating itWe may need your ICU againhttps://t.co/04xYUYW1cy"
+      },
+      {
+        "_id": "schrvalvl",
+        "custom_id": 1272570189654229000,
+        "document": "Sommige zwarten maar ageren tegen die “slechte blanke man”... alles wat van hem is zijn geschiedenis zijn realisaties enz moet verdwijnen.Wat als die nu een Coronavaccin ontwikkelt ? Laten ze dat dan liggen 🤔?"
+      },
+      {
+        "_id": "s0gpzzcn9",
+        "custom_id": 1272423310341689300,
+        "document": "Onze puber zegt: “Wat een hoer van de RIVM is hij”"
+      },
+      {
+        "_id": "s3uen423f",
+        "custom_id": 1272415764138639400,
+        "document": "Corona 020 is aan het komen mensen gaan dood dankzij @groenlinks links @halsema en linkse lijmsnuivende achterlijke hetjes. 💩"
+      },
+      {
+        "_id": "s45epgqcw",
+        "custom_id": 1272421181489062000,
+        "document": "@FrankVanZuilen @ehjongsma @OprechtsNu @oakentersagain @Oprjocht1 @RientsHofstra @Classicon2 @Karin25958043 @Moorkopje2 @Ano15033075 @pufpufpafpaf @meer_irma @IkNet @LokaalGeld @nieuws_gier @Strijd_Vrijheid @Asja_jacobs @Korneel_Evers @cameronks @NYGovCuomo @MinPres @hugodejonge @rivm LastigIk denk dat ik met mijn blanke stamboom sowieso als racistisch wordt bestempeld ongeacht mijn woordkeuze."
+      },
+      {
+        "_id": "s23zldvl9",
+        "custom_id": 1272422690616496000,
+        "document": "@hnjansen @NOS Ach ik ben van mening dat deze protesten een heel eenzijdig verhaal vertellen. Ik ben zelf opgegroeid in een divers wijkje om het zo maar te zeggen en ben jarenlang uitgemaakt voor kk blanke kk kaaskop de Chinese eigenaar van de bakker werd constant lastig gevallen.."
+      },
+      {
+        "_id": "szrk4k126",
+        "custom_id": 1272411315483615200,
+        "document": "Barry Atsma (47) is ondanks de coronabeperkingen al wekenlang volop aan het filmen op de set van de Duitse tv-serie Du sollst nicht lügen. Ik word elke drie dagen getest (premium) https://t.co/LZKHVPI3J5"
+      },
+      {
+        "_id": "svl8iy72u",
+        "custom_id": 1272413586539896800,
+        "document": "Weer nertsen op pelsdierenfarm in Moergestel.terwijl elders in #Brabant de dieren gedood worden vanwege #corona vult nertsenfokker zijn hokken...https://t.co/W0Kg22VdAp"
+      },
+      {
+        "_id": "suz3s3zli",
+        "custom_id": 1272422392581820400,
+        "document": "@NuchtereDe @StefanPaas huh? Corona Trumps schuld?zwarte man gedood door blanke agent Trumps schuld? Als jij dit bent in nuchtere staat moeten ze je toetsenbord maar weghalen als je dronken bent"
+      },
+      {
+        "_id": "s5ymnt91b",
+        "custom_id": 1272546470164660200,
+        "document": "Wat een kaaskop zeg!! 😂😂Corona doet wat met je... https://t.co/07GYp6Su49"
+      },
+      {
+        "_id": "s1y0q1z6v",
+        "custom_id": 1272551382395039700,
+        "document": "Verpleegster in tranen: Patiënten sterven niet aan corona ze worden vermoord https://t.co/R0tIYxxCQ6"
+      },
+      {
+        "_id": "svrv0lszf",
+        "custom_id": 1272559343427297300,
+        "document": "@NassauWillem @Little_one_Ann Wij kunnen beter hun controleren met hun achterlijke  gedoe het is tijd de coronavirus is sowieso teveel opgeblazen zo erg is het allemaal niet"
+      },
+      {
+        "_id": "sbl3v3dvq",
+        "custom_id": 1272553505505661000,
+        "document": "Voor mensen die roepen dat de VS een achterlijk land was dat het niet eerder was geregeld: in landen als Duitsland en Italië kunnen gays pas sinds kort trouwen. Zo vooruitstrevend als Nederland op dit thema zijn weinig landen."
+      },
+      {
+        "_id": "s8n4x521b",
+        "custom_id": 1272550020882083800,
+        "document": "@Beeronline1 @dijkhoff Ik geef al jaren niks meer aan goede doelen. Wij blanken worden toch als slechte mensen neergezet. Ze raken in paniek het is niet uit te leggen dat al 2 weken lang dagelijks protesten zijn met 100pden opelkaar. De ware bedoeling komt steeds meer uit. We pikken dit niet meer."
+      },
+      {
+        "_id": "s5p1ydlyf",
+        "custom_id": 1272557954110230500,
+        "document": "Qudt. In Coronatijd kan je bejaarde tante ook gewoon uitgezaaide alvleesklierkanker krijgen natuurlijk. Oh mijn arme nicht vorig jaar broer nu dit...."
+      },
+      {
+        "_id": "swph7f3gh",
+        "custom_id": 1272605454594642000,
+        "document": "Verpleegster in tranen: Patiënten sterven niet aan corona ze worden vermoord https://t.co/R0tIYxxCQ6 het wordt steeds duidelijker dat het middel.... Veel erger is dan de kwaal (bij die oude verzwakte mensen bespoedigd de behandelmethode dus hun dood)"
+      },
+      {
+        "_id": "sns5n79qe",
+        "custom_id": 1272292250190520300,
+        "document": "Hey @JessikaSoorsTijd voor praktijktesten: hoeveel jongeren vallen een blanke aan wanneer die door de straat loopt.We zullen u nu wel niet horen zeker..."
+      },
+      {
+        "_id": "sgn1n0cio",
+        "custom_id": 1272461899037368300,
+        "document": "Het CDA moet die iedeote dorpsgek Hugo de Jonge eruit gooien Die is volledig het pad kwijt met zijn achterlijke reactie op dat covid19 virus Hij lijd aan hysterische vorm van smetvrees https://t.co/Dco8nY3C48"
+      },
+      {
+        "_id": "s3rmjus97",
+        "custom_id": 1272460875971080200,
+        "document": "@destandaard Ach zo ni ze doen maar op ze zijn goed bezig om zo vol te zitten en bij 1 achterlijke mensen ow dat corona terug komt krijgen ze van mij nog lappen bij door een ander zot."
+      },
+      {
+        "_id": "sivq3tx5h",
+        "custom_id": 1272461997733535700,
+        "document": "Als Je zo been rund bent en nu op @Schiphol staat neem aub corona mee te4ug. Dan kan het achterlijke d66 klapvolkje weer  klappen  voor domme verpleger die voor toerist hun leven geven dank @UNWTO  en @WHO en reisbranche meer doden graag @Schiphol Spaanse corona voorkeur cocktail https://t.co/B74CicvGFG"
+      },
+      {
+        "_id": "st3itivrj",
+        "custom_id": 1272505961564057600,
+        "document": "Nederland heeft kinderen vrouwen en mannen verkracht mishandeld en wreed vermoord gedurende 350 jaar. Nu probeert NL opnieuw via achterlijke kolonialen als #Rayman #Sitalsingh ea en coronahulp weer binnen te dringen in Su. Alle NL Hulp wordt GEWEIGERD. #nieuwsuur #buitenhof https://t.co/JvhM6unYbq"
+      },
+      {
+        "_id": "sdmhgmdpl",
+        "custom_id": 1272530045547032600,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’ https://t.co/IxKMNIVaAG"
+      },
+      {
+        "_id": "sycydvt6m",
+        "custom_id": 1272534403797979100,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’ https://t.co/eCsOFRudnr"
+      },
+      {
+        "_id": "saemt75on",
+        "custom_id": 1272534514691080200,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’ https://t.co/oXoZTSIR04 via @telegraaf"
+      },
+      {
+        "_id": "sy21br5t6",
+        "custom_id": 1272536400504782800,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’ https://t.co/O8wJuk7ct8 via @telegraaf"
+      },
+      {
+        "_id": "sq6p4aoyo",
+        "custom_id": 1272543374038438000,
+        "document": "Is er racisme  Ja. Is het trecht hier tegen te protesteren Ja. Maar of het wegpesten van zwarte piet of omver halen van beelden hier iets aan bijdraagt  ? Neen//’Protesten tegen racisme maken meeste blanke mensen niet bewuster’  via @Telegraaf https://t.co/WqxjxCal8q"
+      },
+      {
+        "_id": "sgau2t7zd",
+        "custom_id": 1272531597338783700,
+        "document": "@noahendricus ja echt hoor en die vrouw reageerde ook vet bot op iedereen die het vroeg?? echt mens het was vóór corona al debiel als je niet kunt pinnen"
+      },
+      {
+        "_id": "s6fmkn77t",
+        "custom_id": 1272534221026975700,
+        "document": "@EenVandaag @HenkNaves Deze wet is het gevolg van het Fascisme in Den Haag.Wir haben es nicht gewußt kunnen we nu niet meer zeggen.!We staan er bij en ? wat doen we?Stop het Fascisme! Stop Rutten3!Stop het moorden van Corona patiënten.!"
+      },
+      {
+        "_id": "sp740paem",
+        "custom_id": 1272588204911276000,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’  via @Telegraaf https://t.co/CJ0xobk30h"
+      },
+      {
+        "_id": "s7bdf93ck",
+        "custom_id": 1272588338852171800,
+        "document": "@RTLnieuws Het mag niet wat @hugodejonge  en @rivm  willen proberen met n wet. Er is de Grondwet waar alles instaat en dictatuur mag niet. Dus géén achterlijk verzonnen wetje  @2eKamertweets  @EersteKamer  want dan is er écht burgeroorlog in Ned."
+      },
+      {
+        "_id": "swkzonyga",
+        "custom_id": 1272574820950200300,
+        "document": "ik las dat het ook nog op eenvandaag wasTwee derde van de blanke mensen in Nederland zegt zich door de protesten tegen racisme niet bewuster te worden van hun eigen gedrag op dat gebiedVraag: Moet dat dan???Ik heb namelijk wel wat tegen het gedrag van het demonstrerende tuig."
+      },
+      {
+        "_id": "sa8v2xubf",
+        "custom_id": 1272580871158202400,
+        "document": "Aantal coronapatiënten op ic voor derde dag op rij gestegen https://t.co/RfatmoaVJe via @telegraaf Bedankt he.. Femke Halsema. Met je achterlijke Dam-actie."
+      },
+      {
+        "_id": "spz677h6d",
+        "custom_id": 1272322088645337000,
+        "document": "Aha tokkies uit Rotterdam/ Den Haag zoeken elkaar op! Dit keer niet om elkaar op het domme smoelwerk te rammen nee! Om te demonstreren tégen racisme *PROEST* tégen de covid-19 maatregelen én TEGEN #Antifa!Want daar heeft men een hekel aan en ik denk te weten waarom: zie foto https://t.co/qPqPnL7cdg"
+      },
+      {
+        "_id": "sm4t3tn8j",
+        "custom_id": 1272473885124948000,
+        "document": "@parool Leuk verhaal. Japan is zo ongeveer het enige Aziatische land dat geen enkel clue heeft wat er gebeurd. Je kunt je er niet laten testen en cijfers verstrekt de overheid niet. Het was altijd wachten op een uitbreiding van de eerste golf. Japan is het achterlijke broertje van Korea"
+      },
+      {
+        "_id": "svgmtgmwn",
+        "custom_id": 1272590536193585200,
+        "document": "De wekker echt achterlijk vroeg reistijd veel te lang benauwend mondkapje.Maar damn wat heb ik dat gemist. Mijn eerste echte hele kantoordag. Beetje sparren ouwehoeren overleggen samen lunchen. Damn dat was even fijn. Nee altijd thuiswerken niets voor mij!"
+      },
+      {
+        "_id": "s28yvf2ju",
+        "custom_id": 1272600064414953500,
+        "document": "@RTLnieuws Mooi valt niks te worstelen gewoon niet handhaven en vooral geen achterlijke boetes uitdelen ! #stopanderhalvemeter !!! https://t.co/F6eIHb6B9u"
+      },
+      {
+        "_id": "s0k9wqf3l",
+        "custom_id": 1272598456008429600,
+        "document": "@Sambamagico Zeg dat maar tegen de actievoerders bij die protesten die aan blanken vragen achteraan te gaan zitten of 10 dollar te betalen aan een zwart iemand."
+      },
+      {
+        "_id": "sj2pirxi7",
+        "custom_id": 1272524952558809000,
+        "document": "@BergmannMedia Op een gegeven moment moet je accepteren: Covid-19 is één van de doodsoorzaken van homo sapiens https://t.co/koEEifphDS #inhumaan #ouderen #coronamaatregelen #bijkomendeschade #covid19nl #anderhalvemeter #proportionaliteit #coronanl"
+      },
+      {
+        "_id": "s21hoovuw",
+        "custom_id": 1272517892312125400,
+        "document": "Twee derde van de blanke mensen in Nederland zegt zich door de protesten tegen racisme niet bewuster te worden van hun eigen gedrag op dat gebied. Dat meldt EenVandaag op basis van onderzoek onder 39.000 deelnemers van het Opiniepanel. https://t.co/cOh0Uail9s"
+      },
+      {
+        "_id": "s2npfoil6",
+        "custom_id": 1272518413513109500,
+        "document": "Twee derde van de blanke mensen in Nederland zegt zich door de protesten tegen racisme niet bewuster te worden van hun eigen gedrag op dat gebied. https://t.co/Om05z50mxs"
+      },
+      {
+        "_id": "ssn3trdw9",
+        "custom_id": 1272520318226227200,
+        "document": "Twee derde van de blanke mensen in Nederland zegt zich door de protesten tegen racisme niet bewuster te worden van hun eigen gedrag op dat gebied. https://t.co/Om05z50mxs"
+      },
+      {
+        "_id": "sznuhu85g",
+        "custom_id": 1272520718857756700,
+        "document": "Hoe kun je bewust worden over iets wat je niet doet? ’Protesten tegen racisme maken meeste blanke mensen niet bewuster’  via @Telegraaf https://t.co/ZXZcqjYCnK"
+      },
+      {
+        "_id": "se0hupq89",
+        "custom_id": 1272521554035949600,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet’ https://t.co/4Pa6JcCHb7 via @telegraaf zijn de meeste mensen niet bezig met racisme omdat er door de meeste mensen geen onderscheid wordt gemaakt. Iedereen gelijk kan toch ook. Ook witte hebben dan last van discriminatie"
+      },
+      {
+        "_id": "s7kuzg42s",
+        "custom_id": 1272523004598255600,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’ https://t.co/lJzx1QR5g6 via @Telegraaf#Bij ons werkte er allerlei mensen van alle komaf op de vloer# Blank werd ook geweigerd. Niet alleen gekleurd#maar je moet wel het werkprotocol v d werkgever volgen#"
+      },
+      {
+        "_id": "s705amaoo",
+        "custom_id": 1272524277246558200,
+        "document": "@telegraaf Twee derde van de blanke mensen in Nederland zegt zich door de protesten tegen racisme niet bewuster te worden van hun eigen gedrag op dat gebied.Ehh het gaat dus ALLEEN om blank racisme?? 🤔"
+      },
+      {
+        "_id": "s7uor7fy1",
+        "custom_id": 1272525427001692200,
+        "document": "@RRATorres1 @telegraaf Twee derde van de blanke mensen in Nederland zegt zich door de protesten tegen racisme bewuster te worden van BLM/Antifas gedrag op dat gebied...."
+      },
+      {
+        "_id": "sjw3ll9kh",
+        "custom_id": 1272527220133822500,
+        "document": "’Protesten tegen racisme maken meeste blanke mensen niet bewuster’ https://t.co/mAPpea8p5v via @telegraafals dochter komt thuis met iemand uit bv Afrika en wil trouwen deze man vindt dat er ook elke maand wat geld naar zijn fam: moet ben benieuwd hoe deze mensen dan reageren."
+      },
+      {
+        "_id": "sc8cpkdpg",
+        "custom_id": 1272516716992573400,
+        "document": "laat Afrika voor de negers en Europa voor de blankeof witte mensen en alle problemen met rasisme isopgelost is niet moeilijk is gemakkelijk volg Coronacovid 19 maatregel blijf in uw kot en land en dewereld vrede is eeuwig verzekerd de multi cultuuris de 3 de wereld krijgen *"
+      },
+      {
+        "_id": "smtytaajs",
+        "custom_id": 1272521044461596700,
+        "document": "@CrouchingHidden @Marias50 Stop het Fascisme.!!Wir haben es nicht gewußt Dat kunnen we ons nu NIET meer veroorloven.!!Stop het MOORDEN van Corona Patiënten.Stop Rutten3Stop FASCISMEVRIJHEID VRIJHEID VRIJHEID.!!!!!"
+      },
+      {
+        "_id": "sgi91rbzf",
+        "custom_id": 1272424220589469700,
+        "document": "#Baudet over de #anti-racismeprotesten: Wij blanken hebben ervoor gezorgd dat de #slavernij werd afgeschaft. Dan zit er echt een hele #rare kronkel in he kop! Bijna onmogelijk voor #Weimans om met deze langspeelplaat in gesprek te gaan  https://t.co/v3atEye1BE via @nporadio1"
+      },
+      {
+        "_id": "su4si1eqi",
+        "custom_id": 1272428275068022800,
+        "document": "@lectrr @sthbracke Daarover gaat de ophef niet. Het is eerder een diepe zucht (althans bij mij) dat het weer dezelfde stemmen zijn (Bracke Zinzen) die al tig keer zijn opgevoerd. Er is klimaat racisme radicalisering. Zelfs corona. En er worden drie gepensioneerde blanke mannen gekozen ????"
+      },
+      {
+        "_id": "su04u90rf",
+        "custom_id": 1272429214126538800,
+        "document": "Ik was er toch wat onrustig over want recent had een buuf dat ook gedaan met allerlei kleine spulletjes speelgoed etc. Een week haalden dagelijks mensen spulletjes op. Kinderen wandelaars etc. Maar andere buren vinden het in Corona te tricky of vinden een doos lelijk."
+      },
+      {
+        "_id": "st83rztca",
+        "custom_id": 1272627438569140200,
+        "document": "Op een gegeven moment moet je accepteren: Covid-19 is één van de doodsoorzaken van homo sapiens. PUNT https://t.co/gysU3IkEnN #leven #sterven #menszijn #coronanl #covid19nl #coronanederland #coronamaatregelen #schadelijk #ouderen"
+      },
+      {
+        "_id": "sh5363gya",
+        "custom_id": 1272628200347181000,
+        "document": "@fernandes_shai @Yapo_el_guapo @JokeBruis38 @Bourgonje @Sanderstwits @CoopZor @JagerTwee @PossiblyWim @kennis_dennis @0987654321Id @JB_Hilterman @ger2591 @Ocean4Q @benniedoorsnee @TellerOfWisdom @RajiveTheMajive @qt2bstr @Obe_85 @kwybes @GeneraalSpoor4a @WietskeHoorn @LMeulebroek @MsmVolger @buzztruus @Ger19511 @tnuh87 @HeemskerkRon @RFJanse @Lagonda_Blogger @nieuws_gier @Djeep_ @horsemen345 @michel16823463 @dianvrijmens @PollyRotterdam @HeavenCanWait77 @Truthse07006958 @jjmvee @Maria_Serenita @AudioVD @NuchterBurger @Swaffel2 @MarcelTheStifm1 @ikhebgezien @Mawufeasi @Mans516 @TerpTheatre @Michonnet @pirateonboard @MickPersson Die makaken werden allemaal ziek. Ook bij de testen op mensen (vrijwilligers) van een ander vaccin: ernstige bijwerkingen."
+      },
+      {
+        "_id": "soejfzl3n",
+        "custom_id": 1272646595352375300,
+        "document": "Neem een gewassen appen en een sinaasappel een doos onbespoten aardbeien en je bet klaar kut griepje er is geen hond overleg aan corona NIEMAND !"
+      },
+      {
+        "_id": "s2ut6um2r",
+        "custom_id": 1272490792037363700,
+        "document": "Kijk en hier gaat het dus fout.In plaats van al die achterlijke #coronamaatregelen (#anderhalvemetersamenleving) zou het #overheidsbeleid moeten inzetten op een #mentaliteitsverandering: #gezondheidsklachten = #blijfthuis.Anderen kunnen door jou #ziek worden.#durftevragen https://t.co/CHGunaZayh"
+      },
+      {
+        "_id": "s78v37qxf",
+        "custom_id": 1272493685066915800,
+        "document": "@Wim_Schellekens @dwarrel75 @DrZoeHyde @IGJnl @GGDGHORNL @rivm Ze willen de zogenaamde immuniteit volgen met een virus waar ze nog bar weinig vanaf weten en de bevolking dom en achterlijk houden. Wat er gebeurd is in de verpleeghuizen is een groot schandaal. En nu weer back to business met een gladde aal in maatpak op de posters door de stad"
+      },
+      {
+        "_id": "syeiuzv89",
+        "custom_id": 1272493715404316700,
+        "document": "Nieuwe regels voor het Henny Huismanmuseum m.b.t COVID-19: Vanaf heden zijn enkel nog blanke mensen toegestaan in ons museum i.v.m verminderd besmettingsgevaar"
+      },
+      {
+        "_id": "smje7ld8g",
+        "custom_id": 1272442083857612800,
+        "document": "#Kinderen die chocolademelk kregen met feces om #immuunsysteem te testen. #Farmacie #vaccins. Gedeeld ⤵️ door Kennedy-telg (die laatst zijn nicht en haar zoon naar het graf bracht; de zoveelste... Voel erg mee met de familie 😔 en bewonder Robert om wat hij doet: waarheidsvinding"
+      },
+      {
+        "_id": "s8q70sfsf",
+        "custom_id": 1272444528373502000,
+        "document": "@tomvangrieken hopelijk schiet er een blanke agent u kreupel of een corona infectie dat uw spraak spreek vermogen aantast zodat we u ranzige en racistisch gezever niet meer kunnen horen of lezen. Vuile nazi"
+      },
+      {
+        "_id": "shaptymxg",
+        "custom_id": 1275584161311531000,
+        "document": "@SoffiHart @jesseklaver Klopt! Net als het coronavirus..de BLM demos etc etc..alles wordt uit de kast gehaald om het blanke volk er onder te krijgen...maar ze vergeten..wij zijn met meer!"
+      },
+      {
+        "_id": "s6ochkpzm",
+        "custom_id": 1275827722636361700,
+        "document": "@Felicity256 @marcvdhoogen 3: #Jihadisten binnenlaten heet #Deugen ( De activiteit ) maar niet meedoen met het DEBIELE #Covid19 #1_5Mbeleid levert een #Boete op.#Jihadist krijgt onderdak maar @geertwilderspvv mag 5 jaar debiel papierwerk invullen om n stelletje Farizeeers  te weerstaan na een #Quotemine"
+      },
+      {
+        "_id": "s03ic6tfn",
+        "custom_id": 1275824694776803300,
+        "document": "@Nielsrigter Het wordt tijd dat de witte deelstaat Nederland de zwarten gaan betalen. Hier zou @MinPres vanavond op terugkomen. #herstelbetaling #KOZP #persconferentie"
+      },
+      {
+        "_id": "s68lxqa8c",
+        "custom_id": 1275825031843590100,
+        "document": "@Nielsrigter Het wordt tijd dat de witte deelstaat Nederland de zwarten gaat betalen. Hier zou @MinPresvanavond op terugkomen. #herstelbetaling #KOZP #persconferentie"
+      },
+      {
+        "_id": "scaotylmi",
+        "custom_id": 1275825319258226700,
+        "document": "@KajsaOllongren Het wordt tijd dat de witte deelstaat Nederland de zwarten gaat betalen. Hier zou @MinPres vanavond op terugkomen. #herstelbetaling #KOZP #persconferentie"
+      },
+      {
+        "_id": "svt7nq92v",
+        "custom_id": 1275617405612499000,
+        "document": "https://t.co/MsNR2ICOi3 nemen jullie ook zwarten over lol voor dit te begrijpen kijk video #zorgpersoneel #blacklifematters #BlackLivesMatter #BLACK_LIVES_MATTER #AllLivesMattter #coronavirus #"
+      },
+      {
+        "_id": "serfxgg2o",
+        "custom_id": 1275707134139936800,
+        "document": "Weer zon blanke vrouw die zegt het is onze schulddat we geen gekleurde journalisten hebben! Wat een onzin. Correspondent Italië hele dag op de radio en tv allerlei gekleurde Nederlandersdie zijn geslaagd. En +/- 18% vd bevolkinghè!  #spraakmakers #omroepgelderland"
+      },
+      {
+        "_id": "sbke8vz3n",
+        "custom_id": 1275708694685237200,
+        "document": "@JongGroen @PauwelsCpauwels Dus jullie willen blanke mannen #discrimineren ook al zijn deze beter geschikt? Gaan we hier ook #praktijktesten tegen moeten houden dan. Nu ja als jullie een maatschappij willen waar we iedere keer gaan denken ze heeft de job om dat ze vrouw is. Ok dan."
+      },
+      {
+        "_id": "stxqenerj",
+        "custom_id": 1275704812550701000,
+        "document": "@Cortes BLM = helaas niet opkomen voor racisme van elke aardNee het is gekaapt door mensen die blanke mensen willen uitroeien!Lekker bezig BLM?!!!!Rutte praat met BLMAlleen #corona is natuurlijk niet genoeg?"
+      },
+      {
+        "_id": "sdrxrr4ap",
+        "custom_id": 1275893116269142000,
+        "document": "Stuur Rutte ook maar een doos rotte eieren.. afgezien dat het strafbaar is: het zou te veel eer zijn om die nog naar zijn hoofd te gooien. En als Rutte ergens nog op werkbezoek langs komt voor een leuke foto: biedt hem een doos rotte eieren aan. #persconferentie #kickoutrutte"
+      },
+      {
+        "_id": "syrmga51z",
+        "custom_id": 1275634072388276200,
+        "document": "@rikaockeloen @AntonJan7 @mauricedehond Het RIVM is slaaf van modellen. Daarmee worden fouten uitvergroot. Om niet voor paal te staan : volhouden.Het is weer de Verenigde Naties die via een van hun institutende wereldorde bepaalt. Eerder hadden die de klimaathysterie en het Marakesh pact."
+      },
+      {
+        "_id": "s83qi6e36",
+        "custom_id": 1275562075687968800,
+        "document": "@madrettor010 @martinhoof @geertwilderspvv Misschien moeten die tokkie vrouwen met hun tokkie hooligan mannen en inteelt kinderen lekker thuisblijven zoals vroeger verplicht was voor het lage volk."
+      },
+      {
+        "_id": "sp4weg50e",
+        "custom_id": 1275556070761599000,
+        "document": "#Genee had het #Akwasi virus opgelopen deed een #Coronaspuugje in de bek van @derksen dankzij die #ZwarteHeks #Halsema en haar tokkie vriendjes via #JerryAfriyie #op1npo"
+      },
+      {
+        "_id": "sn4nw0npm",
+        "custom_id": 1275561247484805000,
+        "document": "@RobertVall3 Oh God die mongool weer. Had aan begin van Corona ook al zon belerend filmpje gemaakt. Alsof we kleuters waren. Dat dit soort mensen echt bestaan!!🤣🤣🤣 Waarom wordt zon gast niet teruggefloten door zijn chef? Of zal die net zo debiel zijn?"
+      },
+      {
+        "_id": "sd9urgfof",
+        "custom_id": 1275873126346363000,
+        "document": "@patricecv @MinPres @rivm @hugodejonge @NOS @RTLnieuws @HartvNL Hoe ongewone (lees achterlijke mensen) reageren op een aankondiging."
+      },
+      {
+        "_id": "skt72fnah",
+        "custom_id": 1275878347780886500,
+        "document": "Vanavond tijdens de #persconferentie zei men steeds 15m afstand houden maar als je naar de hoeren mag gaan hoef je geen mondkapjes te gebruiken geen 15m afstand houden en je mag verschillende standjes wippen met n wildvreemde hoertje. Wie kan dit nog volgen? 🤔"
+      },
+      {
+        "_id": "soh2vkrk5",
+        "custom_id": 1275867629715153000,
+        "document": "Waarom doen we net alsof dit bijzonder en misplaatst is? Bizar. Nederland is een blank land dus verwacht je een blanke advocaat. Zo simpel is het!#KOZP #anderhalvemeter #coronamaatregelen #KickOutRutte"
+      },
+      {
+        "_id": "s3s5q2c3g",
+        "custom_id": 1275873144910332000,
+        "document": "En ik maar roepen dat Groningers niet zo achterlijk zijn om tegen Coronamaatregelen te demonstreren. Voor al die Groningers die #awake zijn: Ik hoop dat je wakker blijft en niet op de ic terecht komt. Stelletje egoïstische onnadenkende wakkere assholes! https://t.co/D3FsgMD3IJ"
+      },
+      {
+        "_id": "sacp84mpe",
+        "custom_id": 1275691137584500700,
+        "document": "@TheRebelThePoet Kijk eens hoe weinig zwarte mensen er bij die protesten zijn. 80 a 90% zijn blanke deugkneuzen die ws geen omgang hebben met zwarten. De gewone zwarte man werkt/leeft en betaald belasting zoals ook blanke mensen doen. En weekend BBQ-en we samen en drinken een biertje. zeurpiet"
+      },
+      {
+        "_id": "stsbjj1ky",
+        "custom_id": 1275685726328422400,
+        "document": "Kijk dit dus! mijn fam in buitenland italie .spanje. engeland.zeggen dat dus steeds! Mensen gaan niet dood aan #corona  ze worden vermoord 😔😰😱"
+      },
+      {
+        "_id": "sp9gy0oaq",
+        "custom_id": 1275689190903238700,
+        "document": "Update update: de hoeren van PostNL hebben alles op de stoep gedumpt want corona ondanks dat ik EXTRA HEB BETAALD om het tot binnen te laten brengen"
+      },
+      {
+        "_id": "sl8g90h9h",
+        "custom_id": 1275695160148594700,
+        "document": "@Reith2Adam @weijers3 @TheRebelThePoet En dan maakt men zich zorgen over Corona. Terwijl Jerry rondloopt. Een hyena op zoek naar een blanke prooi."
+      },
+      {
+        "_id": "sb2outqfr",
+        "custom_id": 1275697359125700600,
+        "document": "Voor de #Corona believers; de #15meter samenleving gelovers; kijk de video en laat het op je inwerken. #vrijheidsbeperking(inhumane) onder het mom van het goede een vuile agenda implementeren. Komt ie; https://t.co/Hhb2XXy8K8"
+      },
+      {
+        "_id": "scu7jozlr",
+        "custom_id": 1275804574201319400,
+        "document": "@telegraaf Kijk dat zijn mooie berichten! Eindelijk is geen zeiknieuws over zwarten die de weg kwijt zijn of de corona"
+      },
+      {
+        "_id": "s26oag8vi",
+        "custom_id": 1275796127900676000,
+        "document": "@tpooknl @TPOnl Oregon wil genocide plegen op zwarte gemeenschap. Door niet dragen van mondkapje lopen ze grotere kans om ziek te worden en te sterven. Klinkt vergezocht maar mocht aantal Covid19 gevallen onder zwarten binnenkort in Oregon stijgen zal waarschijnlijk 1 of ander BLM dit beweren."
+      },
+      {
+        "_id": "s5gs3e41l",
+        "custom_id": 1275802599640518700,
+        "document": "Door steeds maar eenzijdig te communiceren over racisme over BLM die trouwens een extreem linkse communistische organisatie is (communisme= terreur goelag beperking persvrijheid enz) over praktijktesten zwarte piet duwt men de gematigde blanke man richting VB."
+      },
+      {
+        "_id": "s50qw7fwf",
+        "custom_id": 1275731477959979000,
+        "document": "Voetbal met toeschouwers maar zonder spreekkoren.. Dus hou je 600 man tegen die gaan schreeuwen?Wat een achterlijke regering ongekent.#Corona #coronamaatregelen #Coronavirusnl"
+      },
+      {
+        "_id": "s7t7nkrkq",
+        "custom_id": 1275745405268103200,
+        "document": "@DIndo1984 @RonvdVeer @babettevanveen Dan haal je er een boodschap uit die ik niet als zodanig zie. De protesten zijn er niet voor bedoeld om blanke mensen de schuld te geven maar om duidelijk te maken dat gelijke kansen en behandeling voor iedereen moeten gelden. Een bepaalde groep ervaart dat niet als zodanig."
+      },
+      {
+        "_id": "s5gyon2rd",
+        "custom_id": 1275731966147649500,
+        "document": "@SamvanRooy1 vb valt altijd de corona strijders aan in de rug.net als vroeger  door corona nog nazis waren.toen noemde iedereen hen ook zwarten of collaborateurserfelijk?"
+      },
+      {
+        "_id": "sielkl11k",
+        "custom_id": 1275781988084076500,
+        "document": "@KleurrijkKampen Natuurlijk roepen we op om hoer bij te zijn.  Leuk dat jullie het anders doen dan andere protesten"
+      },
+      {
+        "_id": "s1zgj5owu",
+        "custom_id": 1275783162103242800,
+        "document": "Het coronavirus is nog niet van de voorpagina’s verdwenen of we hebben alweer een volgende crisis te pakken: het racisme van blanken jegens de gekleurde medemens. https://t.co/i2QaFNozBq"
+      },
+      {
+        "_id": "sxaphj0hl",
+        "custom_id": 1275908041624498200,
+        "document": "@Lausan1959 @JasperBoerstra @moeva18 Ten eerste Frankrijk Spanje Portugal italië waren allemaal kolonisators dus die zijn niet te vertrouwen. Ten tweede kan je wit genoemd worden met neger niet vergelijken wat voor domme opmerking is dat."
+      },
+      {
+        "_id": "swpq0flwj",
+        "custom_id": 1275898359048536000,
+        "document": "Met stip op nr 1 op de lijst van achterlijke #coronamaatregelen in Nederland. U mag naar een voetbalwedstrijd maar gij zult niet meedoen aan liederen of #spreekkoren!En welke overenthousiaste suppoost gaat dit handhaven?🙈🤣"
+      },
+      {
+        "_id": "sb3he8e47",
+        "custom_id": 1275905919516315600,
+        "document": "@marianneschuurm @lenn2art @Schiphol @KMar_PenB_SPL @SchipholWatch Theoretisch kloppen de maatregelen vast. In een lege hal ook. De praktijk is waar het om gaat. Lijkt me 😬 Heb als caminghouders ook doos vol stickers linten desinfectie hesjes en uitgeprint protocol maar dat zegt weinig over uitvoering coronamaatregelen hier. 😎 https://t.co/MQlKpz4o6b"
+      },
+      {
+        "_id": "skblege5s",
+        "custom_id": 1275845948497973200,
+        "document": "Jezus wat een doos zeg. Ze luistert gewoon echt niet naar wat Rutte zegt. Moeilijk he! LUISTEREN. #persconferentie"
+      },
+      {
+        "_id": "sp64gr46g",
+        "custom_id": 1275845952629354500,
+        "document": "Wat een muts die van sbs zeg. #persconferentie"
+      },
+      {
+        "_id": "stm2hc3vf",
+        "custom_id": 1275846580780892200,
+        "document": "#npo1 #persconferentie ohhh nee daar heb je die domme muts weer met haar nog dommere vragen...."
+      },
+      {
+        "_id": "sem10eilw",
+        "custom_id": 1275845885059006500,
+        "document": "Wie is de vrouwelijke vraagsteller? Ben blij dat dit de laatste persconferentie is"
+      },
+      {
+        "_id": "scv30s6yt",
+        "custom_id": 1275845591193587700,
+        "document": "Staan er al rijen bij de hoeren ? #coronamaatregelen"
+      },
+      {
+        "_id": "st0r267rr",
+        "custom_id": 1275846409435189200,
+        "document": "Zou het toch iets met Gremlins te maken hebben dat covid? Ook uit een geheimzinnige doos uit China  en is alleen s’nachts nog gevaarlijk... Volgens Rutte inNachtclubs en Discotheken...🙉😏🔥#gremlins #persconferentie #rutte #dejonge #corona #china #dtv #nijmegen #disco #djlife https://t.co/mMjgLAD7F6"
+      },
+      {
+        "_id": "s1nedzaof",
+        "custom_id": 1275848745557655600,
+        "document": "Dus als je naar de hoeren wil moet je een lul van abderhalve meter  hebben @minpres @hugodejonge @geertwilderspvv @thierrybaudet #persconferentie"
+      },
+      {
+        "_id": "shn3ekpdk",
+        "custom_id": 1275848757402382300,
+        "document": "@LievenseDave @arieboomsma #PVVtokkies zijn blijkbaar 27 graden!?!?  Het zijn dus vampieren of zombies?!? Waarom zijn #deugtokkies altijd zo dom? Niet zo dom als #TjerrieBidet tokkies maar wel erg dom #persconferentie#op1 #op1npo #nieuwsuur #buitenhof #ditism #eenvandaag #beau #tijdvoormax"
+      },
+      {
+        "_id": "s1zsmjbgb",
+        "custom_id": 1275849786831310800,
+        "document": "Hey ergste van heel deze persconferentie zijn niet de  leugenachtige “35.000 doden” of de achterlijke watersnood metafoor van De Jonge maar de hemeltergend domme en vrijwel kritiekloze vragen van de pers. #anderhalvemeter #coronamaatregelen"
+      },
+      {
+        "_id": "sy4t0who4",
+        "custom_id": 1275850168550785000,
+        "document": "Update: Hier alle VERSOEPELINGS bij de Rijksoverheid. Discotheken en nachtclubs blijven gesloten. U mag wel weer naar de hoeren &amp; Rutte/RIVM keuren alle standjes goed +++ LIVE -  Mark Rutte versoepelt er verder op los https://t.co/qVVUjT4k7w"
+      },
+      {
+        "_id": "sfneq7x7p",
+        "custom_id": 1275647014617919500,
+        "document": "De Corona-uitbraak op het tennistoernooi van Djokovic maakt duidelijk dat deze man een autist is die denkt dat de hele wereld om hem en om tennis draait."
+      },
+      {
+        "_id": "sqyvjnva8",
+        "custom_id": 1275863189012578300,
+        "document": "Ik ga nog liever niet naar het stadion dan met al deze beperkingen flikker toch op man. #persconferentie"
+      },
+      {
+        "_id": "szsc6wzfk",
+        "custom_id": 1275853789606621200,
+        "document": "@rutger_ Kan je mooi de Corona de schuld geven dus schaam je niet!volgend jaar nieuwe kans."
+      },
+      {
+        "_id": "sqoc1zere",
+        "custom_id": 1275855187006161000,
+        "document": "#LangLeveDeLiefde gelukk8g is dit een herhaling van voor Corona en #blm .kussen  en blanke rozen   dat kan echt niet meer medio juno 2020"
+      },
+      {
+        "_id": "s8udtg8xv",
+        "custom_id": 1275858745558478800,
+        "document": "Je mag niet zingen in het voetbalstadion. Dan rappen we gewoon dat de moeder van *vul naam in* een hoer is#coronamaatregelen #voetbal #knvb"
+      },
+      {
+        "_id": "stp6obgul",
+        "custom_id": 1275851765154549800,
+        "document": "Dus je mag wel weer naar de hoeren zonder mondkapjes maar o.a in het theater en voetbalstadions op 15 meter blijven 🤨 Kan je daar misschien dan #neuken of staat dat een beetje raar. 🤔 #persconferentie #Rutte"
+      },
+      {
+        "_id": "s8nbnua0n",
+        "custom_id": 1275853814445346800,
+        "document": "Geen spreekkoren in de stadions...ik zie wel een win-win om die achterlijke racistische uitingen aldaar in te dammen #persconferentie #elknadeelhebzijnvoordeel"
+      },
+      {
+        "_id": "shmw74ka9",
+        "custom_id": 1275864425728290800,
+        "document": "Lieve échte NLérs. Wat u ook bent blank bruin geel of oranje hetero of homo als uw vaderland u lief is mijd dan #blacklivematters en #kozp Zij zijn een afleidingscampagne van de werkelijke problemen. ZIng mee ! : https://t.co/SxHw8Yx5o1 #VERSOEPELING #PERSCONFERENTIE"
+      },
+      {
+        "_id": "swyaav9us",
+        "custom_id": 1275856616001286100,
+        "document": "🎶 | 𝗩𝗮𝗻𝗮𝗳 𝟭 𝗷𝘂𝗹𝗶:❌ 𝘎𝘦𝘦𝘯 𝘴𝘱𝘳𝘦𝘦𝘬𝘬𝘰𝘳𝘦𝘯✅ 𝘞𝘦𝘭 𝘻𝘢𝘯𝘨𝘬𝘰𝘳𝘦𝘯Tijd om een paar klassiekers uit de oude doos te halen! 😌#OhLeoHalle #anderhalvemeter https://t.co/eja11VC2kv"
+      },
+      {
+        "_id": "sfsevkfti",
+        "custom_id": 1275859718070849500,
+        "document": "@mariannezw Persconferenties door twee kleutermeestertjes die in hun eigen Jip en Janneke taal het klootjesvolk denken te moeten beleren. Zouden die twee echt denken dat wij achterlijk zijn? Logisch @mariannezw  dat je er klaar mee bent."
+      },
+      {
+        "_id": "s0ovfqv8j",
+        "custom_id": 1275665930723430400,
+        "document": "Ze zijn echt helemaal gek daar aan de overkant van de oceaan. Alleen blanken moeten beschermd worden tegen coronavirus??!? https://t.co/sgPuBMqAgX via @nypost"
+      },
+      {
+        "_id": "sqlwvcbbx",
+        "custom_id": 1275667640434995200,
+        "document": "De blanke bevolking van Europa moet de zwartjes helpen met hun protesten tegen geweld. Zoiets belangrijks kunnen we niet aan hun overlaten.#BlackLivesMatterNL"
+      },
+      {
+        "_id": "sw33c91w6",
+        "custom_id": 1275655222434697200,
+        "document": "Wat een vuile vieze teringstreek dit de zorg wordt echt keihard aangepakt. Mag hopen dat diegene die bedacht heeft om alles terug te betalen CORONA krijgt en op de IC komt te liggen. https://t.co/FlEBvEFa5F"
+      },
+      {
+        "_id": "sob92sdav",
+        "custom_id": 1275667612463247400,
+        "document": "Veel hebben ze te verbergen 😡 want nu een corona commissie oprichten tijdens hun vuile onderhandeling om een vuile regering op te richten zou kwaadbloed zetten bij vele onderhandelaars en dat mag niet nu want nu VB groter word zijn ze bang voor nieuwe verkiezingen."
+      },
+      {
+        "_id": "s90raqzyj",
+        "custom_id": 1275761803264434200,
+        "document": "Als je een blanke vrouw bent en toevallig nu zwanger van een blank jongetje doe ons allemaal een plezier en maak een tripje naar de abortuskliniekVreemde tijden waarin duidelijk is dat een extremistische abortusvisie hoort bij de bredere protesten die nu door Amerika waaien https://t.co/th9VESEDsV"
+      },
+      {
+        "_id": "sonz8mx4j",
+        "custom_id": 1275772420532641800,
+        "document": "mensen ik ben het zat de corona maatregelen en de racistische blm. ze slaan continu blanken wezenloos in de usa maar ook in mindere mate in nederland. naar diegene die zijn land en cultuur niet wil laten afpakken door racisten zoals blm r.l dan"
+      },
+      {
+        "_id": "sqqze9xm4",
+        "custom_id": 1275671636948193300,
+        "document": "@TrailRunningWim @DomiSGT @GeertruiRaport Nuja op zich begrijp ik het wel eh het was al een paar keer in het nieuws dat ze nu met Corona de diplomas gratis weggeven bij een doos Kelloggs"
+      },
+      {
+        "_id": "shfktbgs9",
+        "custom_id": 1275673512531964000,
+        "document": "@WiersmaGerlof De consumens is een slaaf van het neoliberalisme. Daar maken de grootgrutters gretig gebruik van. Corona en stikstof zijn een zegen."
+      },
+      {
+        "_id": "swrpw55ib",
+        "custom_id": 1275675387109027800,
+        "document": "@MarcoPastors @NPRZ010 @SophiaKinderTV @RDStad Met de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/ln5l5NNUrW"
+      },
+      {
+        "_id": "sytbh9rhf",
+        "custom_id": 1275675550527500300,
+        "document": "@OP_Zuid @Indebuurt010 @Havenloods @FIBplatform Met de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/b0xd6XxuA6"
+      },
+      {
+        "_id": "sr3ghk6v7",
+        "custom_id": 1275675706232537000,
+        "document": "@Racesport @RaceXpress @RacePlanet @RaceReporterNL Met de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/cKyF7WJM1g"
+      },
+      {
+        "_id": "s9rlb8uhv",
+        "custom_id": 1275676117316362200,
+        "document": "Corona is geen nieuws meer uit verveling en uitingsdrang hebben ze hun pijlen op het weer gericht hoelang zal het duren voor de blanke man de schuld krijgt voor de kuren van de zon 🙈"
+      },
+      {
+        "_id": "sx9hwtd0n",
+        "custom_id": 1275676122668302300,
+        "document": "@PorscheClubNE @PorscheNL @PorscheCentrumE @JumboSupermarktMet de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/edfaeOfv43"
+      },
+      {
+        "_id": "s6485fw4c",
+        "custom_id": 1275676563481256000,
+        "document": "@Formule1 @AlleenF1 @F1nl @RechtUitRdam @RobKamphuesF1 Met de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/2ROIzCOADa"
+      },
+      {
+        "_id": "s7rzt7jgb",
+        "custom_id": 1275676800853606400,
+        "document": "@ERU_Goudkuipje @tamaravanark @PaulBlokhuis @openrotterdamMet de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/trSt8O43Vh"
+      },
+      {
+        "_id": "s98k4hs47",
+        "custom_id": 1275676991849668600,
+        "document": "@DagMetEenLach @VriendenLoterij @Jarige_Job @HetVergetenKindMet de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam https://t.co/4lNqjBsnDg"
+      },
+      {
+        "_id": "sfgxt4jbc",
+        "custom_id": 1275677416027979800,
+        "document": "@ErasmusMC @BUKOBedrijven @RTLGP @op1npo @BeauvanED Met de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/fVEAo2x3Ml"
+      },
+      {
+        "_id": "s0qiqei1m",
+        "custom_id": 1275677994539987000,
+        "document": "@dit_is_M @NPORadio1 @BureauSport @ADSportwereld Met de mogelijke versoepeling van de Corona-regels door het kabinet stijgen ook de kansen voor de derde Robert Doornbos GP en Sophia Grand Prix voor kansarme kinderen en patientjes op zondag 25 oktober in Ahoy Rotterdam. https://t.co/rGgy4Xqrg7"
+      },
+      {
+        "_id": "svkpog1z4",
+        "custom_id": 1269675311320490000,
+        "document": "@hakhverdian @sheilasitalsing @UvA_Amsterdam RIVM slaaf van de luchtvaartlobby en overheid. Hou op!"
+      },
+      {
+        "_id": "sgrdw6dbi",
+        "custom_id": 1269661061520806000,
+        "document": "@DVanLangenhove @2dekamerpvv En precies DAT is wat me zo kwaad maakt over die protesten. Selectieve verontwaardiging. Ze vinden het leven van een zwarte crimineel belangrijker dan het leven van welke blanke vrouw ook. https://t.co/gQsAwPKDW1"
+      },
+      {
+        "_id": "shnx94iox",
+        "custom_id": 1269675244123455500,
+        "document": "Diezelfde trut stond ook 70 weken lang in frontlinies in Frankrijk gedurende #GiletsJaunes protesten en heeft #Macron aangeklaagd wegens misdaden tegen de menselijkheid?!!"
+      },
+      {
+        "_id": "s16t4rs4k",
+        "custom_id": 1269662224378888200,
+        "document": "@ClipsSchnitzel @noaisfel @MarcBuchner3 @VictorReinier Ja DJT is zooo racistisch dat hij vind dat als je als zwarte niet op hem stemt  ‘You ain’t black’. Of was dat Biden ?🤔pre-corona werkeloosheid onder zwarten daalde tot een record laagte. Welvaart is de beste manier om zaken te verbeteren.."
+      },
+      {
+        "_id": "svj8k355w",
+        "custom_id": 1269663689675804700,
+        "document": "@PeterK43579783 @henktoepoer Was in de veronderstelling dat Corona een burgeroorlog zou voorkomen we zijn inmiddels dichterbij dan ooit. Laat Nederland Nederland blijven met tolerantie zoals het tot voor kort was waar heel de wereld graag wil zijn zonder #KOZP en ht nieuwe tegen blanken gericht #racisme"
+      },
+      {
+        "_id": "shp6d3xvf",
+        "custom_id": 1269672792078856200,
+        "document": "@Simply_Lori_ @Cara_Jacobs359 Als de politie vraagt om het plein te verlaten dan luister je.Minderjarig meerderjarig autochtoon allochtoon  . . . Wie niet horen wil moet op de blaren zitten. Het is niet tegenstrijdig. Het is om de rest van  Vlaanderen niet terug op te zadelen met corona."
+      },
+      {
+        "_id": "sto8em5s7",
+        "custom_id": 1269674716354113500,
+        "document": "@dreken45144354 Ik hoop dat ze stuk voor stuk corona krijgen. Van ganser harte. Vanwege een COPD risicopatient met één long die geen tweede keer corona wil krijgen ( getrouwd met een verpleegkundige waar zij vandaag op kosten )."
+      },
+      {
+        "_id": "sfbqoryso",
+        "custom_id": 1269608686323929000,
+        "document": "@jdceulaer @vanranstmarc @eva_vannoten Een jonge mooie blanke vrouw. Ongetwijfeld kwam ze als eerste uit de testen."
+      },
+      {
+        "_id": "s73a3ze2h",
+        "custom_id": 1269610587652345900,
+        "document": "@SBergsma @MinPres  @rivm geldt de nieuwe Coronawet van 15 meter alleen voor ‘witte’ mensen straks in NL? Want tja we mogen niet racistisch zijn en de zwarten het recht op dergelijke demonstratie dus niet verbieden. Snapt u dat ik het niet snap?"
+      },
+      {
+        "_id": "sfsaryd8x",
+        "custom_id": 1269604835760001000,
+        "document": "@De7deDag : Is een uitspraak als zwarten kunnen nooit racistisch zijn van Sandrine Moponami niet belangrijker om vragen bij te stellen dan hoe de wielersport renners zal testen? Ik stel mij er in ieder geval vragen bij ...Is die stelling zelf op zich ook niet racistisch?🤔"
+      },
+      {
+        "_id": "so6eetmf4",
+        "custom_id": 1269614652910112800,
+        "document": "@Alex72377946 @AR146XI @P33rd @KhuneSilvretta @Alexandratweet9 @geertwilderspvv Het gaat nu over Amerika. De protesten zijn daar begonnen om hun land te verbeteren. Onze protesten zijn als steun voor hen. Als blanken in Afrika een protest organiseren of mensen in Palestina dan zal ik hen steunen."
+      },
+      {
+        "_id": "sj1do4x8u",
+        "custom_id": 1269601061834276900,
+        "document": "@HarrySnel1 @KellyOverCorona @NOS Met goede voorlichting waarschijnlijk wel meer en dan zijn de tokkies wel te handhaven. Nu dacht men griepje dat alleen ouderen treft mondkapjes werken averechts. In plaats van: virus dat iedereen ernstig kan treffen waarbij eenmalige lockdown het indamt en vandaar TTI."
+      },
+      {
+        "_id": "s3m1hao9k",
+        "custom_id": 1269524557070839800,
+        "document": "Ik ben er zeker van dat het geen blanken zullen zijn die met een #Coronavaccin voor de dag zullen komen."
+      },
+      {
+        "_id": "sshso5zao",
+        "custom_id": 1269539571961823200,
+        "document": "Corona verknalt zomerkamp voor kansarme kindjes: Veiligheidsmaatregelen maken het onmogelijk  https://t.co/hdDiM8O8QW via @Nieuwsblad_be"
+      },
+      {
+        "_id": "sozbajx17",
+        "custom_id": 1269530901710594000,
+        "document": "@Rudpren Howla.. dit filmpje toont exact het probleem.. jullie probleem is dat het over een blanke gaat.. maar dit soort onredelijk geweld is typisch voor de Amerikaanse politie.. vandaar de protesten"
+      },
+      {
+        "_id": "sml5y3ah7",
+        "custom_id": 1269535355876839400,
+        "document": "Nou dit heb ik nergens in de NL media gezien iemand anders wel? Protesten waar je alleen blanke mensen of latinos ziet hebben niks met #GeorgeFloydProtests te maken! Niks! Vind ik. https://t.co/Gtvkv3OpKj"
+      },
+      {
+        "_id": "sa7ciigkw",
+        "custom_id": 1269540841074425900,
+        "document": "Tucker Carlson slaat de spijker op de kop. De enige demonstranten die de #corona-regels mogen overtreden van de westerse overheden zijn die van #BlackLivesMatter. Dit is het grootschalig geïnstitutionaliseerd voortrekken van zwarten ten koste van mensen met een andere huidskleur."
+      },
+      {
+        "_id": "sa85yjxin",
+        "custom_id": 1269631080333824000,
+        "document": "@Rob81189128 @NOS Dit heeft niks te maken met tokkie of niet.Ditsoort protesten gaan weer eens helemaal nergens over. Of behoor jij ook tot de groep die al bukt met een wijd open aars om te ontvangen wanneer nodig?"
+      },
+      {
+        "_id": "sd4l8imvs",
+        "custom_id": 1269631734376775700,
+        "document": "Honderden mensen bij protesten tegen racisme in Zwolle via @Telegraaf https://t.co/NZSTFrtpA1Ja laten we ons uitspreken tegen racisme tegen zwarten en wanneer gaan we dat dan ook doen tegen de blanken. Hebben jullie wel is gehoord van Zuid Afrika?Blanken worden afgeslacht."
+      },
+      {
+        "_id": "swvunxord",
+        "custom_id": 1269635823076544500,
+        "document": "@OnderdrukteM @DeEchte_Jamie @bennie_vacet @NetflixNL @Joreokoekje HAHAHAHAH EEN CUCK IS JUIST RACISTISCH MOGOOOL.  Dit bewijst dat jij een cuck bent lmfao. En inderdaad iemand noem je witt en jij wilt hem nikker noemen ?? Okee laten we dit testen in het echt kom maar naar mik en zeg et in me gezicht zullen we zien wat er gebeurt."
+      },
+      {
+        "_id": "spga9gf7e",
+        "custom_id": 1269637281071145000,
+        "document": "@LodeCossaer Al waren die agenten hem publiekelijk aan verkrachten met hunne matrak dan nog is er *niets* dat al die gewelddadige protesten rechtvaardigt."
+      },
+      {
+        "_id": "szbd7nukd",
+        "custom_id": 1269639482518749200,
+        "document": "Ik zie blanke mensen commentaar geven op de protesten van vandaag omdat de social distancing niet gerespecteert wordt etc... maar dat zijn wel dezelfde mensen die Driesje VL verdedigde toen hij op een BBQ zat of zelf zijn gaan picknicken toen we nog niet buiten mochten..."
+      },
+      {
+        "_id": "s9azgsf4i",
+        "custom_id": 1269641860420702200,
+        "document": "Ik dacht even dat mijn scherm stuk was alleen maar zwart/wit beeld? Blijken het al die protesten te zijn 😅! #AllLivesMatters #dtv waarom staan er toch zoveel blanke mensen tussen?"
+      },
+      {
+        "_id": "suewoaj42",
+        "custom_id": 1269633937560801300,
+        "document": "Alles van te voren al bepaald.  Rutte sprak ook met zoon Soros. Dit hele Corona gedoe is een opgezet plan. Minder bevolking. Las dat van het vaccin veel ongeborenen dood zullen gaan. Dan moslims en negers nemen de westerse wereld over.  Chia lacht zich suf.  Putin ook"
+      },
+      {
+        "_id": "s6t33npj2",
+        "custom_id": 1269635736539725800,
+        "document": "@Geepstar @Volger66082047 Was in de veronderstelling dat Corona een burgeroorlog zou voorkomen we zijn inmiddels dichterbij dan ooit. Laat Nederland Nederland blijven met tolerantie zoals het tot voor kort was waar heel de wereld graag wil zijn zonder #KOZP n ht nieuwe tegen blanken gericht #racisme"
+      },
+      {
+        "_id": "sfruhr7fg",
+        "custom_id": 1269636227990466600,
+        "document": "@Riadh_B Proficiat Riadh &amp; partner! Hopelijk straalden jullie net zozeer als de zoon van mijn nicht (Kenneth) &amp; partner (Arno) die in volle coronacrisis zijn getrouwd in Gent 😉."
+      },
+      {
+        "_id": "s2b5oh3s8",
+        "custom_id": 1269685548425363500,
+        "document": "Waarom heeft niemand ons verteld dat het Coronavirus zulke grote gevolgen zou hebben voor de geestelijke gesteldheid van mensen. Er is een hele grote groep totaal debiel geworden"
+      },
+      {
+        "_id": "ssj4o2ypw",
+        "custom_id": 1269683738096668700,
+        "document": "Golfen tennissen en voetballen nog maar in zeer beperkte vorm. We worden gigantische in de zeik genomen. Ga jij nog op die achterlijke Praatpop Mark Rutte stemmen? RIVM-experts: Kans dat iemand heel vliegtuig besmet is buitengewoon klein https://t.co/L06mTt8pKd via @NOS"
+      },
+      {
+        "_id": "sa6su7am8",
+        "custom_id": 1269681008925966300,
+        "document": "@dferwerda91 @PCIMeijer En ik denk dat al die protesten juist dat wilt benadrukken (en nee die rellen keur ik zeker niet goed). Want er bestaan velen gevallen waar dit niet gebeurt. Waar een blanke bijv. sneller ergens mee weg komt dan een zwarte terwijl dat niet uit zou moeten maken."
+      },
+      {
+        "_id": "spls6ikzi",
+        "custom_id": 1269682012715180000,
+        "document": "@Pensioenspook @StefaanSintobin Twas  precies wel relevant dat het een neger was! Heel de zwarte wereld protesteert om Corona nieuw  leven in te blazen. Onnozelaars!!!"
+      },
+      {
+        "_id": "st3zgfbnk",
+        "custom_id": 1269682373400170500,
+        "document": "@PhilippeClose @marnixbe welke mongool laat zo een demonstratie gebeuren in deze coronatijden hij heeft nu veel bloed aan zijn handen door de coronadoden die daar in de komende weken door zullen vallen."
+      },
+      {
+        "_id": "sy6bk3msm",
+        "custom_id": 1269684713041662000,
+        "document": "@WNiemegeers U moet eens gadeslaan het klopt dat dit simultaan georchestreerd is overal dezelfde slogans voor corona maar net zogoed voor klimaat of massamigratie of reclame voor multicultuur (zwarte man met blanke vrouw) 👇https://t.co/KVPhIfw0PM"
+      },
+      {
+        "_id": "sl56h4wpo",
+        "custom_id": 1269685153309352000,
+        "document": "@neckishdeep @Filip_Bru Is dit de goede manier van protest dan?In tijden van corona met duizenden op elkaar geplakt gaan staan en ondertussen nog politie bekogelen met stenen.Dankzij die achterlijke personen die in brussel zijn nukrijgen vb en nva nog een pak extra stemmen bij de volgende verkiezingen"
+      },
+      {
+        "_id": "swnfw32nn",
+        "custom_id": 1269685311992365000,
+        "document": "@freek_niesten @anderralph Als het dat rapaille van de N-VA past draaien ze als een windhaan  slaafs hun Grote Leider achterna. Eerst de ernst van corona gewoon ontkennen en als ze daarvan de gevolgen vaststellen staan te roepen dat de door hen gecontesteerde maatregelen zouden zijn overtreden."
+      },
+      {
+        "_id": "sdd93bnzf",
+        "custom_id": 1269688116253728800,
+        "document": "@SirJelle @tomvangrieken Zielig en beangstigend dat jullie soort daadwillig nog meer Coronadoden zullen veroorzaken... Deugen&gt;volksgezondheid 🤮 achterlijk afval"
+      },
+      {
+        "_id": "shixwcw09",
+        "custom_id": 1269689355628687400,
+        "document": "Het is gewoon te toevallig. Overheden falen in hun beleid tegen corona en ineens word een neger neergeschoten en zijn er wereldwijd proresten tegen racisme. Dis allemaal vooropgezet spel om ons af te leiden van t echte probleem. Politici die stemmen proberen te winnen!"
+      },
+      {
+        "_id": "s0v5bp5gl",
+        "custom_id": 1269695528654311400,
+        "document": "Binnen een week: België nog steeds heel racistisch zwarten worden harder getroffen door covid-19"
+      },
+      {
+        "_id": "sw2cb9amd",
+        "custom_id": 1269698054988402700,
+        "document": "@hugodejonge En we willen ook af van die achterlijk hoge coronaboetes"
+      },
+      {
+        "_id": "sn3c040m7",
+        "custom_id": 1269702398223822800,
+        "document": "@HanneloreGoeman Hoeveel doden gaat deze achterlijke betoging hier opleveren door corona?"
+      },
+      {
+        "_id": "szgrof25l",
+        "custom_id": 1269695058921521200,
+        "document": "@librarianbe @ockhams Ik vind dat starters van de protesten op Belgische bodem hiervoor 100% verantwoordelijk mogen worden gesteld. Ze wisten dat dit ging gebeuren. Ze wisten het. Maarja.. Wel goed dat die ene gast die brandende doos weghield uit de winkel. Alles vernielen/leegroven was niet genoeg..."
+      },
+      {
+        "_id": "sf35rzree",
+        "custom_id": 1269699096564174800,
+        "document": "@JazieAnthony @020BIJ1 ..... huidskleur. Een schoolvoorbeeld van racisme. De afgelopen week is dat nog eens in versnelling over gedaan.Ik ben GEEN racist. Maar toch krijg ik dat stempel regelmatig naar mijn hoofd. Net als alle blanke demonstranten bij de protesten van de......."
+      },
+      {
+        "_id": "szzsimrfo",
+        "custom_id": 1269701313291595800,
+        "document": "Beste MSN de protesten die jullie geïmporteerd en zo deugdoend vinden hebben mij als blanke man een mooi beeld gegeven van hoe fout jullie zijn.Niet de racisten hoor. JULLIE!"
+      },
+      {
+        "_id": "sfeh38mli",
+        "custom_id": 1269703052812042200,
+        "document": "@janneke25467111 @vainceur2000 het laat ook gewoon zien hoe dom zwarten  zijn. het interesseert ze geen ene moer waarom die protesten  er zijn. ze willen alleen roven  plunderen en vernielingen aanrichten. doordat iedereen een mondkapje draagt is niet te zien wie. een drama"
+      },
+      {
+        "_id": "sfhb8tsvj",
+        "custom_id": 1269693018862424000,
+        "document": "@VerhelstBr Het zijn niet enkel de blanken die rasistich zijn. Dit is van alle tijden met nu dat er totaal geen verdraagzaamheid meer is. Vreedzaam betogen brandstichting plunderingen paarden molesteren enz. Deze manifestatie diende gewoon te zijn verboden in deze corona crisis.😡😷😡😷"
+      },
+      {
+        "_id": "sw1vyk48u",
+        "custom_id": 1269695733231489000,
+        "document": "@SamvanRooy1 U moet eens gadeslaan het klopt dat dit simultaan georchestreerd is overal dezelfde slogans voor corona maar net zogoed voor klimaat of massamigratie of reclame voor multicultuur (zwarte man met blanke vrouw) https://t.co/KVPhIfw0PM"
+      },
+      {
+        "_id": "snlcitnjx",
+        "custom_id": 1269695999745892400,
+        "document": "@Filip_Bru U moet eens gadeslaan het klopt dat dit simultaan georchestreerd is overal dezelfde slogans voor corona maar net zogoed voor klimaat of massamigratie of reclame voor multicultuur (zwarte man met blanke vrouw)https://t.co/KVPhIfw0PM"
+      },
+      {
+        "_id": "sxmap4pdk",
+        "custom_id": 1269696226997518300,
+        "document": "@tomvangrieken U moet eens gadeslaan het klopt dat dit simultaan georchestreerd is overal dezelfde slogans voor corona maar net zogoed voor klimaat of massamigratie of reclame voor multicultuur (zwarte man met blanke vrouw)https://t.co/KVPhIfw0PM"
+      },
+      {
+        "_id": "s0a50kx29",
+        "custom_id": 1269696408300531700,
+        "document": "@FDW_VB U moet eens gadeslaan het klopt dat dit simultaan georchestreerd is overal dezelfde slogans voor corona maar net zogoed voor klimaat of massamigratie of reclame voor multicultuur (zwarte man met blanke vrouw)https://t.co/KVPhIfw0PM"
+      },
+      {
+        "_id": "si358yuna",
+        "custom_id": 1269697918807793700,
+        "document": "@BramBroeckx Toevallig niet laten zien hou zwarte en blanke mensen werden gescheiden van elkaar en in aparte busjes werden meegenomen (zonder rekening te houden met de corona maatregelen) naar verschillende locaties? Da dacht ik ook al."
+      },
+      {
+        "_id": "s2zg01gfs",
+        "custom_id": 1269699048602243000,
+        "document": "@mug_willem nee duidelijk een racistisch manwijf met kenmerkende criminele trekken beter dat ze uit d e maatschappij onttrokken wordt...coronatje ofso"
+      },
+      {
+        "_id": "sdld5siup",
+        "custom_id": 1269699156114800600,
+        "document": "@JoostNiemoller Sommige zaken mag je alleen denken die kun je tegenwoordig niet meer zeggen.Ik wens ze veel succes en denk eraan die hele corona crises en die 1 1/2 meter afstand zijn alleen maar een bedenksel van de blanke mannen. Dus vooruit met zn allen op straat demonstreren!"
+      },
+      {
+        "_id": "smbgkepqd",
+        "custom_id": 1269699457270059000,
+        "document": "@dabok @WillyWa85422856 @Merlinappa @058weestwel @joachimstiller8 @PjotrMonster @sjakie1112 @Korneel_Evers Rechts gevaarlijker dan links? Heb je die rellen gezien? Dat is niet bepaald rechts. Dat je in Nederland als blanke Nederlander voor racist wordt uitgemaakt is niet rechts. Dat alle coronaregels worden geschonden die moet voorkomen dat de pandemie weer oplaait is niet links. Dus?"
+      },
+      {
+        "_id": "szee2zyqp",
+        "custom_id": 1269705154661662700,
+        "document": "Misschien moeten alle blanke mensen komende week dan maar de PC Hooftstraat leegtrekken want zo blijk je de medemens in Coronatijd te moeten overtuigen dat #AllLivesMatters Of is dat alleen weggelegd voor #BlackLivesMatterNL en de gekkies in Brussel? En Femke maakt het niks uit.."
+      },
+      {
+        "_id": "stpfl0xrs",
+        "custom_id": 1269404514936815600,
+        "document": "@annehofstede Ik ben het niet met deze quote eens...Rutte is geen MP omdat ie blank is...en ik als blanke ga net zo makkelijk naar de klote als elke zzp er werkzaam in events....en daar zijn veel zwarte gasten die daar in werken en die gaan niet kapot vanwege #WhitePrivilege maar door covid19"
+      },
+      {
+        "_id": "spobn3hld",
+        "custom_id": 1269410122171891700,
+        "document": "@PowNed 6 inside zal ongetwijfeld die niet voetballende voetballers zijn. Die volg ik eigenlijk niet meer.Johan is een populistisch Baudet hat0r schijnt het en een nicht wat betreft Corona.Dus die kunnen ook in de kliko."
+      },
+      {
+        "_id": "souxbdtqg",
+        "custom_id": 1269653428290060300,
+        "document": "Coronavirus en global heating  veroorzaken angst en chaos. Mensen grijpen terug op  religie: Heilig geloof in  1) #AnderhalveMeter 2) #Kettingzaagbioethanol 3) #Stikstofnorm 4) #alcohol1) Islam was maar voor 50% achterlijk deden al aan social distancing…https://t.co/klMBGTIprr"
+      },
+      {
+        "_id": "slb5s2crr",
+        "custom_id": 1269645698108137500,
+        "document": "@Vandefilm @Samira_Tarrass @Infocadl2015 Je ziet ze vliegen net als die achterlijken van het rivm. Rot voor je. Blij dat ik wel zelf blijf nadenken."
+      },
+      {
+        "_id": "suwbr71fb",
+        "custom_id": 1269651203140522000,
+        "document": "@Wim_Schellekens @bosmana @rivm Dat zijn we inmiddels wel gewend. 😉 Hoeveel voorspellingen hadden ze goed tot nu toe? En hoeveel van de keren dat ze zeiden het lijkt zaten ze goed?They are in over their heads and drowning. https://t.co/R8i9GP4pXP"
+      },
+      {
+        "_id": "ssamnpx8c",
+        "custom_id": 1269653603893088300,
+        "document": "echt dit land is zo hypocriet eerst geen toestemming geven voor protesten wegens corona maar de politie mag dan wel allemaal mensen op elkaar proppen? en dan gaan ze de schuld geven aan protesters binnen een paar weken bij de tweede golf ma echt waar fuck dit land lmao"
+      },
+      {
+        "_id": "sk29lj4i8",
+        "custom_id": 1269656737772167200,
+        "document": "Vb van simplistisch ongenuanceerd denken.“Blanken kunnen #racist zijn zwarten niet.”Als directeur in een bedrijf zeg ik: kies de beste werknemer ongeacht huidskleur geslacht of religie. Dat is eenvoudig het beste voor het bedrijf. Praktijktesten mogen maar hoeven niet."
+      },
+      {
+        "_id": "s9h8h1asg",
+        "custom_id": 1269651980684791800,
+        "document": "@DeRedacteur_ Voor de corona hoorde je veel over steekincidenten. Steeds dezelfde manier: willekeurige blanke wordt omsingeld geslagen en gestoken. Als het slachtoffer met 10-20 steekwonden op de grond ligt zijn/haar spullen pakken. En dit rascistisch geweld wordt dan geboekt als beroving."
+      },
+      {
+        "_id": "sjhlueyx4",
+        "custom_id": 1269653163445026800,
+        "document": "@BelSpectator @demorgen Onder de zwarte bevolking in de VS is Corona besmetting twee keer zo hoog als onder de blanke bevolking. Dit soort bijeenkomsten gaat dat alleen maar versterken. En waarom? Omdat een crimineel is omgekomen? Natuurlijk jammer voor de man maar hoor weinig over zijn slachtoffers."
+      },
+      {
+        "_id": "se4tvii86",
+        "custom_id": 1269653554777723000,
+        "document": "Aan alle Vlamingenbegin u al maar schuldig te voelen over de grote toename aan coronabesmettingen onder zwarten en antifas.#BLMBelgium #superverspreidingsevenement #BlackLivesMattter"
+      },
+      {
+        "_id": "scvq6l446",
+        "custom_id": 1269657214140190700,
+        "document": "@RMBras1973 Revolutie gaat me wat ver.Maar t halve land is zo dom en achterlijk dat ze graag achter diegene die t luidst roeptoetert. Dat heeft Corona wel bewezen en nu die paar linkse deugdrammers wederom.Graag daarin gesteund door de msm."
+      },
+      {
+        "_id": "sjjzelh7f",
+        "custom_id": 1269660120184750000,
+        "document": "Betoging in Antwerpen is blijkbaar uit de hand aan het lopen. Poc en blanke mensen worden blijkbaar gescheiden en in bussen gestopt. Politie denkt niet eens aan de veiligheid van de mensen in deze corona tijd. Wtf."
+      },
+      {
+        "_id": "smghphh27",
+        "custom_id": 1269660300321665000,
+        "document": "In de hele westelijke EUSSR rellen tegen blanken OP ANDERHALVE CENTIMETER afstand.Was corona een besmettelijke ziekte een godsgeschenk misbruikt voor linkse ideologieof eentoevalligchinees ontsnapt virus ?Een combinatie van alle 3 kan ook .#stopdelockdown #stopnieuwnormaal"
+      },
+      {
+        "_id": "sxs7d3p8x",
+        "custom_id": 1269596306496016400,
+        "document": "@NOS Ik word gewoon boos als ik het lees. Het vieze clubje red haar eigen leden weereens. En iedereen is over een maand vergeten hoe achterlijk het RIVM gehandeld heeft aan het begin van de crisis. En hoe nietszeggend het vvd beleid was. Alles voor de stemmen. Bah"
+      },
+      {
+        "_id": "suh19k1lq",
+        "custom_id": 1269597700594577400,
+        "document": "@rivm Gelukkig werkte de hele site zo belachelijk slecht dat ik hem niet af heb kunnen maken👌 dit is wel weer typisch in jullie achterlijke beleid."
+      },
+      {
+        "_id": "sseo085cc",
+        "custom_id": 1269589601263538200,
+        "document": "Die #BLMBelgium is eigenlijk Selffulfilling prophecy ze willen extremisme stoppen maar door hun egoïstisch  gedrag creëren ze nog meer stemmen voor extreem rechts.  massa protesten tijdens coronacrisis aanvallen van politie racisme tegenover blanke mensen VB wint nieuwe stemme"
+      },
+      {
+        "_id": "ssi7jy9uc",
+        "custom_id": 1269589679994740700,
+        "document": "@iusfinis @donconjo @BryanRoyAjax Dat geldt ook voor de blanke amerikanen tijdens vorige regeringen toen ik in Dallas was in 2005 zat mijn vriendin daar in dezelfde situatie geen sociale zekerheid ook voor haar... Trump deed/doet zijn best om banen te creeren ging goed tot de corona speeltje van de elite..."
+      },
+      {
+        "_id": "sujpk1i2t",
+        "custom_id": 1269593186076409900,
+        "document": "Ook in #Madrid voorzie ik een nieuwe #CoronaOutbreak.De blanke onderdeurtjes hebben zich verzameld om te gaan knielen voor een crimineel ..... Ja ja bij demonstraties voor misdaden tegen blanken (#Rotherham) zie je ze niet die #hypocrieten."
+      },
+      {
+        "_id": "sm7o17o6z",
+        "custom_id": 1269594791760867300,
+        "document": "Er is een nieuw ritueel waarbij zwarten blanken op de knieën excuus moeten aanbieden voor hun niet bestaande “white privilege”. Ook krijgen zwarten in coronatijd demonstraties gedaan. Maar zwarten hebben geen macht? #victimplay"
+      },
+      {
+        "_id": "smsr3mlqm",
+        "custom_id": 1269595515840331800,
+        "document": "Er is een nieuw ritueel waarbij zwarten blanken op de knieën excuus laten aanbieden voor hun niet bestaande “white privilege”. Ook krijgen zwarten in coronatijd demonstraties gedaan. Maar zwarten hebben zgn geen rechten???"
+      },
+      {
+        "_id": "sd2aggsvz",
+        "custom_id": 1269619256305561600,
+        "document": "Het #SARSCoV2 (#covid19/#coronavirus) blijkt dus idd n #retrovirus te zijn en zal dus keer op keer n #epidemie/#pandemie kunnen veroorzaken.Daarmee wordt t belangrijker de #mentaliteit bij #ziekte te veranderen dan die achterlijke #anderhalvemetersamenleving in te voeren. https://t.co/91iChWw5Ww"
+      },
+      {
+        "_id": "sulakw1fl",
+        "custom_id": 1269431928295391200,
+        "document": "De domste tweet reactie vandaag was toch wel van iemand die mij verweet het goed te keuren dat bij protesten in Amerika een blanke politieagent door zwarte betogers in brand was gestoken.   Waarom doen mensen hun huiswerk zo slecht?!"
+      },
+      {
+        "_id": "skyr3gixn",
+        "custom_id": 1269515583135064000,
+        "document": "Kans dat het hier komt klein. Kans dat kids elkaar besmetten klein. Kans op presymptomatische verspreiding klein. Kans op datalekken klein. Enz enz enz enz. Leugenachtige hoeren van @rivm kunnen we niet meer vertrouwen."
+      },
+      {
+        "_id": "s5e7tmd4f",
+        "custom_id": 1269558104343097300,
+        "document": "ze infecteren doelbewust die protestreizigers en @rivm zegt over 3 weken das haben wir nicht gewust ?"
+      },
+      {
+        "_id": "sdslx90vh",
+        "custom_id": 1269558471948677000,
+        "document": "Hoi NederlandWij zouden graag willen dat u in opstand komt maar het maakt niet uit wat voor achterlijk gedrag wij vertonen of wat voor rare dingen wij zeggen en/of doen u blijft maar fijn doen wat wij zeggen.Groetjes@MinPres en de #RIVM vriendjes"
+      },
+      {
+        "_id": "sy1ydgvi7",
+        "custom_id": 1269555116874641400,
+        "document": "Dit moet je lezen...Een veroordeelde zwarte vindt de dood bij politie-optreden. Dit zal bestraft worden. Vele mensen komen op straat geweldloos of gewelddadig.Duizenden blanken worden gruwelijk vermoord. Protesten? Ach deze mensen zijn maar blank..https://t.co/PQO5F6wKZt"
+      },
+      {
+        "_id": "sa36doc0v",
+        "custom_id": 1269560738026344400,
+        "document": "@CeliaLedoux @groen @openvld Ook praktijktesten voor blanken. Niet iedere blanke met hetzelfde opleidingsprofiel heeft dezelfde kansen! Je uitgebreid sociaal netwerk speelt een positieve of negatieve rol zeker waar bij alle besturen. Als je niet over een lange hand beschikt zal je het geweten hebben!#werk"
+      },
+      {
+        "_id": "svjlj1b7o",
+        "custom_id": 1269560857199026200,
+        "document": "@ArmandVervaeck Daarom dat ik blacklivesmatter er wel over vind. En nu in de hele wereld protesten voor een zwarte crimineel die volledig onterecht dood is maar de blanken in die landen nooit protest voor geweest."
+      },
+      {
+        "_id": "slvwzjsic",
+        "custom_id": 1269568955242426400,
+        "document": "@nrc Ik heb geen goed woord meer over voor deze “protesten”. Het is gewoon rellen plunderen en mishandelen van mensen terwijl organisatoren dit doen van subsidies van de door hun gehate blanke mens. Jammer dat de Nederlandse media dit deel niet in het nieuws brengt."
+      },
+      {
+        "_id": "shxq1p76r",
+        "custom_id": 1269556607261773800,
+        "document": "@PCIMeijer @Spetters599 Ook ik wordt er stront ziek van. Eerst was het heel de dag door in de media Corona en nu is het alleen maar racisme  en hoe slecht wij blanken wel niet zijn. En dan al die deugfiguren die er volledig in meegaan om van te kotsen.In doorslaan is men in Nederland erg goed."
+      },
+      {
+        "_id": "sknmlx3e9",
+        "custom_id": 1269563080100454400,
+        "document": "@TonVermond @trouw Onder Trump tot aan corona crisis was de werkloosheid historisch laag zelfs onder de zwarten. Wie toen geen werk had en toch gezond zat liever in de criminaliteit of welfare. Onder Obama zeker zoveel doden door politie geweld de zwarten kwamen niet in actie vreemd 🤔"
+      },
+      {
+        "_id": "scydo8xp8",
+        "custom_id": 1269565470019137500,
+        "document": "@JJorritsma040 wat is het voor achterlijk beleid dat @gem_Eindhoven nu @fit20Eindhoven weer op slot gooit? 1 op 1 training met een personal coach met mondkapje 1.5m cirkels rond de apparaten en alle bezoekers brengen eigen handschoenen hoe debiel willen jullie doen over corona?"
+      },
+      {
+        "_id": "sufaaq4cj",
+        "custom_id": 1269569378460328000,
+        "document": "@Gerardus331 @roland_japin Raymond was bang voor een neger die zijn pinpas probeerde te misbruiken zei hij me. De neger zei Corona Corona kom niet dichtbij!. Kerel heeft een anti-tank raket afgevuurd toen hij dienst deed in Libanon maar een grote neger.The black man must have been very impressive."
+      },
+      {
+        "_id": "s5xcm7ra6",
+        "custom_id": 1269400300982603800,
+        "document": "Wij als blanken worden gediscrimineerd!!! Waar zijn de protesten dat buitenlanders (ondertussen belgen)de blanke aanvallen beroven verkrachten😡😡😡😡. Dit wordt niet op nieuws gezegd he....alleen in krant kan je dit lezen😡😡😡😡"
+      },
+      {
+        "_id": "s8cidujbb",
+        "custom_id": 1269730691773722600,
+        "document": "En terecht moet je maar niet zo achterlijk doen met je protesten"
+      },
+      {
+        "_id": "sohzm1toj",
+        "custom_id": 1269726853637513200,
+        "document": "@HanneloreGoeman mss moet u nu idd de zorgsector volgen in al hun eisen.zodat u met een goed gevoel kan blijven rondlopen.lak hebben aan maatregelen tijdens #COVID19 welke politieke partij deed het eigenlijk nog niet...#Hypocrite papieren zakdoekje uit de doos die ume ooit cadeau deed?"
+      },
+      {
+        "_id": "s51hz275o",
+        "custom_id": 1269734103223603200,
+        "document": "@Remy_v_T @NUnl Je hoort gewoon met je poten van andermans spullen of standbeelden in dit geval af te blijven. Dat BLM slaat helemaal door. In Italië al een motoragent in de fik gestoken waar gaan ze stoppen dan? Als alle blanken excuses maken of wat? En waarvoor?"
+      },
+      {
+        "_id": "sc6vypfvj",
+        "custom_id": 1269724042254262300,
+        "document": "@EenVandaag @haroonwrites Moslims de grootste racisten in NL kapen nu ook al de BLM black power protesten on hun onvrede  over blanke mensen te buiten. Gaat lekker dit zeg. Straks zijn alleen blanken strafrechtelijk vervolgbaar"
+      },
+      {
+        "_id": "saffmoybi",
+        "custom_id": 1269726518701445000,
+        "document": "@jesuisshatou @PCIMeijer Ik kan ook moeilijk geloven dat de rassenhaat zo groot is in Amerika en dat zwarten (ik houd niet van deze term) zodanig gediscrimineerd worden dat ze het ras moeten specificeren in de protesten. Ik hoop  voor ze dat er snel een stijgende lijn in komt."
+      },
+      {
+        "_id": "sewheie0g",
+        "custom_id": 1269727891694256000,
+        "document": "@op1npo @SigridKaag Waarom het niet lukt? Omdat onze gekleurde medemens er alles aan doet om het te bevestigen. Plunderingen tijdens blm protesten homohaat en geweld onder met moslimjongeren explosieve toename wapenbezit onder “jongeren” groepsgeweld minderheden tegen meisjes en blanken etc etc."
+      },
+      {
+        "_id": "spf6bv9bw",
+        "custom_id": 1269728596970668000,
+        "document": "@TheIronyBro Maar als positieve discriminatie OOK onverdiend is voor niet blanken. Zullen we het dan #BlackPrivilege noemen?Nee de protesten gaan over de politie. En over automatisch toegekend racisme. Vreemd want je hebt een Afrikaanse agent 2 Aziatische 1 blanke en geen motief..."
+      },
+      {
+        "_id": "s7j57ktek",
+        "custom_id": 1269730335165685800,
+        "document": "@D66 @SigridKaag https://t.co/a3TLDMVbv1 Hoop voor de toekomst. Ik kijk met grote zorg naar de toekomst door deze achterlijk protesten die nu evolueren in een extreemlinkse revolutie als we niet heel goed uitkijken."
+      },
+      {
+        "_id": "syhv7aimh",
+        "custom_id": 1269731783739916300,
+        "document": "De beelden van de gewelddadige Black Lives Matter protesten gaan de hele wereld over.De giftige combi van Soros-links en BLM die agressief plundert agenten aanvalt en blanken mishandelt.Het is verworden tot een zieke gedegenereerde bende.De beeldvorming is dramatisch."
+      },
+      {
+        "_id": "sv8mwe0cd",
+        "custom_id": 1269722032670990300,
+        "document": "@RaheemKassam @geertwilderspvv Was de Corona al in het VK verdwenen?Voor 1 dode neger tienduizenden Engelse levens op het spel zetten.Hoe dom kun je zijn!"
+      },
+      {
+        "_id": "sfz4cjtrt",
+        "custom_id": 1269727413791076400,
+        "document": "Hoe achterlijk kan je zijn? Er zijn bijna 10.000 mensen gestorven aan Corona in België en nu gaan er 10.000 mensen gaan betogen in Brussel terwijl dit verboden is! Schandalig!"
+      },
+      {
+        "_id": "skzko67ot",
+        "custom_id": 1269733269312098300,
+        "document": "@EelcoHoecke Jaaaa weg met die dictators vooral die smerige trut @KajsaOllongren die de verkiezingen wil uitstellen vanwege Corona... smerig wijf..."
+      },
+      {
+        "_id": "s3wdhjyib",
+        "custom_id": 1269443600754057200,
+        "document": "vraag me beetje af wat de tokkies hadden verzonnen als argument tegen de protesten als corona er niet was? mijn gok is hebben die mensen niks beters te doen ze moeten werk zoeken maar met tokkies weet je het nooit. kan net zo goed boselfjes zijn."
+      },
+      {
+        "_id": "s3v5ksimu",
+        "custom_id": 1269436899304726500,
+        "document": "Je mag zelf wel even bellen want je ziet er echt niet goed uit helemaal wit ik denk dat je last hebt van corona je moet snel een vaccin hebben eentje waarvan je de waarheid verteld aan de burger en zegt o sorry ik heb het allemaal verkeerd gedaan."
+      },
+      {
+        "_id": "szt6dw0cf",
+        "custom_id": 1269469501571117000,
+        "document": "@verwilderd @EJBron2 wordt  moe van die protesten. 80% van die zwarten die eraan meedoen interesseert het geen moer dat ie dood is. het is voor hun een  gelegenheid om winkels leeg te roven en vernielingen aan te richten.als je met 5 nike dozen onder je arm loopt  ben je gewoon een ordinaire dief"
+      },
+      {
+        "_id": "srjmo4lso",
+        "custom_id": 1269716006932557800,
+        "document": "@HanneloreGoeman Zou covid-19 racistisch zijn denk je @HanneloreGoeman hysterische drama trut van @spa  nog meer richting kiesdrempel..."
+      },
+      {
+        "_id": "s2lkj3io9",
+        "custom_id": 1269706689713930200,
+        "document": "@jesseklaver 🤣🤣🤣🤣En maar mondkapjes opdoen in het OV! Maar 4 uur vliegen naar Spanje of Portugal levert geen coronapatienten op? #COVID19 is een fucking #Hoax “Ik heb nog nooit 1 persoon ontmoet dat een heel voetbalstadion bus metro tram festival theater heeft besmet”@rivm"
+      },
+      {
+        "_id": "suab9wztb",
+        "custom_id": 1269714122490482700,
+        "document": "@___Nick_ @gertvdijk @NOS Dat is dus inderdaad de meest achterlijke onzin van ál die Corona bullshit ja.Slaat totaal nergens op die maatregel."
+      },
+      {
+        "_id": "szz1dfnlh",
+        "custom_id": 1269714571398459400,
+        "document": "@WouterDeVriendt @SilkeBeirens Diegene die nu protesteren denken geweldig te zijn en goed...Feit is dat het idioten zijn die zorgen corona weer extra verspreid gaan worden...Zo zullen die achterlijke idioten verantwoordelijk zijn voor meer doden maar dat interesseert ze niet en een nieuwe lockdown ook niet. https://t.co/D3UM1jAKru"
+      },
+      {
+        "_id": "s91golygd",
+        "custom_id": 1269504684429058000,
+        "document": "@NUnl Mischien weten hun in america meer wand valt me op dat er ook blanken mee lopen mischien is er uitgekomen dat corona toch allemaal een groot leugen is en dat dit mischien hier ook gaat gebeuren"
+      },
+      {
+        "_id": "sxtrcpg0x",
+        "custom_id": 1269505347531739100,
+        "document": "@KimBoon94 Ik hoop dat die gl trut een schop onder haar reet krijgt netjes gezegd en nergens meer aan de bak komt en van een bijstandsuitkering kan gaan leven wat een achterlijke trut is dit wijf zoveel mensen hebben zich opgeofferd voor de coronacrisis en nog steeds en zij fucking 0"
+      },
+      {
+        "_id": "sqbthhtar",
+        "custom_id": 1269740108284133400,
+        "document": "@egbertlachaert Met dank aan die achterlijke PS-burgemeester Close!! Hoe dom om deze betoging toe te laten in Corona-tijden!!"
+      },
+      {
+        "_id": "s8bj9iqxa",
+        "custom_id": 1269740453743800300,
+        "document": "@ItsMe_awake De beelden van de gewelddadige Black Lives Matter protesten gaan de hele wereld over.De giftige combi van Soros-links en BLM die agressief plundert agenten aanvalt en blanken mishandelt.Het is verworden tot een zieke gedegenereerde bende.De beeldvorming is dramatisch! Mooi!"
+      },
+      {
+        "_id": "sdtkmtrgi",
+        "custom_id": 1269741472091381800,
+        "document": "@mickvanwely @Marias50 De beelden van de gewelddadige Black Lives Matter protesten gaan de hele wereld over.De giftige combi van Soros-links en BLM die agressief plundert agenten aanvalt en blanken mishandelt.Het is verworden tot een zieke gedegenereerde bende.De beeldvorming is dramatisch. 😉👍🏻 https://t.co/vM569PwOyd"
+      },
+      {
+        "_id": "s1fm33aq3",
+        "custom_id": 1269742038800650200,
+        "document": "@FeyeNody De beelden van de gewelddadige Black Lives Matter protesten gaan de hele wereld over.De giftige combi van Soros-links en BLM die agressief plundert sloopt agenten aanvalt en blanken mishandelt.Het is verworden tot een sneuegedegenereerde bende.De beeldvorming is dramatisch."
+      },
+      {
+        "_id": "sjwhll7rh",
+        "custom_id": 1269744989556355000,
+        "document": "@conner_rousseau natuurlijk wel! strijd tegen racisme? naieveling. Die protesten dienen alleen maar om ons geweten te sussen en ons op de borst te kloppen. De realiteit is dat eenieder ook de negers de joden de moslims iedereen racisten zijn. dat zit in onze genen."
+      },
+      {
+        "_id": "s28ic2nq4",
+        "custom_id": 1269749054419976200,
+        "document": "@SamvanRooy1 De beelden van de gewelddadige Black Lives Matter protesten gaan de hele wereld over.De giftige en agressieve combi van Soros-links en BLM die plundert sloopt agenten aanvalt en blanken mishandelt.Het is verworden tot een gedegenereerde bende.De beeldvorming is dramatisch.👍🏻"
+      },
+      {
+        "_id": "s6l2v9ttu",
+        "custom_id": 1269741483512533000,
+        "document": "@moeva18 @zoet1971 Is Corona nu ook racistisch als er straks meer zwarten worden besmet als blanken of beschuldigen ze Corona van etnisch profileren"
+      },
+      {
+        "_id": "s1icpk526",
+        "custom_id": 1269746417179992000,
+        "document": "@SylvanaBIJ1 @AnneMarieAms Je hersenen wel..eet nog een slachtofferrol eng vies wijf dat je bent. Huilen huilen. Heb je gezien wat er in Amerika gebeurd? In Rotterdam waar blanken zwaar worden mishandeld? Waar ben je dan met je dikke snavel? Krijg corona met heel links erbij"
+      },
+      {
+        "_id": "s5nx2cp5q",
+        "custom_id": 1269749167691350000,
+        "document": "@NOS Eindelijk wordt er overal eens opgestaan tegen racisme. Is een eeuwenoud probleem Corona is maar iets tijdelijks maar juist iets waar ook de blanke mens sinds decennia weer eens bang voor is."
+      },
+      {
+        "_id": "s3bjwrytq",
+        "custom_id": 1269572972479746000,
+        "document": "Dit is ook geen wetenschap maar dient de economie.Dan vindt men het raar dat veel mensen wetenschappers of experts niet meer vertrouwen.Mensen zijn niet helemaal achterlijk meer. Er is genoeg info om tot je te nemen en na te denken#RIVM"
+      },
+      {
+        "_id": "s8j6gy3im",
+        "custom_id": 1269573287643959300,
+        "document": "Waar waren de protesten toen Justine Damond vermoord werd? Die waren er wel... alleen niet voor Justine maar voor de donkere agent die deze blanke vrouw (ZONDER strafblad itt #GeorgeFloyd) doodschoot. Check yourself! #BlackLivesMatter #AllLivesMatter https://t.co/mCZeqOK8ni"
+      },
+      {
+        "_id": "sxtp5ct3b",
+        "custom_id": 1269573795725095000,
+        "document": "@BryanRoyAjax Bryan.... leef jij ook nog;).... Het is diep diep diep triest wat hier gebeurd! koniaal verleden gebruiken als antwoord op Racisme... alle wat nu gebeurd de protesten de inelkaar geslagen blanke en donkere mensen slopen van eigendommen... dit veroorzaakt een golf van GEWELD"
+      },
+      {
+        "_id": "spe4471o1",
+        "custom_id": 1269574830438920200,
+        "document": "@StraatmanSandra @Sywert Heb ook niet zoveel met de protesten in Europa. In de VS kan ik het me nog voorstellen je zegt net zelf dat er meer zwarten doodgaan aan Corona dat heeft ook zijn redenen."
+      },
+      {
+        "_id": "sleul8d8q",
+        "custom_id": 1269580852410953700,
+        "document": "@telegraaf Iedereen ziet dat er nu grof geweld tegen blanke mensen worden gebruikt over heel de wereld. Mishandelingen en moord. Winkels worden geplunderd. Gelukkig worden steeds meer mensen wakker die inzien dat ze gewoon gebruikt zijn voor deze “protesten”"
+      },
+      {
+        "_id": "sbvsuv1q4",
+        "custom_id": 1269570783292113000,
+        "document": "Wie gaat er nog meet lege zakken door de coronaleugen zwaaien naar de Koning zonder werk of bedrijf of bij een voedsel bank en misschien wel zonder woning en toch zwaaien met een vlaggetje naar die volgevreten proleet  of zullen we ze onthoofden ?"
+      },
+      {
+        "_id": "smn5un2wh",
+        "custom_id": 1269572055608983600,
+        "document": "⏬| De impact van de coronacrisis op de werkgelegenheid is groot. @UWVnl verwacht dat het aantal banen in de drie regio’s van Overijssel en Gelderland Noord krimpt in 2020. https://t.co/bv3MoLzBpC"
+      },
+      {
+        "_id": "svk95747c",
+        "custom_id": 1269572996857057300,
+        "document": "@menage00 @Sywert Je hebt gelijk het had het woord autochtoon moeten zijn. Maar ik vergeet ook niet de hysterie dat men weer eens riep dat er meer zwarten dood gingen aan corona. Altijd maar dat slachtofferschap. Zo vermoeiend."
+      },
+      {
+        "_id": "s7a9re734",
+        "custom_id": 1271063565051613200,
+        "document": "Kunnen we nu dan eindelijk weer normaal gaan doen?!! Weg met die achterlijke #anderhalvemeter https://t.co/VtHs6Emc9p"
+      },
+      {
+        "_id": "ss0cw0dnu",
+        "custom_id": 1271062073053778000,
+        "document": "maar gelukkig steunt tokkie nederland wel de echt belangrijke protesten! https://t.co/8huyLpKtYm"
+      },
+      {
+        "_id": "szrfizfoh",
+        "custom_id": 1271057055504388000,
+        "document": "@dynd21 @telegraaf Ja graag! Ik wil die coronawet wel hebben.Word je gelijk getraind om jezelf als een autist te gedragen."
+      },
+      {
+        "_id": "s5uadorxe",
+        "custom_id": 1271061231617609700,
+        "document": "@geertwilderspvv En hopen kut negers Corona krijgen tot hun dood wij als blanken regels moeten. Houden"
+      },
+      {
+        "_id": "s9gvobsqs",
+        "custom_id": 1271061698120745000,
+        "document": "De betogers tegen racisme de schuld geven van een mogelijke opflakkering van covid19 maar geen woord over de skiërs die ons land bezoedelt  hebben met covid19 en reeds opnieuw ski reizen aan het plannen zijn #Villapolitica"
+      },
+      {
+        "_id": "s9xo735tu",
+        "custom_id": 1271055558196580400,
+        "document": "@JoostNiemoller @RobertMolhoek @HDDuurvoort Haar pijn.Weet je wanneer ik pijn voel? Als ik in Italië ben. Dan herinner ik mij weer hoe mijn bet bet bet overgrootvader Germaan vocht tegen de Romeinse overheersers. Dat hij daarvoor werd gekruisigd en zijn vrouw tot slaaf gemaakt. Hoor je mij daarover?"
+      },
+      {
+        "_id": "skf4zq3hi",
+        "custom_id": 1271053317985259500,
+        "document": "Ik snap het wel....blanke protesten willen ze zo veel mogelijk de mond snoeren...tot dat blanken zo boos worden en iets gaan doen ! Dan hebben ze wat ze willen want dat is het voortaan vreedzame zwarten en gewelddadige blanken !"
+      },
+      {
+        "_id": "s8z51bvvv",
+        "custom_id": 1271054519540088800,
+        "document": "@karinsaenzm @ShashiRoopram @BlmNederland omdat dit binnen de context past. 9 zwarte mensen vorig jaar omgekomen door politiegeweld. 20 zwarte mensen omgekomen door blm protesten. daarnaast zijn blanke mensen veel vaker het dodelijke slachtoffer van Amerikaans politiegeweld. maar blijf lekker in fantasieland leven"
+      },
+      {
+        "_id": "sactg7i7n",
+        "custom_id": 1271063983404077000,
+        "document": "@karinsaenzm @ShashiRoopram @BlmNederland en nogmaals: meer zwarte mensen vermoord bij deze protesten dan door politiegeweld in heel 2019. je hebt er niks op ze zeggen behalve dat het je niet uitmaakt omdat de moordenaars geen blanke agenten waren. wie is hier nou de racist? ik niet iig moord = moord"
+      },
+      {
+        "_id": "s3lbhc14s",
+        "custom_id": 1271057388368519200,
+        "document": "@RH61712904 @PatrickKilobyte Dan hadden ze dat ook niet toe moeten staan. 1000en negers op velden en pleinen wel toestaan en een paar 100 man op t Malieveld niet is natuurlijk raar. Tenzij ze stiekem die negers corona toewensen. Maar dat had jij zelf nog niet bedacht natuurlijk. Dat vind ik nou weer geinig"
+      },
+      {
+        "_id": "senio2ghn",
+        "custom_id": 1271179834195095600,
+        "document": "Ik wil geen corona-app ik wil een neger-app die me waarschuwt als er negers in de buurt zijn."
+      },
+      {
+        "_id": "sm2eyrrta",
+        "custom_id": 1271176210803036200,
+        "document": "@peterty9boer @Erwin35229955 @EvertGDavelaar Zwarte zaterdag moeten ze ook maar eens verbieden. Hoeven wij blanke mensen tenminste niet mee in de file te staan naar ons tweede huis in Zuid-Frankrijk.#BlackLivesMatterNL #Beeldenstorm #Bau #zwartepiet #LLDL #COVID19 #voguechallange #deafspraak #Akwasi #"
+      },
+      {
+        "_id": "sfanilejo",
+        "custom_id": 1271178489006305300,
+        "document": "@peterty9boer @Erwin35229955 @EvertGDavelaar Zwarte zaterdag moeten ze ook maar eens verbieden. Staan WIJ blanke mensen tenminste niet meer in de file  naar ons tweede huis in Zuid-Frankrijk.#BlackLivesMatterNL #Beeldenstorm #Bau #zwartepiet #LLDL #COVID19 #voguechallange #deafspraak #Akwasi"
+      },
+      {
+        "_id": "smva48a83",
+        "custom_id": 1271179443453771800,
+        "document": "@Neeleg4 @NOS Gaat hier over minderheidsgroepen -die in landen als Nigeria worden vermoord- Kijk jij eens even naar wat er in italië gebeurd-  ladingen nigerianen  maken een boortochtje vallen italië binnen- zijn geen vluchtelingen hoor. Nigeriaanse mafia -het gross plundert verkracht en moord"
+      },
+      {
+        "_id": "svd46vugi",
+        "custom_id": 1271181052011262000,
+        "document": "Het corona vaccin moet in potjes maar de nederlandse regelgeving laat dat niet toe het achterlijke beleid van @MinPres en die achterlijke gladiool staat hoog in de peilingen 😭😭😭😭"
+      },
+      {
+        "_id": "sffjldiyb",
+        "custom_id": 1270844802570031000,
+        "document": "@TheodorHolman Moedig ze aan flikker alle maatregelen en bepalingen in de gracht liefst de Herengracht. Het leukste gaat nu komen Klaver die ongezien het kabinet ging steunen met een burgermoeder die de middelvinger opsteekt en steun van alles en iedereen krijgt. Chips en cola hamsteren!"
+      },
+      {
+        "_id": "s87o1ygb5",
+        "custom_id": 1270844523690721300,
+        "document": "Stel u voor dat je bent getrouwd met Corona iedereen kent haar iedereen praat over haar niemand vind haar leuk. Uw huwelijk zou tof zijn.."
+      },
+      {
+        "_id": "sftjpcavj",
+        "custom_id": 1271081777226973200,
+        "document": "Hoe zotter moet het nog worden corona tast de hersenen aan zeker?Deze soort achterlijke horen in een instelling."
+      },
+      {
+        "_id": "soydhj95l",
+        "custom_id": 1271085846335312000,
+        "document": "@adamafca Nu met Corona is er toch geen flikker te doen kan je net zo goed je hele ritme verneuken zoals ik 🤠"
+      },
+      {
+        "_id": "skxnldhbk",
+        "custom_id": 1271092092157206500,
+        "document": "@Jeroen99271706 Een blanke demonstratie: hup weg aan de corona regels houden."
+      },
+      {
+        "_id": "so9uzxxue",
+        "custom_id": 1271093431394320400,
+        "document": "@geertwilderspvv Ferdinand zegt:De 1e levensbedreigende tsunami golf voor de blankewereldzoal NL was(is) Islamitisch en de 2e tsunami golf voor de blanke wereld is BLM ideologie en hun slaafse blanke trawanten en in termen van COVID-19is de 2e golf sterker en gevaarlijker dan de 1e."
+      },
+      {
+        "_id": "s0nzop7k7",
+        "custom_id": 1271087561696477200,
+        "document": "@joycev888 @HansDek35828687 Dat moet lukken ik woon in NH. Succes! Je zag het ook bij de boerenprotesten die achterlijke VVD-vrouw die in de provincie NH over de landbouw en de boeren gaat en de boeren gewoon liet stikken in tegenstelling tot Friesland e.a. provincies"
+      },
+      {
+        "_id": "s84ou0dfh",
+        "custom_id": 1271093003243999200,
+        "document": "Ben wereldwijde #AntifaTerrorists en #BLMprotesten demos beeldenstormen plunderingen vernederingen van blanken et cetera SPUUGZAT. Die #massahysterie moet NU na 17 dagen stoppen! Ook de #MSM moeten stoppen om dit elke dag weer te promoten. Luister in dezen podcast @wierdduk"
+      },
+      {
+        "_id": "s6gmn6igj",
+        "custom_id": 1271196560253124600,
+        "document": "Waarom Nederlandse complotdenkers Bill Gates de schuld geven van corona https://t.co/enVzbHu3RD via @NUnl wat een lulkoek!!!"
+      },
+      {
+        "_id": "ss4lh05bf",
+        "custom_id": 1271191150397882400,
+        "document": "@maitedeleebeeck @mayada_srouji Sinds die actie van gisteren is meerdere keren bewezen dat die nieuwe resolutie een lege doos is. Die praktijktesten in haar resolutie zijn niets waard en zorgen alleen maar voor instanties die op zelfregulerende wijze én optioneel per sector discriminatie kunnen vastleggen"
+      },
+      {
+        "_id": "sh7wry3eb",
+        "custom_id": 1271198491734413300,
+        "document": "Na klimaat- en corona-expert is Greta nu ook expert in zwart zijn in de VS.Best knap voor een blanke Zweedse drop-out. https://t.co/y9Y6aZYROH"
+      },
+      {
+        "_id": "skyt53geo",
+        "custom_id": 1270937987988295700,
+        "document": "@bouboutyassine @pvdabelgie @SihameElk @wfschiltz @alexanderdecroo @HanneloreGoeman @groen @anmoerenhout Gaan we hier ook praktijktesten voor vragen of is het enkel een issue als een blanke het doet?"
+      },
+      {
+        "_id": "s89eebyq5",
+        "custom_id": 1271132952882225200,
+        "document": "@UitgeverArie Huidskleur zou geen issue moeten zijn. Er wordt door media constant nadruk op huidskleur gelegd.De demonstraties hier zullen leiden tot (meer) haat naar blanken rellen machtsmisbruik en misschien ook nog wel moord. En er zal vast een Covid19-golf uit voortkomen dat terzijde."
+      },
+      {
+        "_id": "s69jqpi3d",
+        "custom_id": 1271128464784085000,
+        "document": "@hugodejonge @TrajectumLVB Het is alleen spannend omdat jij van die achterlijke regels maakt. Niemand durft nog iets te doen. Daardoor ziet familie elkaar al maanden niet. En zetten jullie doden van eenzaamheid onder Corona doden. Waanzin!"
+      },
+      {
+        "_id": "s050efhc8",
+        "custom_id": 1271135110486769700,
+        "document": "@lienepien1 Het was ook goed 87 en 89 ... rustig heengegaan een mooi afscheid kunnen geven ✨Paar weken geleden werd een nicht gecremeerd: korte dienst en aan het einde coffee-to-go ... het contrast was enorm #Corona"
+      },
+      {
+        "_id": "sfrri1kaj",
+        "custom_id": 1271137171504869400,
+        "document": "De VS is het zwaarst getroffen land ter wereld door #coronaZon uitspraken gemixt met nog een witte die een gele uitscheldt video en zwarten die witte agenten bijeen schoppen en er selfies van nemen clipje...Eigenlijk zou dat strafbaar moeten worden.@VTMNIEUWS"
+      },
+      {
+        "_id": "smfcadwg8",
+        "custom_id": 1271170075777814500,
+        "document": "@telegraaf Een grote corrupte achterlijke vertoning dat Nederlandse justitie apparaat Powered by Corona !!!"
+      },
+      {
+        "_id": "sav5dktgu",
+        "custom_id": 1271169202456584200,
+        "document": "@ThijsVerbeurgt Je verward “gelijke” met “goede”.Dat gezegd zijnde laat die testen maar doorgaan hoor. Ik maak me alleen maar zorgen om de lege doos ideeën om effectief iets te veranderen."
+      },
+      {
+        "_id": "s8baz7e6p",
+        "custom_id": 1270923588875554800,
+        "document": "De lol is er wel een beetje vanaf om smorgens de krant te lezen.Racisme protesten standbeelden weg vlaggen verbieden. Halsema boven de wet en gesteund door debiel Amsterdam.Wat een achterlijk land.#racisme#halsemadebat#halsema"
+      },
+      {
+        "_id": "scrxyttav",
+        "custom_id": 1271099215557660700,
+        "document": "@vlbelang stuur eens een hele doos naar mij moet ik niet meer hamsteren om wc papier"
+      },
+      {
+        "_id": "sjeuzcvgo",
+        "custom_id": 1271099917835153400,
+        "document": "@NadiaPalesa Dan kan je alle Romeinse arenas afbreken! En een excuus en schadevergoeding eisen aan Italië en Turkije (Moren) ooit was de blanke /witte /niet gekleurde mens populair als slaaf.Is ook niet meer het onderwerp : dat is racisme het NU en de TOEKOMST (m.i.)"
+      },
+      {
+        "_id": "sm0tb32ni",
+        "custom_id": 1271105116200992800,
+        "document": "@_Roxy2_x_ Het begon gewoon met protesten tegen racisme en politiegeweld. Daar ben ik helemaal voor. Maar sommige mongolen zien protesten als een reden om te gaan rellen en plunderen. Dat haalt de (sociale) media dus dat vormt ook het beeld wat mensen ervan krijgen."
+      },
+      {
+        "_id": "squq0mo2h",
+        "custom_id": 1271106640129986600,
+        "document": "@MarijnissenL @SPnl @emileroemer Brussel is toen zelf met dat idee gekomen het blanke ras vervangen door Afrikaanse arbeids migranten van daar ook de inzet van Corona. Alles op een hoopje drijven en dan afmaken."
+      },
+      {
+        "_id": "si78cpj1y",
+        "custom_id": 1271044151681994800,
+        "document": "@nieuwsbegrip verspreidt eerst racisme tegen blanke mensen vertelt niet dat #georgefloyd een strafblad heeft de agenten waren niet alle blank. De agent heeft dit niet gedaan vanwege raciale motieven(anders graag bewijs). En george stierf niet vanwege de knie en had #COVID19 ?? https://t.co/bFkWqddMBY"
+      },
+      {
+        "_id": "s8snmawya",
+        "custom_id": 1271048146198630400,
+        "document": "@marianne_oets @rivm 6000 wat denk je Corona is een verzamelnaam deze leugens gelooft niemand het zijn de zelfde doos oorzaken als bij een Goede griep"
+      },
+      {
+        "_id": "sx4ph8qqf",
+        "custom_id": 1271036354382659600,
+        "document": "@debackerphil @egbertlachaert @Stad_Antwerpen @SihameElk @BartSomers Liberalisme gaat er van uit dat jij als individu eigenaar bent van je eigen leven niet de overheid.Wat als ik enkel blanke vrienden heb? Moeten jullie dan praktijktesten gaan organiseren om mijn mogelijk racisme te elimineren? Gelijke kansen betekent niet gelijke uitkomsten."
+      },
+      {
+        "_id": "smchqw5ia",
+        "custom_id": 1271041213991444500,
+        "document": "En waarvoor want Europa dat blanke continent is volgens alle protesten rotter dan rot.... Wat komen ze hier doen dan nog wat olie op het vuur gooien?!"
+      },
+      {
+        "_id": "s8ftvsvs8",
+        "custom_id": 1271041970102849500,
+        "document": "@Marrit_Anne @Verwardwezen Ik begreep van de protesten dat ALLE blanken dit privilege zouden hebben daarom heet het toch ook white privilege en niet white middle age men privilege..."
+      },
+      {
+        "_id": "sfxtqlljg",
+        "custom_id": 1270962427606249500,
+        "document": "In heel Europa protesten van mensen die discriminatie schreeuwen en zeggen vreselijk behandelend te zijn en zelfs nog worden door blanke mensen. Kan iemand mij dan aub uitleggen waarom er überhaupt nog mensen als illegalen naar dit van origine blanke continent willen komen?!"
+      },
+      {
+        "_id": "sms1bc69p",
+        "custom_id": 1270970220979593200,
+        "document": "@markrutte Flikker op met je Corona regels!!! Elk jaar overlijden 47.000 mensen aan kanker... Daar geef je ook geen flikker om!! Want de grote multinationals mogen nog altijd kanker verwekkende spullen gebruiken lozen in het water of affakkelen...https://t.co/4HlzUEcyAL"
+      },
+      {
+        "_id": "sl6lwp4ol",
+        "custom_id": 1270971289604427800,
+        "document": "Deze vent hééft voor niks en niemand respect. Niét voor de vele Corona doden in dé Vs. Niét voor dé zwarte gemeenschap in de Vs. Niét voor n oude blanke opa die bíjna dood achter óver valt. Wát n Kut LAND dat Amerika"
+      },
+      {
+        "_id": "sxqw2r7mx",
+        "custom_id": 1270974128519069700,
+        "document": "De een lust dit niet de ander dat niet en een gebakje is ook best wel coronaproof dan hoef je niet te snijden enzo. Bovendien ziet het er supergezellig uit zon gevarieerde doos gebak."
+      },
+      {
+        "_id": "szwpikg0g",
+        "custom_id": 1271146987258286000,
+        "document": "Mijnheer de allochtoon vond het ook nodig om elke dag de deur van de inkomhal te bespuwen... #praktijktesten https://t.co/L9qKU5McYR"
+      },
+      {
+        "_id": "su13xxodr",
+        "custom_id": 1271146220032057300,
+        "document": "@MeganMsschln @nnn_chaymae is zij kk achterlijk die had nie eens corona die had andere ziekte"
+      },
+      {
+        "_id": "s9scaqhia",
+        "custom_id": 1271147158658527200,
+        "document": "@nieuwsbegrip 3/3Als iemand echt iets zou geven om het leven van zwarte mensen zouden ze demonstreren:  -tegen geweld van zwarten tegen zwarten-tegen zwarte eenoudergezinnen-tegen de torenhoge zwarte criminaliteit etc.Maar heel vreemd alle protesten zijn alleen maar anti-blank. https://t.co/jkzRKRdbEx"
+      },
+      {
+        "_id": "slwl6jdjv",
+        "custom_id": 1270957538364842000,
+        "document": "En zoals het politiegeweld meer slachtoffers maakt onder zwarten en mensen met een migratieachtergrond doet ook het coronavirus aan etnisch profileren. Covid-19 blijkt allesbehalve kleurenblind. Het wordt steeds duidelijker dat corona een ongelijkheidsv…https://t.co/teIoY6IoSQ"
+      },
+      {
+        "_id": "smqg65tbr",
+        "custom_id": 1270952077360091100,
+        "document": "@StefanBogaard1 @NadiaBouras Allemaal meelopers met de tijdelijke hype. Had je die moord van Ahmaud Arbery nog gezien in Maart in Georgia? Geen protesten geen hype. 3 weken geleden nog een homo koppel in Amsterdam mishandeld door een groepje Marokkanen geen halsema geen protesten niks. Nu even hype"
+      },
+      {
+        "_id": "szohwejks",
+        "custom_id": 1270944481261412400,
+        "document": "@HLN_BE Deel 3 van hoe de wereld te onderdrukken en glibalistisch communisme te installeren  1 de terroristen . 2 de coronahoax deel 3 zaai verdeeldheid tussen blanke en donker getinte mensen en schep een rassenoorlog . En de media zet er uiteraard weer volop op in ."
+      },
+      {
+        "_id": "syowi8d2a",
+        "custom_id": 1271010096659812400,
+        "document": "Walmart neemt onder druk shampoo van Swartzkopf en speciale shampoos voor zwarten uit de rekken! Binnenkort bij ons de bruin zeep verboden? Hamsteren maar!"
+      },
+      {
+        "_id": "sk5ma41vy",
+        "custom_id": 1271018816307441700,
+        "document": "Een klasgenoot die zegt dat als quarantaine nog langer doorgaat door die protesten dat hij die zwarten in Amsterdam echt af wilt schieten... GIRL I- 😞😒"
+      },
+      {
+        "_id": "s5ffzg9cp",
+        "custom_id": 1271013974620897300,
+        "document": "Nu krijg ik waarschijnlijk de vliegende vinketering😱 Nou dat zal mij aan mijn reet roesten dat achterlijke niet doen gedoe☹️Opzouten met dat stomme Coronagezeik! KLAAR MEE!"
+      },
+      {
+        "_id": "s4iojd2wr",
+        "custom_id": 1270857993509392400,
+        "document": "Praktijktesten invoeren zonder dat er sancties volgen als een bedrijf makelaar immokantoor betrapt wordt is een lege doos verkopen. Als mensen door een rood licht rijden worden gaan we toch ook niet via zelfregulering ervoor zorgen dat dit niet meer gebeurd?"
+      },
+      {
+        "_id": "sdhjbj8na",
+        "custom_id": 1270858246291628000,
+        "document": "Praktijktesten invoeren zonder dat er sancties volgen als een bedrijf makelaar immokantoor etc... betrapt wordt is een lege doos verkopen. Als mensen door een rood licht rijden gaan we toch ook niet via zelfregulering ervoor zorgen dat dit niet meer gebeurd?"
+      },
+      {
+        "_id": "ss9ghorh8",
+        "custom_id": 1270859274986586000,
+        "document": "Praktijktesten invoeren zonder dat er sancties volgen als een bedrijf makelaar immokantoor etc... betrapt wordt is een lege doos verkopen. Als mensen door een rood licht rijden gaan we toch ook niet via zelfregulering ervoor zorgen dat dit niet meer gebeurt?"
+      },
+      {
+        "_id": "sbmb2vdzk",
+        "custom_id": 1271067434821341200,
+        "document": "Het coronavirus bestaat als virus niet: t is een bacterie en wordt gebruikt om bij u de id-5g-chip te implanteren. Daarbij speelt 5g-technologie een vuile rol. Daarvoor hebben @MinPres en c.s. art. 10 en 11 uit de grondwet gesloopt. Gaat u alert zijn? Of blijft u misleid?"
+      },
+      {
+        "_id": "s1p1h7aff",
+        "custom_id": 1271073895488065500,
+        "document": "RT Ben wereldwijde #AntifaTerrorists en #BLMprotesten demos beeldenstormen plunderingen vernederingen van blanken et cetera SPUUGZAT. Die #massahysterie moet NU na 17 dagen stoppen! Ook de #MSM moet verdomme stoppen om dit elke dag weer te promoten. Zo niet dan maar oorlog."
+      },
+      {
+        "_id": "stx2iwzek",
+        "custom_id": 1270891787872284700,
+        "document": "@DVanLangenhove Zullen wij dan ook praten hoe ze in china moslims in concentratiekampen hebben.Hoe ze in belgië valse beloftes hebben gemaakt tegenover mijnwerkers van turkije noord-afrika italië...Hoe een belgische koning zoveel onschuldige zwarten mensen heeft vermoord.lijst gaat verder."
+      },
+      {
+        "_id": "svczzturo",
+        "custom_id": 1271123905160384500,
+        "document": "@trouw Hoeveel landen zijn er waar blanken niet veilig zijn om hun huidskleur?Coronavirus veroorzaakt blijkbaar ook iets bizars in de breinen van aardbewoners."
+      },
+      {
+        "_id": "sozfp1uvw",
+        "custom_id": 1271113075823980500,
+        "document": "Pamela Mastropietro (18) is twee jaar geleden in Italië door drie vluchtelingen Nigerianen ontvoerd verkracht gemarteld vermoord en uiteengereten. Een van de wezens heeft haar hart opgegeten. ZIJ zou een gouden kist hebben verdiend. De burgemeester had voor U moeten huilen"
+      },
+      {
+        "_id": "sm895sf4j",
+        "custom_id": 1271120566108504000,
+        "document": "Pamela Mastropietro (18) is twee jaar geleden in Italië door drie vluchtelingen Nigerianen ontvoerd verkracht gemarteld vermoord en uiteengereten. Een van de wezens heeft haar hart opgegeten. ZIJ zou een gouden kist hebben verdiend. De burgemeester had voor U moeten huilen."
+      },
+      {
+        "_id": "ston1rman",
+        "custom_id": 1271113371488784400,
+        "document": "@vanranstmarc @Naessens99 @_jona_s_ @_Kyle_98 als je corona vergelijkt met de nazis 80 jaar geleden vielen de zwarten ook de strijders tegen de nazis aan in de rug.toen noemde men dat collaborateurs...erfelijk vrees ik..?"
+      },
+      {
+        "_id": "s0jed9rp2",
+        "custom_id": 1271114000407957500,
+        "document": "@vanranstmarc @Naessens99 @_jona_s_ @_Kyle_98 Marc sorry maar excuses vind ik niet op zijn plaats door zo een idiote achterlijke clown want deze zullen toch niet gemeend zijn maar hij vergeet wel dat er vele levens tijdens het corona proses aan u en u voltallige crew te danken is dus aub zet deze aap maar eens op een plek"
+      },
+      {
+        "_id": "st87h53nv",
+        "custom_id": 1271117568120586200,
+        "document": "WALGELUK  n werk van vele vele jaren om Europa PLAT te krijgen en nu met Corona een vuile smerige schep erbovenop..INTERGREREN VAN AUTOCHTONENis dit.Waar is uwNaastenliefde burgerschap respect eerbied voor ouders en voorouders voor gedane inspanningen en offers.."
+      },
+      {
+        "_id": "su3zfgj4k",
+        "custom_id": 1271118025597599700,
+        "document": "#vrijheidBlack and White. Maar behalve dat blanken mensen niet wit zijn zijn zwarten niet zwart. En over racisme gesproken; Corona maakt geen onderscheid. Ga uitwaaien op het strand of trek het bos in. Be Free!"
+      },
+      {
+        "_id": "sw8gihhwr",
+        "custom_id": 1271019531260043300,
+        "document": "Geen stille tochten geen Protesten. Geen verontwaardiging.   #Duitsland weer in shock: Susanna (14) verkracht en vermoord door asielzoekers. Eén verdachte vlucht m... https://t.co/KhUwxxteEV via @HLN_BE"
+      },
+      {
+        "_id": "s1rlk6aak",
+        "custom_id": 1271032066772213800,
+        "document": "Competentie is de enige norm quota zijn absurd! Stel dat ik 4 blanken en 4 zwarten moét aannemen en dat na het testen blijkt dat de 8 besten 6 zwarten en 2 blanken zijn! Dan neem ik die 8 toch aan? O ja juist dàt zal wel mogen maar 6 blanken 2 zwarten? Dan ben ik een RACIST!"
+      },
+      {
+        "_id": "sfjkedce5",
+        "custom_id": 1271033697668608000,
+        "document": "@Climate_Darragh “The Dutch George Floyd”. Je bent gewoon een stemmingmaker. 3 weken geleden een homo stelletje mishandeld in amsterdam. Geen protesten geen halsema geen pietenclub. Waarom? https://t.co/nDXb0XdZBw"
+      },
+      {
+        "_id": "swqoyfs7v",
+        "custom_id": 1271026937335603200,
+        "document": "Wat een achterlijk volk in de #Bijlmer. Dom egoïstisch links-activisme legt zo de kiem voor een tweede golf coronadoden. https://t.co/JXnSXTfk0M"
+      },
+      {
+        "_id": "s8t7kd7wo",
+        "custom_id": 1271001510831435800,
+        "document": "Jammer dat onze regering bij voorbaat alle waarschuwingen in de wind slaat!!!Of misschien weer eerst het RIVM of zo?NTC die kunnen we ook de schuld geven als het misgegaan is...."
+      },
+      {
+        "_id": "s2ac8tizb",
+        "custom_id": 1270993741839585300,
+        "document": "Ik roep mensen op om te komen protesteren tegen de moorden op blanke boeren kom in verzet. Kom volgende week woensdag met duizenden naar de Dam mondkapjes hoeven niet meer Corona is met de noorderzon vertrokken. https://t.co/qEUYxRZUYn"
+      },
+      {
+        "_id": "sislr8ixr",
+        "custom_id": 1275467400725647400,
+        "document": "@hugodejonge @rivm Controleer ze ook op cda parasieten die de reet afvegen met onze partijen baudet en wilders en blanke cultuur."
+      },
+      {
+        "_id": "suj80k49g",
+        "custom_id": 1275462369112719400,
+        "document": "Politiek &amp; media kunnen steeds #Viruswaanzin de schuld geven van de grootschalige demonstratie van 21/06 maar die had zich na het verbod direct teruggetrokken. Misschien is het verstandiger te erkennen dat 15 meter vasthouden burgeropstanden in de hand werkt. #covid19nl https://t.co/ShCu36dssL"
+      },
+      {
+        "_id": "sg7zv5j41",
+        "custom_id": 1275463674128412700,
+        "document": "@jaapstronks @ContainmentNu @FTM_nl Ik denk dat het met veel onzekere factoren heeft te maken en vooral dat het RIVM voor een belangrijk deel een zwarte doos is. Graag wijs ik je nog even op dit artikel waarin een duidelijke strategie wordt benoemd en het is geen mitigatiestrategie https://t.co/eAFcwZDnNY"
+      },
+      {
+        "_id": "sbfh1yl5g",
+        "custom_id": 1275459281630965800,
+        "document": "@theoperaman04 @telegraaf Mensen mogen nog wel zelfdenken maar als je ideeën achterlijk zijn luistert niemand. Mensen die claimen dat Corona een hoax is bijvoorbeeld"
+      },
+      {
+        "_id": "s5sj1ean8",
+        "custom_id": 1275467216708931600,
+        "document": "Je moet het juist nu hebben van je scouting en wie flikker je eruit? De ENIGE scout die je hebt. Coronacrisis of niet dit is gewoon dom. #fctwente"
+      },
+      {
+        "_id": "sfgcc0phg",
+        "custom_id": 1275472315753664500,
+        "document": "@LodewijkA De miljarden vliegen alle kanten op.  Door Corona en tekort aan IC bedden + personeel moeten ze bij de voordeur kansarme ouderen weigeren.. sterf maar !!  Hoeveel extra IC bedden zijn er vanaf begin Maart bij gekomen ?  Wachtlijsten in gewone zorg waren er al. 2de golf onderweg?"
+      },
+      {
+        "_id": "sb6d5weci",
+        "custom_id": 1275472406275076000,
+        "document": "@UnpleasantTrut2 En ondertussen worden wij vastgezet en gemuilkorfd.... men wil zeker zijn dat er een 2e zware coronagokf komt die vooral oudere blanken zal treffen....🤮🤮🤮"
+      },
+      {
+        "_id": "seqca4nj9",
+        "custom_id": 1275301620037845000,
+        "document": "@terzaketv @Bart_DeWever Waar zijn wij in godsnaam mee bezig?Zijn er dan zulke testen in Marokko Turkije India of andere moslim of Aziatische landen?Worden blanken daar niet gediscrimineerd ? Altijd dat opgedrongen blank schuld gevoel.Ik wordt dat kotsmisselijk van."
+      },
+      {
+        "_id": "sugeh2cwv",
+        "custom_id": 1275229870201733000,
+        "document": "@NOS Volgende foute grapje: @markrutte is Hitler en heeft de corona virus zelf gemaakt.Het is de zoveelste foute grapje. Dit zien we als blanke rechtse mensen door de vingers. Toch @geertwilderspvv en @thierrybaudet 😉. Oh wacht dit gaan we juist steunen als rechtse mensen"
+      },
+      {
+        "_id": "slxbxqid2",
+        "custom_id": 1275389284506361900,
+        "document": "Dit moet ook ophouden. Ga gewoon lekker bij je dierbare naar binnen zonder bescherming. Lekker knuffelen. Je bent niet strafbaar als familielid. Was gewoon een achterlijk advies van @rivm #coronavirus #coronahoax https://t.co/s1r9WUDlqS"
+      },
+      {
+        "_id": "so8ez6f3r",
+        "custom_id": 1275393410007007200,
+        "document": "@POL_DenHaag @cydonian_ Bij elk evenement hebben we collegas die proberen op te gaan in de groepOok bij boerenprotesten waren er provocateurs van de politie aanwezig om geweld uit te lokkenWaarom zien we deze stillen nooit bij demonstraties van islamisten of BLM ?Mag het alleen bij blanken ?"
+      },
+      {
+        "_id": "senut34np",
+        "custom_id": 1275315842004246500,
+        "document": "Zou verstandig zijn als de politie nu eens zelf gaat nadenken ipv de opdrachten van dit achterlijke kabinet opvolgt. Er is geen gevaar voor Corona. Politietop lijkt echt gebrainwasht. Ze laten zich misbruiken en daarvan zijn ze zelf en de burger de dupe. STA OP. https://t.co/iwTYtdLpIL"
+      },
+      {
+        "_id": "s23nhoovd",
+        "custom_id": 1275527691840688000,
+        "document": "@ReMu33 Ja lekker weer achterlijk knuffelen tot het weer misgaat. Het virus is nog niet weg. #coronamaatregelen"
+      },
+      {
+        "_id": "smc0lvgpm",
+        "custom_id": 1275531968126554000,
+        "document": "En wat zei jelamlul van de #VVD #EU slaaf ? Geef ons jullie goud maar dan LENEN we jullie nog wel wat of zei je : verkoop je GOUD maar dan kun jezelf je problemen oplossen ? Of geen van 2-en en heb je hem lekker gepijpt ? Ik zie overigens weer gen 15 mtr afstand. #coronavirus"
+      },
+      {
+        "_id": "sa5bsx4v7",
+        "custom_id": 1275532217469591600,
+        "document": "@MinPres @EmmanuelMacron @EU_Commission En wat zei jelamlul van de #VVD #EU slaaf ? Geef ons jullie goud maar dan LENEN we jullie nog wel wat of zei je : verkoop je GOUD maar dan kun jezelf je problemen oplossen ? Of geen van 2-en en heb je hem lekker gepijpt ? Ik zie overigens weer gen 15 mtr afstand. #coronavirus"
+      },
+      {
+        "_id": "s2kil0lbs",
+        "custom_id": 1275522766712733700,
+        "document": "Politiek &amp; media kunnen steeds #Viruswaanzin de schuld geven van de grootschalige demonstratie van 21/06 maar die had zich na het verbod direct teruggetrokken. Misschien is t verstandiger te erkennen dat aan de 15 meter vasthouden burgeropstanden in de hand werkt. #covid19nl https://t.co/1pGGa7dGes"
+      },
+      {
+        "_id": "sx6w8gkfo",
+        "custom_id": 1275529384741556200,
+        "document": "Ze doen me intens beseffen dat pigment ras niet veel betekent en cultuur achtergrond familie opvoeding bijna alles. Wat je moeder...je geleerd hebben dat is...het belangrijkste...in hoeverre ze anderen de schuld geven van wat mis is int leven©️Suikerbastaard #ikleesthuis https://t.co/0tPtEjJnwa"
+      },
+      {
+        "_id": "s2ercw7qj",
+        "custom_id": 1275519600785068000,
+        "document": "@3Groter @MinVWS @rivm Builderberg? Welke proleet heeft dat geschreven? Het is Bilderberg. Zorg dat informatie klopt. Dan kunnen ze je nergens op aanvallen."
+      },
+      {
+        "_id": "sbb45cgmx",
+        "custom_id": 1275523638717005800,
+        "document": "Bedoeld wordt natuurlijk: als je een scheet laat en de ventilator staat aan kun je corona krijgen van je scheet dit is net zon achterlijke opmerking als dat advies"
+      },
+      {
+        "_id": "s97vrnu7n",
+        "custom_id": 1275526413551120400,
+        "document": "Ik ben een witmans ...  mijn broer is [net zoals dr @jangajentaan] getrouwd met een licht getinte mevrouw.In juridische zin ... wat willen de marxistische preziesen nu van ons ...? Dat ik die hartelijke vrouw van mijn broer ook corona-gerelateerd nooit meer ga kussen?"
+      },
+      {
+        "_id": "s6qmni7lp",
+        "custom_id": 1275198784004337700,
+        "document": "https://t.co/R9JXmvkcZbCorona nicht anders als Grippeviren"
+      },
+      {
+        "_id": "ss4x5suko",
+        "custom_id": 1275370392035758000,
+        "document": "@superjan Zijn toch vaak blanke meiden van rond de 20 die zeer extreme denkbeelden hebben. Ook bij de protesten in Amerika"
+      },
+      {
+        "_id": "soxmcv9zo",
+        "custom_id": 1275379459378557000,
+        "document": "Racisme is helaas weer in opkomst. Donkere mensen plegen m.i. vaker misdaden met racistisch motief jegens blanken dan andersom. Hierbij een klein draadje de  meeste voorbeelden zijn afkomstig uit de VS maar goed.. de protesten zijn ook overgewaaid naar NL."
+      },
+      {
+        "_id": "s05sceuk9",
+        "custom_id": 1275510115106513000,
+        "document": "@NUnl Als de politie (na de eindtijd van het protest red.) normale instructies geeft en oproept: En nu weg en mensen blijven zich daartegen verzetten en stellen zich gewelddadig op Misschien omdat de mensen de achterlijke corona instructies niet meer pikken??"
+      },
+      {
+        "_id": "sv6c8qxjr",
+        "custom_id": 1275517236325879800,
+        "document": "@realist1976 @MinPres Rutte is een homo en Macron óók. Alleen dat gezoen vind ik heel storend in corona tijd terwijl het volk elkaar niet een hand mag geven."
+      },
+      {
+        "_id": "six6v4yvm",
+        "custom_id": 1275487843348086800,
+        "document": "@TokkieTolk @NOS he tokkie  het is dus geen complot grote sukkel  net officieel geworden in de persconferentie maar je bent zo gericht op mensen afzeiken op komplotten omje zelf te beschermen met cognitieve dissonantie zie link PERS CONFERENTIE GEHOUDEN"
+      },
+      {
+        "_id": "s05bwuizg",
+        "custom_id": 1275476994738847700,
+        "document": "@WouterVanBesien @ImadeAnnouri Neen zeer zwak badend in de argumenten van de partijfiche vanGroen.  De perceptie bij de blanke man dat hij racistisch  IS er wel door jullie eenzijdig gedram. Wat gaan jullie daar tegen doen? Praktijktesten voor mensen met een 2de verblijf ih buitenland mag dat ook?"
+      },
+      {
+        "_id": "ss7xsf8cd",
+        "custom_id": 1275473804106567700,
+        "document": "De miljarden vliegen alle kanten op.  Door Corona en tekort aan IC bedden + personeel moeten ze bij de voordeur kansarme ouderen weigeren.. sterf maar !!  Hoeveel extra IC bedden zijn er vanaf begin Maart bij gekomen ?  Wachtlijsten in gewone zorg waren er al. 2de golf onderweg?"
+      },
+      {
+        "_id": "s2zvg606t",
+        "custom_id": 1275477606620635100,
+        "document": "@Powerboxie @PartijvdDieren Wat mij betreft horen sadisten als nertsenfokkers sowieso niet bij de mensheid. Het gaat alleen om de een achterlijk modeverschijnsel om vachtjes te dragen. Niets essentieels voor de maatschappij te bespeuren wat dit betreft. Verder is corona ook gevaarlijk voor de mens dus...."
+      },
+      {
+        "_id": "s62lzn5dy",
+        "custom_id": 1275446312687657000,
+        "document": "@wierdduk @telegraaf Mijn Indische tante van 70 werd in maart door ca. 10 marokkaanse tieners in de metro belaagd. Kk Corona Chinees moest oprotten muts van haar hoofd getrokken etc. Maar wat Johan Derksen zegt nee dat is pas echt erg. Gelukkig sprongen 2 vrouwen in de bres."
+      },
+      {
+        "_id": "sjbxdy098",
+        "custom_id": 1275207095902756900,
+        "document": "@madworldgary @MinPres I durf te wedden dat jullie rasidioten nu zeggen dat het niet bestaat en zodra ze positief testen de schuld geven aan 5G en/of Bill Gates.Oh ja het ‘De dam’ argument kan ook weg want daar waren ze tenminste nog zo slim om geen groepsknuffel te geven (En mondkapjes op te doen)"
+      },
+      {
+        "_id": "spwrde0rf",
+        "custom_id": 1275536479054450700,
+        "document": "Waarom loopt #Rutte zo achterlijk die #anderhalvemeter zou ondertussen voor hem en #Macron gewoon moeten zijn  #Op1"
+      },
+      {
+        "_id": "synmf1vdb",
+        "custom_id": 1275540685131743200,
+        "document": "@Koffiegeest Ja bij mijn nicht was het hoesten en niezen van de kinderen wel corona dus pas op."
+      },
+      {
+        "_id": "stxggnyqm",
+        "custom_id": 1275537783592026000,
+        "document": "@marjaibizalover @rivm Vooral bang blijven. Iedere corona dode is big business. Mensen worden vermoord door ze aan de beademing te leggen. Wakker worden"
+      },
+      {
+        "_id": "sjtn9p2ur",
+        "custom_id": 1275544967176499200,
+        "document": "@VVD En zoals @peterkwint het al beter zei de VVD geeft onze hardwerkende zorgverleners die teveel uren maakten ivm de coronacrisis nog een schop na door ze toeslagen af te nemen. Compleet achterlijk walgelijk geen woorden voor. https://t.co/fueRUVduGQ"
+      },
+      {
+        "_id": "sbnbzqqus",
+        "custom_id": 1275547976786739200,
+        "document": "@telegraaf Uhhm er werd niet gedemonstreerd tegen die flut Corona wat bij iedereen zijn neus uitkomt maar tegen dat communistische regime en die achterlijke wetten die er aan vast zitten... zit wel een heel verschil tussen hoor!! Rectificeer dat even...🙃"
+      },
+      {
+        "_id": "safnpccls",
+        "custom_id": 1275548963006025700,
+        "document": "@MaxiHolt @VdHerma @telegraaf Er spelen veel meer onderliggende redens mee. Zwarte piet de blanke man een schuld gevoel aanpraten Corona demonstraties mogen niet maar BLM wel. ( niet zij daar iets aan kunnen doen ) De aftakeling van onze cultuur. Mensen zoals Akwasi zitten altijd in een slachtofferrol."
+      },
+      {
+        "_id": "ssq1gpvtr",
+        "custom_id": 1275399816680558600,
+        "document": "@Cees_Critique @maanberg @zolverda @NOS @E_Hunyadi Ik heb niemand een asociale tokkie genoemd ik had het over asociale horken. U wilt gewoon lekker uw gang gaan alsof er helemaal niets aan de hand is en verwacht van een paar miljoen Nederlanders die wel in de risicogroep zitten dat ze wel thuisblijven omdat u wilt funshoppen."
+      },
+      {
+        "_id": "sdfpz813a",
+        "custom_id": 1275404684598096000,
+        "document": "@detailhandel Winkeliers breken het zelf af. Stickers met belijningen voor 1.5 m en achterlijke oproepen is niet verplicht!  Ondernemen betekent lef en je eigen gezicht tonen voor je klanten en niet voor de overheid.  Elke winkelier die een schaap blijft met of zonder corona gaat failliet"
+      },
+      {
+        "_id": "sad1oeq3m",
+        "custom_id": 1275412769291014100,
+        "document": "@volkskrant @julienalt @2eKamertweets @Corona_NL @MinPresWelk  opgeklopte kloof  bedreigt Nederland?? ik ben zelf in augustus al 60 jaar  allochtoon in nederland eerst nederlands onderdaan mijn ouders en voorouders zijn van  slavenkomaf en Indiaans(oorspronkelijke bewoners van suriname)"
+      },
+      {
+        "_id": "suxohv1nz",
+        "custom_id": 1275427261362159600,
+        "document": "@annettevanbolhu En indertussen zuigt die kiwi reus nog wat zwarten  in Italië uit.. Maar hoera Veronica is weg.Dom mens"
+      },
+      {
+        "_id": "s1k08tc1h",
+        "custom_id": 1275427936884199400,
+        "document": "@annettevanbolhu Ondertussen zuigt  die kiwi reus in Italië nog wat zwarten uit..maar hell wat maken die uit.Want Veronica inside is belangrijkerJij bent echt niet snugger."
+      },
+      {
+        "_id": "so2e8q29t",
+        "custom_id": 1275418462853177300,
+        "document": "Als je geen achterlijke coronaspoedwet wilt! Niet stemmen op de @hugodejonge ! Als deze wet er komt mensen big brother is watching you doet mij denken aan de WOll verraders!!! Jonge: coronaspoedwet op 1 juli niet haalbaar https://t.co/szePuaZIzc"
+      },
+      {
+        "_id": "s0b6ul7ch",
+        "custom_id": 1275440363847598000,
+        "document": "@collinsteven Nou ik vind het enorm achterlijk beledigend en kleinerend.Veel collegas hebben behoefte aan rust willen wandelen in Spaanse Pyreneeën of in Italië. En nu wordt je gedwongen om tussen 17 miljoen Nederlanders en 1 miljoen Duitsers vakantie te houden ..Welke rust ???"
+      },
+      {
+        "_id": "scttcd41j",
+        "custom_id": 1275431506006159400,
+        "document": "@PietervVol Het hypocriete is dat de politie opgedragen krijgt niet in te grijpen bij BLM demos maar juist hard in te grijpen bij pro vrijheid protesten waar hfdz blanken zijn..hoezo nog sympathie kunnen opbrengen voor @politie ??"
+      },
+      {
+        "_id": "snxmdmk6b",
+        "custom_id": 1275433553770221600,
+        "document": "Hoe wordt je als mens steeds slaaf van de overheid in deze tijd. Dit wordt door onze strot geduwd:- 5G- Vaccineren- Donor wet- Basis inkomen- Coronawet - inclusief paspoort vaccineren- 100% CashlessDit is niet volledig ... aanvullen maar ....."
+      },
+      {
+        "_id": "s8htlbnrh",
+        "custom_id": 1275335275158405000,
+        "document": "@GerhardVerwox De blanken in t racisme debat zijn wat de bejaarden zijn in de corona crisis: de pineut."
+      },
+      {
+        "_id": "sv130l3al",
+        "custom_id": 1275323350273982500,
+        "document": "Nick Kyrgios neemt Novak Djokovic op de korrel: Wat een debiel idee om in deze tijden een exhibititoernooi te organiseren. Corona is geen grap https://t.co/HHiyDbHRPl https://t.co/uOV3zdhTyD"
+      },
+      {
+        "_id": "su3nzaksm",
+        "custom_id": 1275263645111509000,
+        "document": "Marion KoopmansDierenarts en gepromoveerd op onderzoek naar virusoverdracht bij koeien!Zij is een invloedrijke adviseuze bij het RIVM en de WHO(Weet je waar die achterlijke ophokplicht vandaan komt) https://t.co/6Rqasap7vC"
+      },
+      {
+        "_id": "shmz87xee",
+        "custom_id": 1275261256488964000,
+        "document": "Marion KoopmansDierenarts en gepromoveerd op virusoverdracht bij koeien Zij is een invloedrijke adviseuze bij het RIVM en de WHO!Weet je waar die achterlijke ophokplicht vandaan komt! https://t.co/rWi1CTTeWd"
+      },
+      {
+        "_id": "s1ly7v1ip",
+        "custom_id": 1275261430514757600,
+        "document": "Marion KoopmansDierenarts en gepromoveerd op virusoverdracht bij koeien Zij is een invloedrijke adviseuze bij het RIVM en de WHO!Weet je waar die achterlijke ophokplicht vandaan komt https://t.co/4DOcYzvvSP"
+      },
+      {
+        "_id": "s6focoj13",
+        "custom_id": 1273992095888478200,
+        "document": "@telegraaf Hallo @KHN wat denken jullie nou?Dat dit kabinet waar men met zon achterlijke #coronawet komt überhaubt luistert??Je kan beter tegen een boom aan praten.Zo lang je mee buigt met dit #Partijkartel (zie BLM) mag alles maar zodra je eisen hebt zijn ze selectief doof"
+      },
+      {
+        "_id": "sawuaft7l",
+        "custom_id": 1273847518040862700,
+        "document": "HET voorbeeld van vennootschappen waar de rechten van de eigenaars reeds jaren worden verkracht de manier waarop COVID-19 werd misbruikt om nu ook nog het vraagrecht te miskennen blijft totaal onbehandeld!?!https://t.co/vQWQFryvE9"
+      },
+      {
+        "_id": "s1bhn7raq",
+        "custom_id": 1273856013179986000,
+        "document": "@wierdduk Duizenden dakloos groei armoede werkloosheid naar ongekende hoogte ontelbare problemen ten gevolge van corona en dan lees ik wat deze muts zegt. 😑"
+      },
+      {
+        "_id": "sejijji0f",
+        "custom_id": 1273857936536866800,
+        "document": "@DieTukkerfries Nu #Corona uitgewerkt is en blanken zich meer en meer bewust worden van de oorlog die hen verklaard is dmv #blacklivesmatter moet je niet verbaasd zijn als er meer van deze #boomer haat berichten komen zodat generaties blanken weer tegen elkaar uitgespeeld worden."
+      },
+      {
+        "_id": "syihe7p1o",
+        "custom_id": 1273858322454757400,
+        "document": "@rivm Er zijn 71 covid-19 doden de rest zijn overleden aan andere ziektes. RIVMwant jullie zijn de huichelaars van Hugo de vaccin freak en hij is de hoer van WHOBill GatesVN en natuurlijk de NWOJe zou er daar voor werken om je eigen volk te verradenenge volk dat jullie zijn."
+      },
+      {
+        "_id": "sfva5idtr",
+        "custom_id": 1273858540076179500,
+        "document": "Nu #Corona uitgewerkt is en blanken zich meer en meer bewust worden van de oorlog die hen verklaard is dmv #blacklivesmatter  moet je niet verbaasd zijn als er meer van deze #boomer haat berichten komen zodat generaties blanken weer tegen elkaar uitgespeeld worden."
+      },
+      {
+        "_id": "sno6tps68",
+        "custom_id": 1274098771203326000,
+        "document": "@jochemwijma2 Angela de Jong is een domme trut en had net als Beau geen klote verstand van het onderwerp. Van haar kun je dat verwachten van Beau mag je verwachten dat hij zich een beetje in het onderwerp verdiept. Journalistiek is dood. RIVM zit er keer op keer naast en krijgt nul kritiek."
+      },
+      {
+        "_id": "s41peflak",
+        "custom_id": 1274095687915966500,
+        "document": "Korte samenvatting van @op1npo alle blanke Nederlanders zijn rascistisch de islamistische terreurcel is uit gelokt door justitie en  de 2e corona uitbraak in Peking is afkomstig uit Europa! #linksemedia doe mij maar @veronicainside"
+      },
+      {
+        "_id": "sby5wa7pf",
+        "custom_id": 1273973357243961300,
+        "document": "Ik ben ziek van covid-19..Ik ben ziek van zwart vs. wit. Ik ben ziek van Democraten vs. Republikeinen. Ik ben ziek van homo vs hetero christenen vs andere overtuigingen Veganisten vs… https://t.co/tfyWDTTSeq"
+      },
+      {
+        "_id": "sze7p5jpk",
+        "custom_id": 1273966420024574000,
+        "document": "In Twente nu al 3 weken geen corona besmettingen ! Kappen met dat 1.5 meter gedoe ! We zijn hier niet achterlijk ! We willen deze zomer in vrijheid genieten gewoon normaal net als elke ander zomer ! Kappen dus Hugo &amp; Mark alias Peppie &amp; Kokkie de 2 tamme eikels !"
+      },
+      {
+        "_id": "se4j3wrqi",
+        "custom_id": 1273969815313698800,
+        "document": "Met duizenden in de vertrekhal op Schiphol is geen probleem maar buiten met meer dan twee mensen op het terras zitten is levensgevaarlijk. Wie gelooft dit nog? En als het aantal besmettingen toeneemt zeker alle burgers de schuld geven en versoepelingen terugdraaien? #coronawet"
+      },
+      {
+        "_id": "syk8ni0x7",
+        "custom_id": 1273953634334711800,
+        "document": "Keer op keer zien we hoe negers een voorkeursbehandeling krijgen.Zij mogen wel hun judeo-communistische anti-blanke BLM evenementen houden waar de 1.5 meter niet geldt terwijl blanken niet tegen corona-maatregelen mogen demonstreren"
+      },
+      {
+        "_id": "s0xdjmgdn",
+        "custom_id": 1273955117247729700,
+        "document": "Ik ga stuk al die tokkies die zeiken dat het protest op het #Malieveld verboden wordt als jullie wel waren gegaan mogen jullie ook niet zeiken wanneer je corona krijgt. Eigen schuld. #viruswaanzin"
+      },
+      {
+        "_id": "sd1gwryhs",
+        "custom_id": 1274024917193932800,
+        "document": "@SchreursYannick @StephaninAdam @VirgilvDijk Daar zitten ook negers die tegen rascisme zijn.. ik adviseer Italië"
+      },
+      {
+        "_id": "s1ac6zqbj",
+        "custom_id": 1274029808394080300,
+        "document": "@martin66schrav @NOS Omdat  alleen zwarten het recht hebben om.zich uit te spreken via protesten"
+      },
+      {
+        "_id": "soq7n9k64",
+        "custom_id": 1274026300643172400,
+        "document": "@moeva18 Zo ben ik half zweeds en half noors. Hier in Zweden zijn ook protesten van BLM. Waarom moeten zweden lastig gevallen worden met slavernijverleden door blanke nederlanders?"
+      },
+      {
+        "_id": "smwie7ez6",
+        "custom_id": 1274027987202117600,
+        "document": "@moeva18 Zo ben ik half zweeds en half noors. Hier in Zweden zijn ook protesten van BLM. Waarom moeten zweden lastig gevallen worden met slavernijverleden van ongeveer 200 jaar geleden door een kleine fractie van blanke nederlanders?"
+      },
+      {
+        "_id": "sz3aerxjr",
+        "custom_id": 1274030374398693400,
+        "document": "En het demonstratierecht was een groot goed in Nederland...@minpres Rutte @VVD Met duizenden sLinkse tokkies demonstreren om de Dam is geen probleem...maar met duizenden demonstreren tegen alle corona overheidsmaatregelen wordt verboden..#viruswaanzin https://t.co/Px7vxntq44"
+      },
+      {
+        "_id": "sr49ogoxb",
+        "custom_id": 1273927063792050200,
+        "document": "@edwinelgers Oh maar die gaat dan gewoon mee hoor..Die is vliegen gewent hij heeft al het wat gezien toen we nog shows met hem liep weet precies waar ik kan logeren met hem haha heb dan een nicht in Malaga wonen en Italië vrienden haha"
+      },
+      {
+        "_id": "s9krztbwn",
+        "custom_id": 1273926033109127200,
+        "document": "@BeedeGee @Bas76331326 @guidoweijers @viruswaanzin Eenzijdige berichtgeving! Ik zie nergens voorbij komen dat er geweld is tegen blanken op de MSM alles is of BLM of Corona ander nieuws mag en kan niet hier heb ik het over. Maar blijf jij lekker in je bubbel doe ik dat ook. Fijne dag nog."
+      },
+      {
+        "_id": "sin7bwomz",
+        "custom_id": 1273930006431924200,
+        "document": "@HammersteinO Die chocolade lul het is een blanke dus dit mag zag zijn omzet al kelderen door corona dus heeft dit nodig om overheid te vragen voor bedrijfsteun. Want zijn chocolade is een deugmerk."
+      },
+      {
+        "_id": "sgmrk4iac",
+        "custom_id": 1273930454031360000,
+        "document": "@moeva18 Het is een agenda die gebruikt wordt mensen!! Corona- BLM - kozp - Racisme  wij gewone hardwerkende mensen worden monddood gemaakt..we leven in een dictatuur straks een spuit in   Je flikker (vaccin??) en we zijn helemaal zombies!!"
+      },
+      {
+        "_id": "sshye449f",
+        "custom_id": 1273898672179339300,
+        "document": "Hoe hypocriet is een @albertheijn ? Zendtijd stoppen rondom @veronicainside maar wel sinaasappels meloenen en producten verkopen uit Italië waar mensen nog steeds als slaaf behandeld worden! Zie hier: https://t.co/G5K5z9foPV"
+      },
+      {
+        "_id": "sgzcyr7mn",
+        "custom_id": 1273895955750883300,
+        "document": "Covid-19 schijnt ook racistisch te zijn. Dat zou te maken kunnen hebbben met genetische verschillen tussen blanke en zwarte mensen."
+      },
+      {
+        "_id": "squogu318",
+        "custom_id": 1273891602348544000,
+        "document": "@roelsint @StevenJagt75 Dat. Protesten zijn vaak terecht. En daar mag best eens een standbeeld bij sneuvelen. Maar het gevaar is een machtsverschuiving van kansarme witte naar kansrijke witte klassen die tegelijkertijd plaatsvindt."
+      },
+      {
+        "_id": "sam47o87t",
+        "custom_id": 1273893166891098000,
+        "document": "@hbvl Doet @stadGenk ook praktijktesten naar haar eigen veelbestoefte klimaatdoelstellingen? Die o zo belangijke SDGs?Nee dat doet Genk niet.Dat hebben wij gedaan.En wat blijkt?Op1 namiddag verkracht Genk -bewust- 5 van haar 17 klimaatdoelen:https://t.co/4VMXPO6eBK"
+      },
+      {
+        "_id": "sudhntv1v",
+        "custom_id": 1273889638780977200,
+        "document": "Bij @WNLVandaag over corona demo:We hebben toch allemaal gekozen voor 15m?Nou dat weet ik nog zo net nietOnzin de 15m is GOEDwauw als er zelfs bij #WNL KEIHARD voor 15m gepleit wordt waar moet je dan als tokkie nog naar toe? Arme tokkies."
+      },
+      {
+        "_id": "stebodtbr",
+        "custom_id": 1273894238825177000,
+        "document": "Spoedwet in strijd met de eed zegt Koninklijke Marechaussee agent https://t.co/op3CiPq9Vd via @YouTubeNog meer mensen tegen deze achterlijke Corona spoedwet!"
+      },
+      {
+        "_id": "srthtesdb",
+        "custom_id": 1273899612504539100,
+        "document": "@NOS Dit heeft dan ook niet met demonstreren te maken. Meer een anti-coronamaatregelen festival voor complotgekkies tokkies en andere idioten die de volksgezondheid in gevaar brengen. Prima besluit van de gemeente."
+      },
+      {
+        "_id": "s0vkur8oa",
+        "custom_id": 1273900012435579000,
+        "document": "De Jonge: corona-spoedwet op 1 juli niet haalbaar https://t.co/h6lb7bcjYP Deze achterlijke wet mag er absoluut niet komen!! Teken de petitie tegen deze wet: https://t.co/ioGn8cf4Eb"
+      },
+      {
+        "_id": "sr7zs8iea",
+        "custom_id": 1273903245971402800,
+        "document": "@KuijtWijntje Maar die corona maatregelen treffen ook mensen van kleur😯 je weet wel mensen die er toe doen.whos lives matter!?black lives matter!Ik zou me kapot schamen als blanken waar dan ook zich zo zouden gedragen🥺"
+      },
+      {
+        "_id": "szhp8aztt",
+        "custom_id": 1273942178616787000,
+        "document": "@OlifaNT Hmja.Dat die Willem Engel een ergerniswekkende debiel is doet natuurlijk nix af aan het feit dat het RIVM utterly incompetent is.En dat die spoedwet uiterst eng is.Zul je zien wordt die demo zondag door de MSM weergegeven als een parade van 5g- en aanverwante gekkies."
+      },
+      {
+        "_id": "sz8lp4njn",
+        "custom_id": 1273934260261568500,
+        "document": "We leefden in een democratie? Nu mag de demonstratie betreft de #Coronawet niet doorgaan want zogenaamd voor “je eigen veiligheid”. Waarom was dat dan niet het geval met die achterlijke #BlackLivesMatter protesten? Meten met 2 maten. #Malieveld #viruswaanzin #dictatuur #1984"
+      },
+      {
+        "_id": "scur062bl",
+        "custom_id": 1273934575807455200,
+        "document": "We leefden in een democratie? Nu mag de demonstratie betreft de #Coronawet niet doorgaan want zogenaamd voor “je eigen veiligheid”. Waarom was dat dan niet het geval met die achterlijke #BlackLivesMatter  protesten? Meten met 2 maten. #Malieveld #viruswaanzin #dictatuur #1984"
+      },
+      {
+        "_id": "ssnuqad78",
+        "custom_id": 1273779257332899800,
+        "document": "@ADnl Het waren ook geen 3 zwarten die ik met polio zag strompelen de laatste 3 jaar in rotterdam @rivm"
+      },
+      {
+        "_id": "snut7z01g",
+        "custom_id": 1273911717756616700,
+        "document": "de lange lat voor het corona demo tokkie volk#malieveld"
+      },
+      {
+        "_id": "s2u3zaixd",
+        "custom_id": 1273913514231500800,
+        "document": "En ik zeg niet dat het bij iedereen slechte intenties zijn maar net zoals nu sommigen pas bij de BLM protesten komen met buiten proportioneel geweld tegen blanken komen maar verder er nooit aandacht aan besteden gebeurt dit ook vaak met het mannen besnijdenis argument."
+      },
+      {
+        "_id": "s0n75085l",
+        "custom_id": 1273913655747383300,
+        "document": "En ik zeg niet dat het bij iedereen slechte intenties zijn maar net zoals nu sommigen pas bij de BLM protesten komen met buiten proportioneel geweld tegen blanken maar verder er nooit aandacht aan besteden gebeurt dit ook vaak met het mannen besnijdenis argument."
+      },
+      {
+        "_id": "sjz6bt6xk",
+        "custom_id": 1273909595497472000,
+        "document": "President Macron: Nederland zet toekomst Europa op het spel https://t.co/3iCuTygtdX Macron moet zijn eigen volk eens aantrappen. Luie flikkers die weer door ons gevoed moeten worden. Fuck you Macron dop je eigen boontjes maar Onze zakken zijn leeg door onze Corona."
+      },
+      {
+        "_id": "slspwtbve",
+        "custom_id": 1273913532246110200,
+        "document": "Is alleen mijn vader zo? Ik vroeg hem gisteren of ik naar stad mocht gaan met mijn neven en nicht en hij werd boos en zei “overal is al slecht aan het lopen door corona en jij zegt nog stad” en dan smorgens laat hij geld achter voor stad..."
+      },
+      {
+        "_id": "sbm0nlwkg",
+        "custom_id": 1274013348267507700,
+        "document": "@Pog3ko1 @TheEdgyVeggie1 Geen protesten voor deze blanke man?👹🗣👱‍♂️"
+      },
+      {
+        "_id": "s3y6at6z9",
+        "custom_id": 1274023069183611000,
+        "document": "@HLN_BE Wat een schande? Doe eerst een echte corona commissie achterlijke idioten."
+      },
+      {
+        "_id": "szs7o54cb",
+        "custom_id": 1274009244782780400,
+        "document": "@smits_arnoud @Jan_Slagter Denk eerder dat de maat gewoon vol is. Kijk maar naar de BLM-protesten en het afnemen van het begrip voor ZP. Mensen zijn er klaar mee zo simpel is het eigenlijk. En dat iemand tot nu toe wegkwam met achterlijk racistisch gelul biedt dus geen garantie meer voor de toekomst."
+      },
+      {
+        "_id": "swuajmph6",
+        "custom_id": 1274016610475552800,
+        "document": "@jc06776163 @StrakSlap @DekritischeNed En jij zult vast 1 van die tokkies zijn die commentaar hebben op de BLM-protesten maar die wel het bewijs zijn dat racisme wel degelijk bestaat binnen Nederland.Ik wens je veel wijsheid toe want die heb je hard nodig."
+      },
+      {
+        "_id": "sweh92mpi",
+        "custom_id": 1274017638939844600,
+        "document": "Wat een stelletje neanderthalers... achterlijk volk... waar zijn de protesten van al die deugers? Kijken allemaal weg importeren dat barbarisme liever....... en wat erg voor dat kind!!! En daar zijn onze jongens voor naar Afghanistan gegaan en enkele voor gestorven..."
+      },
+      {
+        "_id": "su4khx4bi",
+        "custom_id": 1274013142025154600,
+        "document": "@ronfresen @Fl_TegenGeluid @hugodejonge Zodat hij alles recht kan praten wat krom is? Enige kritische vragen? Wat gaat hij doen als al die zieke mensen weer hierheen komen? Als niet corona dan toch minstens huidkanker en 3e graads brandwonden op de tere blanke huidjes?"
+      },
+      {
+        "_id": "s9539f349",
+        "custom_id": 1274014302387810300,
+        "document": "Hugo de Jonge zegt dat de coronawet nodig zal zijn todat er een werkend vaccin is. Flikker ff lekker op met je achterlijk gedoe. #Coronawet #spoedwetNEE"
+      },
+      {
+        "_id": "sr8cn6hmb",
+        "custom_id": 1274014453328228400,
+        "document": "Hugo de Jonge zegt dat de coronawet nodig zal zijn totdat er een werkend vaccin is. Flikker ff lekker op met je achterlijk gedoe. #Coronawet #spoedwetNEE"
+      },
+      {
+        "_id": "smzdlhbum",
+        "custom_id": 1274015759480631300,
+        "document": "@telegraaf Voor Corona zijn we al lang niet meer bang. Maar wat er voor gespuis in het land rondloopt? Je bent als blanke niet meer veilig zeker als je ook nog een mening hebt."
+      },
+      {
+        "_id": "shn2zkrbt",
+        "custom_id": 1274022961939390500,
+        "document": "@thierrybaudet Uiterst kwalijk. Zonder t geld van deze export en de aankomende recessie vanwege de achterlijke corona maatregelen. De vele import van kansloze en dan nog het klimaat. Nu maar hopen dat Afrika ook n giro 555 voor Nederland straks heeft. We zullen t nog nodig hebben😂😂😂😂"
+      },
+      {
+        "_id": "saexieccg",
+        "custom_id": 1274062637555486700,
+        "document": "#fuckcorona dit had mijn kech zomer moeten zijn :("
+      },
+      {
+        "_id": "s9931ji64",
+        "custom_id": 1274002848389501000,
+        "document": "Waarom Nederlandse complotdenkers Bill Gates de schuld geven van corona https://t.co/WgYwgsTYyi via @NUnl"
+      },
+      {
+        "_id": "sza6byuki",
+        "custom_id": 1273881722027991000,
+        "document": "@JohanRemkes eindelijk een moment om ons uit te spreken tegen het walgelijke kabinet en hun achterlijke wetsvoorstel #Covid_19 ... Wordt deze verboden door een stel schijtbakken ... Vooral de mensen monddood maken dat is het enige waar jullie goed in zijn ..."
+      },
+      {
+        "_id": "sqfn2v2sj",
+        "custom_id": 1273885619828162600,
+        "document": "@ferdgrapperhaus Jullie zijn allebij achterlijk en  levensgevaarlijk blind voor wat wetenschap behoort te zijn en laten zonder visie leunend op bange bureaucraten van het rivm ons land naar de klote gaan. Je tweet getuigd van narcisme en gebrek aan reflectie. Youre both fired!!!!!!"
+      },
+      {
+        "_id": "snalnkmam",
+        "custom_id": 1273882669001126000,
+        "document": "ABSOLUUT BESCHAMEND! BLM demonstraties zijn prima maar tegen achterlijke Corona maatregelen is verboden? Allemaal politieke spelletjes. | Den Haag verbiedt demonstratie tegen coronabeperkingen | https://t.co/04XTClwqDi"
+      },
+      {
+        "_id": "s3oz1bu2e",
+        "custom_id": 1273882984735805400,
+        "document": "Ja hoor #BlackLivesMatterNL mag demonstreren  Nlers bedreigen  zijn een gevaar voor de volksgezondheid maar als blanke  bezorgde Nederlanders opstaan is het verbodenDen Haag verbiedt demonstratie tegen coronabeperkingen  via @Telegraaf https://t.co/kOiW5stcoG"
+      },
+      {
+        "_id": "su9i464tp",
+        "custom_id": 1273885778595262500,
+        "document": "RACISME#BlackLivesMatterNL mag demonstreren  Nlers bedreigen  zijn een gevaar voor de volksgezondheid maar als blanke  bezorgde Nederlanders opstaan is het verbodenDen Haag verbiedt demonstratie tegen coronabeperkingen  via @Telegraaf"
+      },
+      {
+        "_id": "sbktf1npk",
+        "custom_id": 1274070273361358800,
+        "document": "let wel hè 1 besmetting niet 1 dode - er is NIETS gebeurd na Damdemo dus #stopanderhalvemeter #stoplockdown #stopspoedwet #stopnoodwet stop achterlijke #mondkapjes stop met onze horeca scholen concerten onze samenleving kapot te maken @viruswaanzin @robertjensen"
+      },
+      {
+        "_id": "sogo9szxw",
+        "custom_id": 1274071642793283600,
+        "document": "Als je beelden vernield of coronaregels schend in Adam ben je een held. Iemand die een andere mening heeft is gelijk een tokkie 🤨. Wie is nu een racist 🤔?"
+      },
+      {
+        "_id": "syq7g1xc7",
+        "custom_id": 1274084487719202800,
+        "document": "@NOS Je kan heel veel van Trump vinden maar je kan echt niet zeggen dat hij het slecht gedaan heeft voor de zwarte gemeenschap.De first step act bijvoorbeeld en voor de Corona crisis de laagste werkloosheidscijfers voor zwarten ooit."
+      },
+      {
+        "_id": "s0opyf0u5",
+        "custom_id": 1273292723013984300,
+        "document": "@1Benanka @Michel1401 Een debiel doet wat ie zegt. Schoonmaakmiddel tegen corona. Jij: hadden wij maar zon debiel."
+      },
+      {
+        "_id": "sv3q6z9jk",
+        "custom_id": 1273299214613782500,
+        "document": "@lightfall_lucie @Elleenpvv @telegraaf Stem  PVV  in godsnaam  want hier worden de hard werkende WEER gestraftWeg pensioengeld Ons belastinggeld gaat naar Italië omdat ze geen belasting betalenEn wij voor die k.u.t.zooi maar werkEn geen medische zorg? Hoe een achterlijk land Laat ze allemaal branden in de hell!"
+      },
+      {
+        "_id": "so5qlh7pn",
+        "custom_id": 1273292977889259500,
+        "document": "@Tim0106 @VevaDan We raden hier docenten en proffen ook altijd een korte dry run aan (om de technologie te testen). Zorg dat je zelf water bij de hand hebt (en flikker het niet over uw keyboard ;-)). Maak een opname als backup (afhankelijk van onderwerp) om naderhand ter beschikking te stellen."
+      },
+      {
+        "_id": "sgqpg1yl8",
+        "custom_id": 1273297091591311400,
+        "document": "@Agent_327 Ook zon eikel bij mij in de straat met een veel te groot penissubstituut die het voor corona al nodig vond om half zeven s ochtends luid dat kreng te starten en door het virus niet gestopt is."
+      },
+      {
+        "_id": "sg056ee5b",
+        "custom_id": 1273240030606250000,
+        "document": "@ShashiRoopram Hou goed in de gaten dat ieder individu heden ten dage een slaaf is van het grootkapitaal. Zie klimaat zie energie zie coronamaatregelen zie banken zie EU zie internationale handelsverdragen. #hetiswathetis"
+      },
+      {
+        "_id": "szn0w4r9r",
+        "custom_id": 1273143689968259000,
+        "document": "@PeterRdeV Heel raar dat ze nu pas in actie komen omdat anders de zaak verjaard. Straks gaan ze nog de schuld geven aan corona wanneer de zaak niet opgelost is voordat het verjaard. Dit terwijl het al een zaak uit 1985 is🤦🏻‍♀️. Komt dit in Nederland ook voor @PeterRdeV ?"
+      },
+      {
+        "_id": "s6uib3rqf",
+        "custom_id": 1273130475654123500,
+        "document": "Hoe slim kunnen sommige mensen zijn..Firma list en bedrog bepaald Uw vrijheid ..er is buiten geen vuiltje/virus in de lucht dus stop die achterlijke 1.5 meter. #COVIDー19 #COVID #Coronavirusnl https://t.co/pTMMvEqPvV"
+      },
+      {
+        "_id": "s398p4gjo",
+        "custom_id": 1273324817048010800,
+        "document": "@vvbasvv Al die mongolen die het over een vaccin hebben. Spuit het lekker in je. Het is bewezen dat een vaccin minimaal 10 a 20 jaar getest MOET worden. Als je dood wil ga je gang. Als je geloofd in al die corona bullshit ben je echt een leeghoofd. Word wakker man"
+      },
+      {
+        "_id": "si7pqe3br",
+        "custom_id": 1273362968038772700,
+        "document": "11000 mink to be killed at Danish farm due to coronavirus outbreak https://t.co/135QzTyIUrWel meteen gedood. Daar hebben wij hier 5 weken over ‘nagedacht’.In Denemarken zijn ~2000 nertsenfarms 🤢"
+      },
+      {
+        "_id": "sml0d57ck",
+        "custom_id": 1273374066972463000,
+        "document": "Moeten we Scandinavië(vikingen)en Italië(romeinen) ook niet om een excuus vragen ivm slavernij? 🤔 En wat was de status van een lijfeigene? Toch ook een slaaf alleen andere benaming"
+      },
+      {
+        "_id": "smr9juryj",
+        "custom_id": 1273361717507088400,
+        "document": "BLM-rellen USA anno nu Geen mens heeft interesse in dode blanke gele bruine zwarte.Af en toe om te testen hoe sterk tegenstander is Opgejut door poppenspeler.Verder niksMaar we zijn weer jaren terug gezet Stop subsidieshttps://t.co/dDluki0CBT via @veren_of_lood"
+      },
+      {
+        "_id": "ss16or3ah",
+        "custom_id": 1273255662953345000,
+        "document": "@LoorSchrijft En dan nog als het zo is krijgen wij het niet te weten.Valt het niet op dat RIVM alleen met cijfers komt en niet met statusman of vrouw en allochtoon of andere cultuur geen brandhaarden waar het virus meest hangt? Alleen adviesen en maatregelen maar geen concrete aanwijzingen."
+      },
+      {
+        "_id": "s89wbm7hl",
+        "custom_id": 1273351223748542500,
+        "document": "@Poempieloempie Het coronavirus leidt tot een piek van narcisme bij de blanke ehh...sorry...witte bevolking."
+      },
+      {
+        "_id": "sdtvedv1x",
+        "custom_id": 1273357265219850200,
+        "document": "@geertwilderspvv Rutte grote klootzak je sleept het hele land de afgrond in met je achterlijke corona beleid opsodemieteren"
+      },
+      {
+        "_id": "s606sfaxd",
+        "custom_id": 1273348257415139300,
+        "document": "Knielende voetballers tegen racisme minuut stilte voor Coronaslachtoffers bij voetbal. Corona bij de ene talkshow Instagram blanke vrouwen naar zwarte vrouwen bij de andere talkshow. Mensen zijn volslagen gek geworden en we moeten het allemaal zien"
+      },
+      {
+        "_id": "sr12ioa4e",
+        "custom_id": 1273348713633718300,
+        "document": "@Outlaw__Mike Congo-commissie = schuld v blanke BelgCorona-commissie = schuld v onbekwame politiekDus Congo-commissie belangrijker!Ze halen wezen nr hier uit migratiekampen want kinderen zijn niet verantw v misdaden v oudersMaar inzake Congo verleden zijn wij dat wel?!Mis ik iets??"
+      },
+      {
+        "_id": "s1s87cdci",
+        "custom_id": 1273354025887563800,
+        "document": "@debroervanroos Danny heeft wel degelijk racisme meegemaakt. Namelijk als blanke vooral geen uitgesproken mening hebben over gekleurde mensen want dat is racisme. Geweld verwerpen niets mis mee toch? Corona besmettings angst vanwege demonstraties? Ook logisch. Tim is een beetje in de war."
+      },
+      {
+        "_id": "ssvlj82fv",
+        "custom_id": 1273356776180789200,
+        "document": "Corona-vaccin alleen voor blanken ?zit er dik inieder ras reageert anders op een vaccin  is ingewikkeld en de farma-industrie verdient niks aan arme mensen https://t.co/byqfQbaWfT https://t.co/22Tusnfbnu"
+      },
+      {
+        "_id": "s6ogwmnaj",
+        "custom_id": 1273176739418640400,
+        "document": "@ReicheltMiriam Ging nicht wegen Corona."
+      },
+      {
+        "_id": "sjcvep33a",
+        "custom_id": 1273169911330869200,
+        "document": "Het coronavirus slaat keihard toe in Brazilië. Correspondent @MarcBessems sprak met Ana. Haar moeder en nicht kregen tegelijk coronaklachten. De nicht kon naar een duurdere particuliere kliniek. Anas moeder moest naar een publiek ziekenhuis. Een reportage in het #r1jn. https://t.co/Hrg1UBWYh7"
+      },
+      {
+        "_id": "svdhp5prc",
+        "custom_id": 1273172544586162200,
+        "document": "@Repelsteeltje21 Ik ben bang dat we op dit moment enkel nog maar aan het begin staan van wat komen gaat. Corona en de rassenrellen zijn een mooi moment voor revolutie. Alleen gaat deze revolutie voornamelijk ten koste van de blanke westerse burger."
+      },
+      {
+        "_id": "svfrjzis3",
+        "custom_id": 1273159093394509800,
+        "document": "Mensen zich laten afleiden door rechts vs links autochtoon vs allochtoon rijk vs arm het westen vs de rest enz. De gevestigde macht lacht zich rot. Zij blijven hierdoor ongezien en drukken op de achtergrond hun agendas door.#coronavirus #China #Europa #stopdestaatsgreep"
+      },
+      {
+        "_id": "s8iaohc3l",
+        "custom_id": 1273020520141914000,
+        "document": "@Bart_DeWever @fireondemand1 Geen regering gewenst meneer De Wever. Uw steun aan de coronagruwel van de afgelopen maanden en het weghalen van eervolle standbeelden van tot voorbeeld strekkende blanken tonen aan dat u mee een dictatuur wenst te installeren samen met de andere criminele politieke syndicaten."
+      },
+      {
+        "_id": "skiovfs8u",
+        "custom_id": 1273311669662466000,
+        "document": "Interview met Anthony Patch uit 2014. Must watch! THE CORONAVIRUS AGENDAtoen al bekend dat hetgemanipuleerd is bedoeld om ons tot slaaf te maken vd #DeepState.Hoe vaccineren een rol speelt wereldwijd. #PatriotsUnited #Expose @MinPres @hugodejonge https://t.co/lDpz87D0Am"
+      },
+      {
+        "_id": "scgvjdyow",
+        "custom_id": 1273202398920618000,
+        "document": "@RobJetten Al eens gezien hoe leerlingen zich gedragen en bij optreden of verbieden of corrigeren de ouders wel even op verhaal komen omdat ze het niet pikken. Leerlingen die spijbelen voor klimaatoptochten dan weer voor zwarten dan weer corona."
+      },
+      {
+        "_id": "s9c5v248f",
+        "custom_id": 1273272263752724500,
+        "document": "@SanderQuote @Steve_ice_t Puik werk @SanderQuote! Maar wat vind je nou van de spoedwet waarin corona-angst werkelijkheid wordt? En nee ik ben geen fan van Baudet of Jensen dus ik ben geen domme domme tokkie of kleinburger."
+      },
+      {
+        "_id": "snpc7pd4g",
+        "custom_id": 1273284176482050000,
+        "document": "@cher2107 Oh ik dacht dat je nu wilde boeken maar dat was voor corona . Dan is het een vuile tering streek verwijderen uit je telefoon en nooit meer bellen 😉👍"
+      },
+      {
+        "_id": "so5f4kupg",
+        "custom_id": 1271657719175372800,
+        "document": "@suus__je Ik ben getrouwd met een Filipijnse 2 jaar terug. Afgelopen zomer waren we 3 maanden in Nederland.We zouden eind februari/begin maart weer en ik zou dan blijven maar vulkaanuitbarsting op 12 januari EN de covid19 crisis zorgden er dus voor dat we nog op de Filipijnen zijn."
+      },
+      {
+        "_id": "s9fnflt3z",
+        "custom_id": 1271748766312403000,
+        "document": "Och och och de zelfverklaarde experts maar in werkelijkheid non-valeurs van het @rivm zijn aan het voorsorteren flikker toch eens gauw op malloten."
+      },
+      {
+        "_id": "sv4q5izh5",
+        "custom_id": 1271758529465135000,
+        "document": "RIVM-experts: Er komt een punt dat we niet verder kunnen versoepelen  https://t.co/6V6RfuVPfa via @  man man man wat stelletje achtelijke mongolen zijn jullie terwijl iedereen weet dat het virus op het einde loop lullen jullie deze onzin ga eens een keer wat nuttigs doen"
+      },
+      {
+        "_id": "siqsyefls",
+        "custom_id": 1271749655865561000,
+        "document": "Bent u al op de hoogte van de nieuwe debielen achterlijke hoax Corona grappenmakerij anderhalf meter regel die van 1 juli ingaat? Nee hè. We zijn de Sjaak. Depressie en armoe gaat zegevieren. Haal de botte bijlen maar vast uit de kast. Ik heb hem al geslepen.  🔪"
+      },
+      {
+        "_id": "sa9yn3qa5",
+        "custom_id": 1271754149554774000,
+        "document": "@geertperu @NUnl Iddaltijd als het gaat om dingen waar ze 00 verstand van hebben hebben ze Nederland weer nodig .. zou ik ook zeggen zoek het maar lekker uit .. krijg jullie allemaal de Corona ..dan mag je zwarten wel helpen"
+      },
+      {
+        "_id": "sxgu5hfta",
+        "custom_id": 1271740481844785200,
+        "document": "Is hier wel eens aandacht aan besteed? Nou @jesseklaver @SylvanaBIJ1 @groenlinks @PvdA @VVD en verder alle linkse deugers? Verschrikkelijk omdat deze zwarte man niet uitgezet wilde worden doodde hij een vrouwelijke blanke politieagent. Waar blijven de protesten? Komop zeg😡😡"
+      },
+      {
+        "_id": "s4ewubytm",
+        "custom_id": 1271736486183030800,
+        "document": "Mijn nicht (45 gezond en fit) had #Corona. Geen risico hoor. En gewoon thuis hersteld. Nou ja...op wat kleine details na; dat ze nu 6 weken later geen 10 stappen kan zetten zonder uitgeput te zijn. Geen gesprek kan voeren zonder ademnood. Doe aub voorzichtig allen!"
+      },
+      {
+        "_id": "sglkjtdjr",
+        "custom_id": 1271739133321494500,
+        "document": "@DeWitteKim @pvdabelgie @RaoulHedebouw Die coronahelden mogen binnenkort weer opdraven voor het onverantwoord gedrag van jullie achterlijke voorzitter vorige zondag."
+      },
+      {
+        "_id": "snexkpaqy",
+        "custom_id": 1271711541860151300,
+        "document": "@NOS Richting het RIVM... inderdaad het volk heeft ze al te veel ruimte gegeven met hun achterlijke grafiekjes!"
+      },
+      {
+        "_id": "s2du01cpn",
+        "custom_id": 1271707441173061600,
+        "document": "Een goed stuk dat korte metten maakt met die achterlijke Coronamaatregelen!! https://t.co/NOIM0hXGHa"
+      },
+      {
+        "_id": "svd360awy",
+        "custom_id": 1271702841439256600,
+        "document": "Waar was de verontwaardiging waar waren de grote protesten toen deze zwarte man een racistische moord pleegde op een willekeurige blanke passant? Of past deze moord niet in het door #Rutte c.s. gewenste frame van ‘blank is slecht &amp; zwart is zielig’? #dtv https://t.co/YIePwjbCep https://t.co/2ttCrv1Yz6"
+      },
+      {
+        "_id": "s4gvdlxrt",
+        "custom_id": 1271703430998917000,
+        "document": "@nieuwsbegrip Je kunt niet en zeker niet op lagere niveaus de nuances hierin uitleggen. Extreem slechte keuze. Nu zijn veel Nederlandse agenten besmaad en wordt gezegd dat alleen blanken aan racisme doen en wordt verzwegen dat bij deze protesten wordt opgeroepen tot geweld."
+      },
+      {
+        "_id": "saqqatv9i",
+        "custom_id": 1271706358266638300,
+        "document": "@Bart4u2 @geertwilderspvv @thierrybaudet Nee absoluut niet. Alleen maar Friezen die de weg blokkeren voor demonstranten die gebruik maken van hun grondwettelijke rechten. Of alleen maar blanke mensen die bij legale protesten dreigen de koppen van die ‘kankerapen’ in te slaan. Verder heb je helemaal gelijk jongen. Sieg🙋🏼"
+      },
+      {
+        "_id": "swwnhbxw5",
+        "custom_id": 1271712184557539300,
+        "document": "@WLoon @WvNoort @nrc Omdat mijn nicht al maanden coronaklachten heeft ben ik lid geworden van de fb-groep Corona ervaringen en langdurige klachten. Veel van de groepsleden testen negatief op de antistoffentest terwijl hun huisarts denkt dat zij corona hebben. Wat is de kwaliteit van deze test?"
+      },
+      {
+        "_id": "skj1hiff3",
+        "custom_id": 1271713074429530000,
+        "document": "@superjan Hebben we al een rekeningnummer om hem te steunen?Al die racistische blanken zoals coronasappelende ZZP-ers zorgpersoneel en bijstandtrekkers kunnen best 50% van hun  inkomen inleveren om het leed van Edgar te verzachten."
+      },
+      {
+        "_id": "sls6x0ssg",
+        "custom_id": 1271872867798601700,
+        "document": "@RutgervdNoort Was in de veronderstelling dat Corona een burgeroorlog zou voorkomen we zijn inmiddels dichterbij dan ooit. Laat Nederland Nederland blijven met tolerantie zoals het tot voor kort was waar heel de wereld graag wil zijn zonder #KOZP en ht nieuwe tegen blanken gericht #racisme"
+      },
+      {
+        "_id": "sm0man5cf",
+        "custom_id": 1271877754422788000,
+        "document": "@telegraaf Die achterlijke Jesse Klaver spoort ook niet helemaal waarschijnlijk de Corona in zijn kop geslagen dit soort gasten moeten opgeborgen worden."
+      },
+      {
+        "_id": "sstf010vk",
+        "custom_id": 1271900277260648400,
+        "document": "@MargoDorsman @hugodejonge @MinPres @VVD @rivm je bent echt achterlijk he?"
+      },
+      {
+        "_id": "swtc1p2nd",
+        "custom_id": 1271905863863799800,
+        "document": "@jonas_verhae @demorgen Dringend praktijktesten nodig voor discriminatie tegen blanke mannen."
+      },
+      {
+        "_id": "s2s8ui76x",
+        "custom_id": 1271903361542041600,
+        "document": "Waarom zie ik alleen maar blanken (of zijn dát die witte mensen?) op fotos in het artikel? #zelfvernedering Circa 1600 mensen bij protesten Breda en Den Bosch  via @Telegraaf https://t.co/JDXyX2mDXL"
+      },
+      {
+        "_id": "s8edyn0am",
+        "custom_id": 1271904761743319000,
+        "document": "@MathijsvdLoo @thierrybaudet dus omdat je eerst iets in leven roept omdat er zelf beter uit te komen (jezelf meer voelen economisch gewin etc) en het dan door protesten van alle kanten (zowel blank als zwart slaaf en niet-slaaf) afschaft moet je er weer beter uitkomen door een dankjewel?"
+      },
+      {
+        "_id": "sriqyl4ca",
+        "custom_id": 1271900092686008300,
+        "document": "@Ocean4Q Mooi dt die proleet met z’n pooierschoenen zich zo in de kaart lt kijken. Woedend omdat artsen doen wat ze behoren te doen duidelijk toch dat het Corona gebeuren aan alle kanten stinkt en niet zo’n klein beetje ook! Dat mannetje wordt gewoon gebruikt en hij heeft het niet door!"
+      },
+      {
+        "_id": "snr3y2si8",
+        "custom_id": 1271583895360876500,
+        "document": "een opa die k*nker en kech gebruikt.. jeetje! k snap waarom corona de ouderen pakt😜😜😜"
+      },
+      {
+        "_id": "scmcwpx3h",
+        "custom_id": 1271583743782924300,
+        "document": "@Azijnzeiker1 @hobiplnt @SorrowliX Ik ben letterlijk minderjarig en dus ook geen kech ik ben je kaolo dochter niet opa. jij bent de reden waarom corona bestaat 80 jarige🤣 corona do je dinggg!!!"
+      }
+    ]
+  }
