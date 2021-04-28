@@ -15,7 +15,7 @@ import re
 # krippendorff alpha set 0: 0.3879788671234199
 # krippendorff alpha set 1:
 
-#pandas.set_option('display.float_format', lambda x: '19.f')
+
 base_folder = Path(__file__).parent
 validation_path = (base_folder / "data/tweets/filtered/validation").resolve()
 udt_labelled_path = (base_folder / "data/tweets/filtered/labelled_tweets_ALL.udt.csv").resolve()
@@ -45,8 +45,12 @@ print("original", original_set)
 
 set0_annotator0 = pandas.read_csv(set0_annotator0_path, header=0)
 set0_annotator1 = pandas.read_csv(set0_annotator1_path, header=0)
+#set1_annotator0 = pandas.read_csv(set1_annotator0_path, header=0)
+#set1_annotator1 = pandas.read_csv(set1_annotator1_path, header=0)
 
 set0_tweet_id = set0_annotator0['custom_id'].dropna()
+set1_tweet_id = set1_annotator0['custom_id'].dropna()
+
 id_list = list(set0_tweet_id)
 int_id_list = []
 for id in id_list:
@@ -60,6 +64,12 @@ set0_annotator0.columns = ['label_0']
 set0_annotator1 = set0_annotator1['annotation'].to_frame()
 set0_annotator1.columns = ['label_1']
 
+#set1_annotator0 = set1_annotator0['annotation'].to_frame()
+#set1_annotator0.columns = ['label_0']
+
+#set1_annotator1 = set1_annotator1['annotation'].to_frame()
+#set1_annotator1.columns = ['label_1']
+
 labelled_set = pandas.concat([udt_labelled_set, sheet_labelled_set])
 labelled_set.head()
 
@@ -68,7 +78,13 @@ merged_df = merged_df.join(set0_tweet_id)
 merged_df = merged_df.dropna()
 merged_df = merged_df.sort_values(by=['custom_id'])
 
+#merged_df_1 = set1_annotator0.join(set1_annotator1)
+#merged_df_1 = merged_df_1.join(set1_tweet_id)
+#merged_df_1 = merged_df_1.dropna()
+#merged_df_1 = merged_df_1.sort_values(by=['custom_id'])
+
 merged_df = merged_df.astype(int)
+#merged_df_1 = merged_df_1.astype(int)
 print(merged_df)
 
 original_and_validation_df = pandas.concat([merged_df, original_set], ignore_index=True)
@@ -79,7 +95,7 @@ duplicated_column = duplicated_column.sort_values(['custom_id', 'annotation'])
 original_annotations = duplicated_column[['custom_id','annotation']].dropna()
 
 
-print(type(original_annotations), original_annotations)
+#print(type(original_annotations), original_annotations)
 duplicated_column.drop(columns='annotation', inplace=True)
 duplicated_column.dropna(inplace=True)
 all_labels_df = duplicated_column.merge(original_annotations)
@@ -89,31 +105,17 @@ print(all_labels_df)
 
 label_0_df = all_labels_df[['label_0', 'custom_id']]
 label_0_df.rename(columns={"label_0" : "label"}, inplace=True)
-#label_0_df = label_0_df.insert(0, 'annotator', '0')
 label_0_df['annotator'] = '0'
 label_1_df = all_labels_df[['label_1', 'custom_id']]
 label_1_df.rename(columns={"label_1" : "label"}, inplace=True)
-#label_1_df = label_1_df.insert(0, 'annotator', '1')
 label_1_df['annotator'] = '1'
 label_2_df = all_labels_df[['label_2', 'custom_id']]
 label_2_df.rename(columns={"label_2" : "label"}, inplace=True)
-#label_2_df = label_2_df.insert(0, 'annotator', '2')
 label_2_df['annotator'] = '2'
 
-#print(label_0_df,label_1_df,label_2_df)
 
 krippendorff_df = pandas.concat([label_0_df, label_1_df, label_2_df])
-#krippendorff_df = krippendorff_df.concat(label_2_df)
-print(krippendorff_df)
+
+#print(krippendorff_df)
 krippendorff_alpha = simpledorff.calculate_krippendorffs_alpha_for_df(krippendorff_df, experiment_col='custom_id',annotator_col='annotator',class_col='label')
 print(krippendorff_alpha)
-# Each row corresponds to an annotator, each column corresponds to a tweet
-labels_transposed = labels_only.transpose()
-
-def df_to_experiment_annotator_table(df, experiment_col, annotator_col, class_col):
-    return df.pivot_table(index=annotator_col, columns=experiment_col, values=class_col, aggfunc="first")
-
-#all_labels_df.pivot_table(index='custom_id', columns='')
-
-krippendorff_pivot = df_to_experiment_annotator_table(krippendorff_df, 'custom_id', 'annotator', 'label')
-#print(krippendorff_pivot)
