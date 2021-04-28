@@ -1,3 +1,6 @@
+# Calculate inter-rater agreement score for the 2 validation sets
+# Uses Krippendorff's alpha from the simpledorff package
+
 from nltk.metrics.agreement import AnnotationTask
 import simpledorff
 import csv
@@ -8,6 +11,9 @@ import glob
 import numpy as np
 from tqdm import tqdm
 import re
+
+# krippendorff alpha set 0: 0.3879788671234199
+# krippendorff alpha set 1:
 
 #pandas.set_option('display.float_format', lambda x: '19.f')
 base_folder = Path(__file__).parent
@@ -99,6 +105,8 @@ label_2_df['annotator'] = '2'
 krippendorff_df = pandas.concat([label_0_df, label_1_df, label_2_df])
 #krippendorff_df = krippendorff_df.concat(label_2_df)
 print(krippendorff_df)
+krippendorff_alpha = simpledorff.calculate_krippendorffs_alpha_for_df(krippendorff_df, experiment_col='custom_id',annotator_col='annotator',class_col='label')
+print(krippendorff_alpha)
 # Each row corresponds to an annotator, each column corresponds to a tweet
 labels_transposed = labels_only.transpose()
 
@@ -108,6 +116,4 @@ def df_to_experiment_annotator_table(df, experiment_col, annotator_col, class_co
 #all_labels_df.pivot_table(index='custom_id', columns='')
 
 krippendorff_pivot = df_to_experiment_annotator_table(krippendorff_df, 'custom_id', 'annotator', 'label')
-print(krippendorff_pivot)
-
-#print(labels_transposed_pivot)
+#print(krippendorff_pivot)
