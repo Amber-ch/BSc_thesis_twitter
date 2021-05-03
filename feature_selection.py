@@ -8,7 +8,12 @@ from tqdm import tqdm
 import re
 import nltk
 from nltk.corpus import stopwords
+from nltk.util import ngrams
 import spacy
+import re
+import collections
+
+#git add . && git commit -am "message"
 
 # DONE validation sets majority vote, remove those without a majority
 # DONE remove tweets with label 3 (it means duplicate)
@@ -27,8 +32,14 @@ class FeatureSelection(object):
     __validation_set_1 = None
     __merge_validation = None
     __all_data = None
+    __current_document = None
+    __stop_words = []
+    __bigrams = []
+    __trigrams = []
 
     def __init__(self):
+        self.__stop_words = stopwords.words("dutch")
+
         self.base_folder = Path(__file__).parent
         self.data_folder = (self.base_folder / "data/tweets/filtered").resolve()
         file_path = (self.base_folder / "data/tweets/filtered/labelled_test_set.csv").resolve()
@@ -95,20 +106,87 @@ class FeatureSelection(object):
         #self.__all_data.to_csv(path_or_buf=write_to, index=False)
         print(self.__all_data)
 
-    #def preprocess(self):
-        """
-        Hyperlinks
-        Lowercase
-        Keyword?
-        Stopword
-        Lemmatization
-        Stop clause
-        Numerals
-        User mentions
-        Non-alphabetic
+    def remove_links(self):
+        removed_link = re.sub(r'http\S+', '', self.__current_document)
+        return removed_link
 
-        hyperlink removal regex: (https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)
-        lowercase: string.lower()
+    def remove_mention(self):
+        removed_mention = re.sub(r'@[A-Za-z0-9]+','', self.__current_document)
+        return removed_mention
+
+    def remove_numerals(self):
+        removed_numerals = re.sub(r'[0-9]+', '', self.__current_document)
+        return removed_numerals
+
+    def remove_interpunction(self):
+        remove_interpunction = re.sub(r'[^\w\s]', '', self.__current_document)
+        # For some reason _ is not included in the regex
+        remove_interpunction = remove_interpunction.replace('_', '')
+        return remove_interpunction
+
+    def remove_emoji(self):
+        regex_pattern = re.compile(pattern = "["
+            u"\U0001F600-\U0001F64F"  # emoticons
+            u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+            u"\U0001F680-\U0001F6FF"  # transport & map symbols
+            u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           "]+", flags = re.UNICODE)
+        regex_pattern = regex_pattern.sub(r'', self.__current_document)
+        return regex_pattern
+
+    def remove_double_space(self):
+        remove_spaces = re.sub(r'/\s\s+/g', ' ', self.__current_document)
+        # Did not remove all double spaces
+        remove_spaces = re.sub(r' +', ' ', self.__current_document)
+        return remove_spaces
+        
+    def remove_stopwords(self):
+        tokenized = nltk.word_tokenize(self.__current_document)
+        remove_stopwords = [token for token in tokenized if token not in self.__stop_words]
+        return remove_stopwords
+
+    def define_bigrams(self):
+        tokenized = nltk.word_tokenize(self.__current_document)
+        self.__bigrams.append(ngrams(tokenized, 2))
+        print(list(self.__bigrams)[:10])
+
+    def count_ngrams(self, ngrams):
+        ngram_frequency = collections.Counter(ngrams)
+        ngram_frequency.most_common(10)
+
+    # Convert document column to list, preprocess, convert back to dataframe and join full dataframe
+    def preprocess(self):
+        documents = self.__all_data['document'].to_list()
+        
+        #print("docs", documents)
+        for tweet in documents:
+            #print(tweet)
+            self.__current_document = tweet
+            self.__current_document = self.remove_links()
+            self.__current_document = self.__current_document.lower()
+            self.__current_document = self.remove_mention()
+            self.__current_document = self.remove_numerals()
+            self.__current_document = self.remove_interpunction()
+            self.__current_document = self.remove_emoji()
+            self.__current_document = self.remove_double_space()
+            # n-gram identification here
+            self.define_bigrams()
+            self.__current_document = self.remove_stopwords()
+            print(self.__current_document, "\n")
+
+        self.count_ngrams(self.__bigrams)
+        """
+        DONE Hyperlinks
+        DONE Lowercase
+        TODO n-grams
+        DONE Stopword
+        TODO Lemmatization
+        DONE Numerals
+        DONE Remove emoji
+        DONE User mentions
+        DONE Non-alphabetic/interpunction
+        DONE remove double spaces
+        -
         word_tokenize(sentence)
         stopword: nltk stopwords
         """
@@ -120,3 +198,4 @@ if __name__ == "__main__":
     featselect = FeatureSelection()
     featselect.merge_all()
     featselect.remove_duplicate()
+    featselect.preprocess()
