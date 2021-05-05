@@ -11,7 +11,14 @@ from nltk.corpus import stopwords
 from nltk.util import ngrams
 import spacy
 import re
-import collections
+from collections import Counter
+import string
+import random
+import heapq
+from itertools import islice
+from sklearn.feature_extraction.text import TfidfTransformer
+#import CountVectorizer
+
 
 #git add . && git commit -am "message"
 
@@ -19,7 +26,7 @@ import collections
 # DONE remove tweets with label 3 (it means duplicate)
 # DONE remove tweets that are duplicate due to validation
 # DONE add tweets back in cuz im a dumbass
-# TODO data cleaning/preprocessing steps
+# TODO data cleaning/preprocessing steps (ngram identification & lemmatization)
 # TODO lookup scores with EmoLex
 # TODO lookup anger intensity score
 # TODO positive/negative sentiment score
@@ -36,6 +43,18 @@ class FeatureSelection(object):
     __stop_words = []
     __bigrams = []
     __trigrams = []
+    __preprocessed_docs = []
+    wordfreq = {}
+    freq_list = []
+    most_freq_list = []
+    freq_dict = {}
+    most_freq_dict = {}
+    most_relevant_list = []
+    most_relevant_dict = {}
+    __corpus = None
+    __idf_values = {}
+    __tf_values = {}
+    __tf_idf_values = None
 
     def __init__(self):
         self.__stop_words = stopwords.words("dutch")
@@ -143,12 +162,15 @@ class FeatureSelection(object):
     def remove_stopwords(self):
         tokenized = nltk.word_tokenize(self.__current_document)
         remove_stopwords = [token for token in tokenized if token not in self.__stop_words]
+        separator = ' '
+        remove_stopwords = separator.join(remove_stopwords)
         return remove_stopwords
 
     def define_bigrams(self):
         tokenized = nltk.word_tokenize(self.__current_document)
+        print(list(ngrams(tokenized, 2)))
         self.__bigrams.append(ngrams(tokenized, 2))
-        print(list(self.__bigrams)[:10])
+        #print(list(self.__bigrams)[:10])
 
     def count_ngrams(self, ngrams):
         ngram_frequency = collections.Counter(ngrams)
@@ -157,7 +179,6 @@ class FeatureSelection(object):
     # Convert document column to list, preprocess, convert back to dataframe and join full dataframe
     def preprocess(self):
         documents = self.__all_data['document'].to_list()
-        
         #print("docs", documents)
         for tweet in documents:
             #print(tweet)
@@ -169,28 +190,87 @@ class FeatureSelection(object):
             self.__current_document = self.remove_interpunction()
             self.__current_document = self.remove_emoji()
             self.__current_document = self.remove_double_space()
-            # n-gram identification here
-            self.define_bigrams()
             self.__current_document = self.remove_stopwords()
-            print(self.__current_document, "\n")
+            #print(self.__current_document, "\n")
+            self.__preprocessed_docs.append(self.__current_document)
 
-        self.count_ngrams(self.__bigrams)
-        """
-        DONE Hyperlinks
-        DONE Lowercase
-        TODO n-grams
-        DONE Stopword
-        TODO Lemmatization
-        DONE Numerals
-        DONE Remove emoji
-        DONE User mentions
-        DONE Non-alphabetic/interpunction
-        DONE remove double spaces
-        -
-        word_tokenize(sentence)
-        stopword: nltk stopwords
-        """
+        # Merge processed tweets with rest of the dataframe
+        self.__preprocessed_docs = pandas.DataFrame(self.__preprocessed_docs, columns=['processed'])
+        self.__tweet_ids = self.__all_data[['custom_id']]
+        self.__preprocessed_docs = self.__preprocessed_docs.join(self.__tweet_ids)
+        print(self.__preprocessed_docs)
+        print(self.__all_data)
+        self.__all_data.rename(columns={'document':'unprocessed'}, inplace=True)
+        print(self.__all_data)
+        self.__all_data = self.__all_data.merge(self.__preprocessed_docs, on='custom_id')
+        print(self.__all_data)
 
+    def identify_frequent_words(self):
+        self.__corpus = self.__all_data['processed']
+        #print(corpus)
+        for sentence in self.__corpus:
+            #print(sentence)
+            tokens = nltk.word_tokenize(sentence)
+            for token in tokens:
+                #print(word)
+                if token not in self.wordfreq.keys():
+                    self.wordfreq[token] = 1
+                else:
+                    self.wordfreq[token] += 1
+     
+        # Returns the N most common words with their frequencies as a dict
+        self.freq_dict = dict(sorted(self.wordfreq.items(), key=lambda item: item[1], reverse=True))
+        self.most_freq_dict = dict(islice(self.freq_dict.items(), 0,19))
+        #print(self.most_freq_dict)
+
+        # Returns just the N most common words as a list
+        self.freq_list = sorted(self.wordfreq, key=self.wordfreq.get, reverse=True)
+        #print(self.freq_list)
+        self.most_freq_list = heapq.nlargest(20, self.wordfreq, key=self.wordfreq.get)
+        #print(self.most_freq_list)
+
+    """def find_idf(self):
+        for token in self.most_freq_list:
+            doc_containing_word = 0
+            for document in self.__corpus:
+                if token in nltk.word_tokenize(document):
+                    doc_containing_word += 1
+            self.__idf_values[token] = np.log(len(self.__corpus)/(1 + doc_containing_word))
+
+
+    def find_tf(self):
+        for token in self.most_freq_list:
+            sent_tf_vector = []
+            for document in self.__corpus:
+                doc_freq = 0
+                for word in nltk.word_tokenize(document):
+                    if token == word:
+                        doc_freq += 1
+                word_tf = doc_freq / len(nltk.word_tokenize(document))
+                sent_tf_vector.append(word_tf)
+            self.__tf_values[token] = sent_tf_vector
+
+    def calculate_tf_idf(self):
+        for token in self.__tf_values.keys():
+            tfidf_sentences = []
+            for tf_sentence in self.__tf_values[token]:
+                tf_idf_score = tf_sentence * self.__idf_values[token]
+                tfidf_sentences.append(tf_idf_score)
+            self.__tf_idf_values.append(tfidf_sentences)
+            tf_idf_model = np.asarray(self.__tf_idf_values)"""
+
+    def identify_relevant_words(self):
+        #self.find_idf()
+        #self.find_tf()
+        tfidf_transformer = TfidfTransformer(smooth_idf=True, use_idf=True)
+        #tfidf_transformer.fit(self.)
+
+
+
+    #def word_reduction(self):
+        # TODO n-grams
+        # If all words in ngram consist of stopword, remove
+        # TODO Lemmatization
 
 
 
@@ -199,3 +279,5 @@ if __name__ == "__main__":
     featselect.merge_all()
     featselect.remove_duplicate()
     featselect.preprocess()
+    featselect.identify_frequent_words()
+    featselect.identify_relevant_words()
