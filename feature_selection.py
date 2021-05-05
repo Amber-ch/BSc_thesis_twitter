@@ -17,7 +17,8 @@ import random
 import heapq
 from itertools import islice
 from sklearn.feature_extraction.text import TfidfTransformer
-#import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 #git add . && git commit -am "message"
@@ -26,7 +27,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 # DONE remove tweets with label 3 (it means duplicate)
 # DONE remove tweets that are duplicate due to validation
 # DONE add tweets back in cuz im a dumbass
-# TODO data cleaning/preprocessing steps (ngram identification & lemmatization)
+# DONE data cleaning/preprocessing steps (ngram identification & lemmatization)
 # TODO lookup scores with EmoLex
 # TODO lookup anger intensity score
 # TODO positive/negative sentiment score
@@ -57,20 +58,34 @@ class FeatureSelection(object):
     __tf_idf_values = None
 
     def __init__(self):
-        self.__stop_words = stopwords.words("dutch")
-
         self.base_folder = Path(__file__).parent
         self.data_folder = (self.base_folder / "data/tweets/filtered").resolve()
         file_path = (self.base_folder / "data/tweets/filtered/labelled_test_set.csv").resolve()
         validation_path = (self.base_folder / "data/tweets/filtered/validation/merged/validation_labels.csv").resolve()
         validation_path_1 = (self.base_folder / "data/tweets/filtered/validation/merged/validation_labels_1.csv").resolve()
+        stop_words_1_path = (self.base_folder / "data/stop-words_dutch_1_nl.txt")
+        stop_words_2_path = (self.base_folder / "data/stop-words_dutch_2_nl.txt")
+
+
+        nltk_stopwords = stopwords.words("dutch")
+        additional_stopwords = pandas.read_csv(stop_words_1_path, sep=" ", names=["stopword"])
+        additional_stopwords = additional_stopwords['stopword'].tolist()
+        additional_stopwords_2 = pandas.read_csv(stop_words_2_path, sep=" ", names=["stopword"])
+        additional_stopwords_2 = additional_stopwords_2['stopword'].tolist()
+        #print("additional", additional_stopwords['stopword'].tolist())
+        all_stopwords = list(set(nltk_stopwords + additional_stopwords + additional_stopwords_2))
+        self.__stop_words = all_stopwords
+        print(len(all_stopwords), all_stopwords)
+        #print(len(nltk_stopwords), nltk_stopwords)
+        #print(len(additional_stopwords), additional_stopwords)
+        #print(self.__stop_words)
 
         self.__test_set = pandas.read_csv(file_path)
         self.__test_set.drop(columns=['path', '.', '_id', 'brush', 'annotation.0'], inplace=True)
     
         self.__validation_set = pandas.read_csv(validation_path)
         self.__validation_set_1 = pandas.read_csv(validation_path_1)
-        print(self.__validation_set_1)
+        #print(self.__validation_set_1)
         
 
     # Returns the majority vote for the validation sets
@@ -102,14 +117,14 @@ class FeatureSelection(object):
         majority_df_1 = self.majority_vote(self.__validation_set_1)
         self.__merge_validation = pandas.concat([majority_df, majority_df_1])
         self.__merge_validation = self.__merge_validation[['custom_id', 'majority', 'document']]
-        print(self.__merge_validation)
+        #print(self.__merge_validation)
 
     def merge_all(self):
         self.get_merged_validation()
         self.__merge_validation.rename(columns={"majority":"annotation"}, inplace=True)
         self.__test_set = self.__test_set[['custom_id', 'annotation', 'document']]
         self.__all_data = pandas.concat([self.__merge_validation, self.__test_set])
-        print(self.__all_data)
+        #print(self.__all_data)
         
     # Removes rows with value NaN & 3 from the original set
     # Test set: 25 tweets after this function
@@ -123,7 +138,7 @@ class FeatureSelection(object):
         # Toggle for final product to save data set
         #write_to = (self.data_folder/"remove_duplicate_dataset.csv").resolve()
         #self.__all_data.to_csv(path_or_buf=write_to, index=False)
-        print(self.__all_data)
+        #print(self.__all_data)
 
     def remove_links(self):
         removed_link = re.sub(r'http\S+', '', self.__current_document)
@@ -198,13 +213,14 @@ class FeatureSelection(object):
         self.__preprocessed_docs = pandas.DataFrame(self.__preprocessed_docs, columns=['processed'])
         self.__tweet_ids = self.__all_data[['custom_id']]
         self.__preprocessed_docs = self.__preprocessed_docs.join(self.__tweet_ids)
-        print(self.__preprocessed_docs)
-        print(self.__all_data)
+        #print(self.__preprocessed_docs)
+        #print(self.__all_data)
         self.__all_data.rename(columns={'document':'unprocessed'}, inplace=True)
-        print(self.__all_data)
+        #print(self.__all_data)
         self.__all_data = self.__all_data.merge(self.__preprocessed_docs, on='custom_id')
         print(self.__all_data)
 
+    # Returns a list of N most frequent terms with their counts
     def identify_frequent_words(self):
         self.__corpus = self.__all_data['processed']
         #print(corpus)
@@ -221,6 +237,7 @@ class FeatureSelection(object):
         # Returns the N most common words with their frequencies as a dict
         self.freq_dict = dict(sorted(self.wordfreq.items(), key=lambda item: item[1], reverse=True))
         self.most_freq_dict = dict(islice(self.freq_dict.items(), 0,19))
+        print(self.most_freq_dict)
         #print(self.most_freq_dict)
 
         # Returns just the N most common words as a list
@@ -229,48 +246,16 @@ class FeatureSelection(object):
         self.most_freq_list = heapq.nlargest(20, self.wordfreq, key=self.wordfreq.get)
         #print(self.most_freq_list)
 
-    """def find_idf(self):
-        for token in self.most_freq_list:
-            doc_containing_word = 0
-            for document in self.__corpus:
-                if token in nltk.word_tokenize(document):
-                    doc_containing_word += 1
-            self.__idf_values[token] = np.log(len(self.__corpus)/(1 + doc_containing_word))
-
-
-    def find_tf(self):
-        for token in self.most_freq_list:
-            sent_tf_vector = []
-            for document in self.__corpus:
-                doc_freq = 0
-                for word in nltk.word_tokenize(document):
-                    if token == word:
-                        doc_freq += 1
-                word_tf = doc_freq / len(nltk.word_tokenize(document))
-                sent_tf_vector.append(word_tf)
-            self.__tf_values[token] = sent_tf_vector
-
-    def calculate_tf_idf(self):
-        for token in self.__tf_values.keys():
-            tfidf_sentences = []
-            for tf_sentence in self.__tf_values[token]:
-                tf_idf_score = tf_sentence * self.__idf_values[token]
-                tfidf_sentences.append(tf_idf_score)
-            self.__tf_idf_values.append(tfidf_sentences)
-            tf_idf_model = np.asarray(self.__tf_idf_values)"""
-
+    # Returns a list of the N most relevant terms with their TF-IDF scores
     def identify_relevant_words(self):
-        #self.find_idf()
-        #self.find_tf()
-        tfidf_transformer = TfidfTransformer(smooth_idf=True, use_idf=True)
-        #tfidf_transformer.fit(self.)
-
-
-
-    #def word_reduction(self):
-        # TODO n-grams
-        # If all words in ngram consist of stopword, remove
-        # TODO Lemmatization
+        docs = self.__all_data['processed']
+        docs = [' '.join(list(docs))]
+        #print(' '.join(list(docs)))
+        tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,2), use_idf=True)
+        tfidf_vectorizer_vectors = tfidf_vectorizer.fit_transform(docs)
+        df = pandas.DataFrame(tfidf_vectorizer_vectors[0].T.todense(), index=tfidf_vectorizer.get_feature_names(), columns=["tfidf"])
+        df.sort_values(by=["tfidf"], ascending=False, inplace=True)
+        print(df.head(30))
 
 
 
