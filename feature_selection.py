@@ -19,6 +19,7 @@ from itertools import islice
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
+from nltk.stem.snowball import SnowballStemmer
 
 
 #git add . && git commit -am "message"
@@ -28,13 +29,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # DONE remove tweets that are duplicate due to validation
 # DONE add tweets back in cuz im a dumbass
 # DONE data cleaning/preprocessing steps (ngram identification & lemmatization)
-# TODO lookup scores with EmoLex
+# DONE lookup scores with EmoLex
 # TODO lookup anger intensity score
-# TODO positive/negative sentiment score
+# positive/negative sentiment count of words is included in EmoLex
 
 class FeatureSelection(object):
     base_folder = None
     data_folder = None
+    emolex_translation = None
     __test_set = None
     __validation_set = None
     __validation_set_1 = None
@@ -56,6 +58,12 @@ class FeatureSelection(object):
     __idf_values = {}
     __tf_values = {}
     __tf_idf_values = None
+    emolex_translation_pivot = None
+    emolex_translation_df = None
+    __emolex_scores = None
+    emolex_header = []
+    emotions = []
+    intensity_lexicon = None
 
     def __init__(self):
         self.base_folder = Path(__file__).parent
@@ -65,8 +73,14 @@ class FeatureSelection(object):
         validation_path_1 = (self.base_folder / "data/tweets/filtered/validation/merged/validation_labels_1.csv").resolve()
         stop_words_1_path = (self.base_folder / "data/stop-words_dutch_1_nl.txt")
         stop_words_2_path = (self.base_folder / "data/stop-words_dutch_2_nl.txt")
+        emolex_path = (self.base_folder / "data/NRC-Emotion-Lexicon/NRC-Emotion-Lexicon-v0.92").resolve()
+        emolex_english = (emolex_path/"wordlevel.txt").resolve()
+        self.emolex_translation = (emolex_path/"translation.xlsx").resolve()
 
+        self.emolex_header = ["index", "english", "dutch", "anger", "anticipation", "disgust", "fear", "joy", "negative", "positive", "sadness", "surprise", "trust"]
+        self.emotions = ["anger", "anticipation", "disgust", "fear", "joy", "negative", "positive", "sadness", "surprise", "trust"]
 
+        self.__emolex_scores = pandas.DataFrame(columns=self.emolex_header)
         nltk_stopwords = stopwords.words("dutch")
         additional_stopwords = pandas.read_csv(stop_words_1_path, sep=" ", names=["stopword"])
         additional_stopwords = additional_stopwords['stopword'].tolist()
@@ -75,7 +89,7 @@ class FeatureSelection(object):
         #print("additional", additional_stopwords['stopword'].tolist())
         all_stopwords = list(set(nltk_stopwords + additional_stopwords + additional_stopwords_2))
         self.__stop_words = all_stopwords
-        print(len(all_stopwords), all_stopwords)
+        #print(len(all_stopwords), all_stopwords)
         #print(len(nltk_stopwords), nltk_stopwords)
         #print(len(additional_stopwords), additional_stopwords)
         #print(self.__stop_words)
@@ -236,7 +250,7 @@ class FeatureSelection(object):
      
         # Returns the N most common words with their frequencies as a dict
         self.freq_dict = dict(sorted(self.wordfreq.items(), key=lambda item: item[1], reverse=True))
-        self.most_freq_dict = dict(islice(self.freq_dict.items(), 0,19))
+        self.most_freq_dict = dict(islice(self.freq_dict.items(), 0,29))
         print(self.most_freq_dict)
         #print(self.most_freq_dict)
 
@@ -257,12 +271,65 @@ class FeatureSelection(object):
         df.sort_values(by=["tfidf"], ascending=False, inplace=True)
         print(df.head(30))
 
+    def setup_emolex_initial(self):
+        self.emolex_translation_df = pandas.read_excel(self.emolex_translation, usecols=["English (en)", "Dutch (nl)", "Positive", "Negative", "Anger", "Anticipation", "Disgust", "Fear", "Joy", "Sadness", "Surprise", "Trust"])
+        self.emolex_translation_df = self.emolex_translation_df.rename(columns={"English (en)": "english", "Dutch (nl)": "dutch"})
+        self.emolex_translation_df.to_excel(self.emolex_translation)
+        print(self.emolex_translation_df.head())
+
+    def setup_emolex(self):
+        self.emolex_translation_df = pandas.read_excel(self.emolex_translation)
+        #self.emolex_translation_df = self.emolex_translation_df.rename(columns={"Unnamed: 0": "index"})
+        self.emolex_translation_df.columns = self.emolex_header
+        print(self.emolex_translation_df.head())
+
+    def get_emolex_score(self):
+        test_corpus = self.__corpus.head(20)
+        self.setup_emolex()
+        stemmer = SnowballStemmer("dutch")
+        # TODO pivot table of NRC lexicon, sum the rows of the words that occur in the specific tweet
+        for sentence in tqdm(test_corpus):
+            print(sentence)
+            sentence_words_df = pandas.DataFrame(columns=self.emolex_header)
+            tokens = nltk.word_tokenize(sentence)
+            for token in tokens:
+                emolex_token_dutch = self.emolex_translation_df.loc[self.emolex_translation_df['dutch'] == token]
+                emolex_token_english = self.emolex_translation_df.loc[self.emolex_translation_df['english'] == token]
+
+                if (emolex_token_dutch.empty == False) | (emolex_token_english.empty == False):
+                    sentence_words_df = pandas.concat([sentence_words_df, emolex_token_dutch])
+                    sentence_words_df = pandas.concat([sentence_words_df, emolex_token_english])
+                else:
+                    stemmed_token = stemmer.stem(token)
+                    emolex_stem_dutch = self.emolex_translation_df.loc[self.emolex_translation_df['dutch'] == stemmed_token]
+                    emolex_stem_english = self.emolex_translation_df.loc[self.emolex_translation_df['english'] == stemmed_token]
+                    sentence_words_df = pandas.concat([sentence_words_df, emolex_stem_dutch])
+                    sentence_words_df = pandas.concat([sentence_words_df, emolex_stem_english])
+            sentence_words_df.drop_duplicates(subset=['english'], inplace=True)
+            print(sentence_words_df)
+            sentence_sum = sentence_words_df.sum(axis=0)
+            sentence_sum = list(sentence_sum)
+            sentence_sum = pandas.DataFrame([sentence_sum], columns=self.emolex_header)
+            print(sentence_sum)
+            self.__emolex_scores = pandas.concat([self.__emolex_scores, sentence_sum], ignore_index=True)
+        self.__emolex_scores = self.__emolex_scores.drop(columns=["index", "dutch", "english"])
+        print(self.__emolex_scores)
+        self.__all_data = self.__all_data.join(self.__emolex_scores)
+        print(self.__all_data.head())
+
+    def setup_intensity(self):
+        intensity_path = (self.base_folder / "data/NRC-Emotion-Intensity-Lexicon-v1/OneFilePerLanguage/Dutch-nl-NRC-Emotion-Intensity-Lexicon-v1.txt").resolve()
+        self.intensity_lexicon = pandas.read_csv(intensity_path, sep='\t')
+        self.intensity_lexicon.loc[self.intensity_lexicon['emotion'] == 'anger']
+        print(self.intensity_lexicon)
 
 
 if __name__ == "__main__":
     featselect = FeatureSelection()
-    featselect.merge_all()
-    featselect.remove_duplicate()
-    featselect.preprocess()
-    featselect.identify_frequent_words()
-    featselect.identify_relevant_words()
+    #featselect.merge_all()
+    #featselect.remove_duplicate()
+    #featselect.preprocess()
+    #featselect.identify_frequent_words()
+    #featselect.identify_relevant_words()
+    #featselect.get_emolex_score()
+    featselect.setup_intensity()
