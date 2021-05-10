@@ -21,9 +21,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.stem.snowball import SnowballStemmer
 
-
-#git add . && git commit -am "message"
-
+# TODO rewrite so each step happens for 1 tweet at a time, instead of each step for all tweets
 # DONE validation sets majority vote, remove those without a majority
 # DONE remove tweets with label 3 (it means duplicate)
 # DONE remove tweets that are duplicate due to validation
@@ -31,9 +29,9 @@ from nltk.stem.snowball import SnowballStemmer
 # DONE data cleaning/preprocessing steps (ngram identification & lemmatization)
 # DONE lookup scores with EmoLex
 # TODO lookup anger intensity score
-# positive/negative sentiment count of words is included in EmoLex
 
 class FeatureSelection(object):
+    test_corpus = None
     base_folder = None
     data_folder = None
     emolex_translation = None
@@ -284,11 +282,13 @@ class FeatureSelection(object):
         print(self.emolex_translation_df.head())
 
     def get_emolex_score(self):
-        test_corpus = self.__corpus.head(20)
+        # Subset for testing
+        self.test_corpus = self.__corpus.head(20)
         self.setup_emolex()
+        # Used when the word cannot be found in the lexicon
+        # TODO paper: explain that lemmatizing can change the meaning, stemming does this to a lesser degree
         stemmer = SnowballStemmer("dutch")
-        # TODO pivot table of NRC lexicon, sum the rows of the words that occur in the specific tweet
-        for sentence in tqdm(test_corpus):
+        for sentence in tqdm(self.test_corpus):
             print(sentence)
             sentence_words_df = pandas.DataFrame(columns=self.emolex_header)
             tokens = nltk.word_tokenize(sentence)
@@ -320,16 +320,48 @@ class FeatureSelection(object):
     def setup_intensity(self):
         intensity_path = (self.base_folder / "data/NRC-Emotion-Intensity-Lexicon-v1/OneFilePerLanguage/Dutch-nl-NRC-Emotion-Intensity-Lexicon-v1.txt").resolve()
         self.intensity_lexicon = pandas.read_csv(intensity_path, sep='\t')
-        self.intensity_lexicon.loc[self.intensity_lexicon['emotion'] == 'anger']
+        self.intensity_lexicon = self.intensity_lexicon.loc[self.intensity_lexicon['emotion'] == 'anger']
         print(self.intensity_lexicon)
+
+    def get_intensity_score(self):
+        self.setup_intensity()
+        # TODO look up score for each word, then take the mean
+        #test_subset = self.__corpus.head(20)
+        stemmer = SnowballStemmer("dutch")
+
+        for sentence in tqdm(self.test_corpus):
+            collect_scores_df = pandas.DataFrame(columns=["word", "Dutch-nl", "emotion", "emotion-intensity-score"])
+
+            tokens = nltk.word_tokenize(sentence)
+            for token in tokens:
+                intensity_token_nl = self.intensity_lexicon.loc[self.intensity_lexicon['Dutch-nl'] == token]
+                intensity_token_en = self.intensity_lexicon.loc[self.intensity_lexicon['word'] == token]
+                
+                if (intensity_token_nl.empty == False) | (intensity_token_en.empty == False):
+                    collect_scores_df = pandas.concat([collect_scores_df, intensity_token_nl])
+                    collect_scores_df = pandas.concat([collect_scores_df, intensity_token_en])
+                else:
+                    stemmed_token = stemmer.stem(token)
+                    intensity_stem_nl = self.intensity_lexicon.loc[self.intensity_lexicon['Dutch-nl'] == stemmed_token]
+                    intensity_stem_en = self.intensity_lexicon.loc[self.intensity_lexicon['word'] == stemmed_token]
+                    collect_scores_df = pandas.concat([collect_scores_df, intensity_stem_nl])
+                    collect_scores_df = pandas.concat([collect_scores_df, intensity_stem_en])
+            collect_scores_df.drop_duplicates(subset=['word'], inplace=True)
+            num_words = len(collect_scores_df) + 1
+            collect_scores_df.drop(columns=["word", "Dutch-nl", "emotion"])
+            collect_scores_df = collect_scores_df.sum(axis=1)
+            collect_scores_df = collect_scores_df / num_words
+            print("score:", collect_scores_df)
+
 
 
 if __name__ == "__main__":
     featselect = FeatureSelection()
-    #featselect.merge_all()
-    #featselect.remove_duplicate()
-    #featselect.preprocess()
-    #featselect.identify_frequent_words()
-    #featselect.identify_relevant_words()
-    #featselect.get_emolex_score()
-    featselect.setup_intensity()
+    featselect.merge_all()
+    featselect.remove_duplicate()
+    featselect.preprocess()
+    featselect.identify_frequent_words()
+    featselect.identify_relevant_words()
+    featselect.get_emolex_score()
+    #featselect.setup_intensity()
+    featselect.get_intensity_score()
