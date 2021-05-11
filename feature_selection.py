@@ -28,7 +28,7 @@ from nltk.stem.snowball import SnowballStemmer
 # DONE add tweets back in cuz im a dumbass
 # DONE data cleaning/preprocessing steps (ngram identification & lemmatization)
 # DONE lookup scores with EmoLex
-# TODO lookup anger intensity score
+# DONE lookup anger intensity score
 
 class FeatureSelection(object):
     test_corpus = None
@@ -46,11 +46,12 @@ class FeatureSelection(object):
     __trigrams = []
     __preprocessed_docs = []
     wordfreq = {}
+    freq_df = None
     freq_list = []
     most_freq_list = []
     freq_dict = {}
     most_freq_dict = {}
-    most_relevant_list = []
+    most_relevant = None
     most_relevant_dict = {}
     __corpus = None
     __idf_values = {}
@@ -66,7 +67,11 @@ class FeatureSelection(object):
     def __init__(self):
         self.base_folder = Path(__file__).parent
         self.data_folder = (self.base_folder / "data/tweets/filtered").resolve()
-        file_path = (self.base_folder / "data/tweets/filtered/labelled_test_set.csv").resolve()
+
+        # Toggle for testing!
+        #file_path = (self.base_folder / "data/tweets/filtered/labelled_test_set.csv").resolve()
+        file_path = (self.base_folder / "data/tweets/filtered/labelled_tweets_ALL.udt.csv").resolve()
+
         validation_path = (self.base_folder / "data/tweets/filtered/validation/merged/validation_labels.csv").resolve()
         validation_path_1 = (self.base_folder / "data/tweets/filtered/validation/merged/validation_labels_1.csv").resolve()
         stop_words_1_path = (self.base_folder / "data/stop-words_dutch_1_nl.txt")
@@ -148,9 +153,9 @@ class FeatureSelection(object):
         self.__all_data.drop_duplicates(subset='custom_id', inplace=True)
         self.__all_data.drop(columns='duplicate', inplace=True)
         # Toggle for final product to save data set
-        #write_to = (self.data_folder/"remove_duplicate_dataset.csv").resolve()
-        #self.__all_data.to_csv(path_or_buf=write_to, index=False)
-        #print(self.__all_data)
+        write_to = (self.data_folder/"remove_duplicate_dataset.csv").resolve()
+        self.__all_data.to_csv(path_or_buf=write_to, index=False)
+        print(self.__all_data)
 
     def remove_links(self):
         removed_link = re.sub(r'http\S+', '', self.__current_document)
@@ -203,11 +208,33 @@ class FeatureSelection(object):
         ngram_frequency = collections.Counter(ngrams)
         ngram_frequency.most_common(10)
 
+
+    def save_words(self, wordtype):
+        if wordtype == 'frequent':
+            filename = "frequent_words.csv"
+            path = (self.base_folder / "data" / filename).resolve()
+            self.freq_df.to_csv(path_or_buf=path, index=False)
+        elif wordtype == 'relevant':
+            filename = "relevant_words.csv"
+            path = (self.base_folder / "data" / filename).resolve()
+            self.most_relevant.to_csv(path_or_buf=path, index=False)
+    
+    def save_features(self, feature):
+        if feature == 'all':
+            filename = "all_features.csv"
+        elif feature == 'preprocess':
+            filename = "preprocessed.csv"
+        elif feature == 'emolex':
+            filename = "emolex.csv"
+        write_to = (self.base_folder / "data" / filename).resolve()
+        self.__all_data.to_csv(path_or_buf=write_to, index=True)
+        print(self.__all_data)
+
     # Convert document column to list, preprocess, convert back to dataframe and join full dataframe
     def preprocess(self):
         documents = self.__all_data['document'].to_list()
         #print("docs", documents)
-        for tweet in documents:
+        for tweet in tqdm(documents):
             #print(tweet)
             self.__current_document = tweet
             self.__current_document = self.remove_links()
@@ -231,12 +258,13 @@ class FeatureSelection(object):
         #print(self.__all_data)
         self.__all_data = self.__all_data.merge(self.__preprocessed_docs, on='custom_id')
         print(self.__all_data)
+        self.save_features('preprocess')
 
     # Returns a list of N most frequent terms with their counts
     def identify_frequent_words(self):
         self.__corpus = self.__all_data['processed']
         #print(corpus)
-        for sentence in self.__corpus:
+        for sentence in tqdm(self.__corpus):
             #print(sentence)
             tokens = nltk.word_tokenize(sentence)
             for token in tokens:
@@ -248,6 +276,7 @@ class FeatureSelection(object):
      
         # Returns the N most common words with their frequencies as a dict
         self.freq_dict = dict(sorted(self.wordfreq.items(), key=lambda item: item[1], reverse=True))
+        self.freq_df = pandas.DataFrame(self.freq_dict.items(), columns=["word", "count"])
         self.most_freq_dict = dict(islice(self.freq_dict.items(), 0,29))
         print(self.most_freq_dict)
         #print(self.most_freq_dict)
@@ -257,6 +286,7 @@ class FeatureSelection(object):
         #print(self.freq_list)
         self.most_freq_list = heapq.nlargest(20, self.wordfreq, key=self.wordfreq.get)
         #print(self.most_freq_list)
+        self.save_words('frequent')
 
     # Returns a list of the N most relevant terms with their TF-IDF scores
     def identify_relevant_words(self):
@@ -265,9 +295,13 @@ class FeatureSelection(object):
         #print(' '.join(list(docs)))
         tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,2), use_idf=True)
         tfidf_vectorizer_vectors = tfidf_vectorizer.fit_transform(docs)
-        df = pandas.DataFrame(tfidf_vectorizer_vectors[0].T.todense(), index=tfidf_vectorizer.get_feature_names(), columns=["tfidf"])
-        df.sort_values(by=["tfidf"], ascending=False, inplace=True)
-        print(df.head(30))
+        words_df = pandas.DataFrame(tfidf_vectorizer.get_feature_names(), columns=["word"])
+        scores_df = pandas.DataFrame(tfidf_vectorizer_vectors[0].T.todense(), columns=["tfidf"])
+        full_df = scores_df.join(words_df)
+        full_df.sort_values(by=["tfidf"], ascending=False, inplace=True)
+        self.most_relevant = full_df
+        print(full_df.head(30))
+        self.save_words('relevant')
 
     def setup_emolex_initial(self):
         self.emolex_translation_df = pandas.read_excel(self.emolex_translation, usecols=["English (en)", "Dutch (nl)", "Positive", "Negative", "Anger", "Anticipation", "Disgust", "Fear", "Joy", "Sadness", "Surprise", "Trust"])
@@ -288,7 +322,7 @@ class FeatureSelection(object):
         # Used when the word cannot be found in the lexicon
         # TODO paper: explain that lemmatizing can change the meaning, stemming does this to a lesser degree
         stemmer = SnowballStemmer("dutch")
-        for sentence in tqdm(self.test_corpus):
+        for sentence in tqdm(self.__corpus):
             print(sentence)
             sentence_words_df = pandas.DataFrame(columns=self.emolex_header)
             tokens = nltk.word_tokenize(sentence)
@@ -307,15 +341,24 @@ class FeatureSelection(object):
                     sentence_words_df = pandas.concat([sentence_words_df, emolex_stem_english])
             sentence_words_df.drop_duplicates(subset=['english'], inplace=True)
             print(sentence_words_df)
+            print("HERE")
             sentence_sum = sentence_words_df.sum(axis=0)
+            print("AFTER SUM")
+            print(sentence_sum)
             sentence_sum = list(sentence_sum)
-            sentence_sum = pandas.DataFrame([sentence_sum], columns=self.emolex_header)
+            print(len(sentence_sum))
+            if len(sentence_sum) == 13:
+                sentence_sum = pandas.DataFrame([sentence_sum], columns=self.emolex_header)
+            else:
+                sentence_sum = pandas.DataFrame(np.zeros((13, 13)), columns=self.emolex_header)
             print(sentence_sum)
             self.__emolex_scores = pandas.concat([self.__emolex_scores, sentence_sum], ignore_index=True)
         self.__emolex_scores = self.__emolex_scores.drop(columns=["index", "dutch", "english"])
+        self.__emolex_scores = self.__emolex_scores.dropna()
         print(self.__emolex_scores)
         self.__all_data = self.__all_data.join(self.__emolex_scores)
         print(self.__all_data.head())
+        self.save_features('emolex')
 
     def setup_intensity(self):
         intensity_path = (self.base_folder / "data/NRC-Emotion-Intensity-Lexicon-v1/OneFilePerLanguage/Dutch-nl-NRC-Emotion-Intensity-Lexicon-v1.txt").resolve()
@@ -325,11 +368,10 @@ class FeatureSelection(object):
 
     def get_intensity_score(self):
         self.setup_intensity()
-        # TODO look up score for each word, then take the mean
-        #test_subset = self.__corpus.head(20)
         stemmer = SnowballStemmer("dutch")
+        intensity_list = []
 
-        for sentence in tqdm(self.test_corpus):
+        for sentence in tqdm(self.__corpus):
             collect_scores_df = pandas.DataFrame(columns=["word", "Dutch-nl", "emotion", "emotion-intensity-score"])
 
             tokens = nltk.word_tokenize(sentence)
@@ -347,21 +389,49 @@ class FeatureSelection(object):
                     collect_scores_df = pandas.concat([collect_scores_df, intensity_stem_nl])
                     collect_scores_df = pandas.concat([collect_scores_df, intensity_stem_en])
             collect_scores_df.drop_duplicates(subset=['word'], inplace=True)
-            num_words = len(collect_scores_df) + 1
-            collect_scores_df.drop(columns=["word", "Dutch-nl", "emotion"])
-            collect_scores_df = collect_scores_df.sum(axis=1)
-            collect_scores_df = collect_scores_df / num_words
-            print("score:", collect_scores_df)
+            num_words = len(collect_scores_df)
+            print(num_words)
+            print(collect_scores_df)
+            collect_scores_df = collect_scores_df.drop(columns=["word", "Dutch-nl", "emotion"])
+            print(collect_scores_df)
+            collect_scores_df = collect_scores_df.sum(axis=0)
+            try:
+                anger_intensity = collect_scores_df.iloc[0] / num_words
+            except RuntimeWarning:
+                anger_intensity = 0
+            print("intensity score:", anger_intensity)
+            intensity_list.append(anger_intensity)
+            #print("sum", collect_scores_df)
+            #collect_scores_df = collect_scores_df / num_words
+            #print("score:", collect_scores_df)
+        intensity_df = pandas.DataFrame(intensity_list, columns=['intensity'])
+        intensity_df['intensity'] = intensity_df['intensity'].fillna(0)
+        self.__all_data = self.__all_data.join(intensity_df)
+        self.save_features('all')
+        #print(self.__all_data.head(20))
 
+    def id_toint(self):
+        all_path = (self.base_folder / "data/features/all_features.csv").resolve()
+        notext_path = (self.base_folder / "data/features/notext_features.csv").resolve()
+        colnames_all = ["custom_id","annotation","unprocessed","processed","anger","anticipation","disgust","fear","joy","negative","positive","sadness","surprise","trust","intensity"]
+        colnames_notext = ["custom_id","annotation","anger","anticipation","disgust","fear","joy","negative","positive","sadness","surprise","trust","intensity"]
+        all_features_df = pandas.read_csv(all_path)
+        all_features_df['custom_id'] = all_features_df['custom_id'].astype(int)
+        #all_features_df = all_features_df.drop(columns="Unnamed: 0")
+        print(all_features_df)
+        notext_df = all_features_df.drop(columns=["unprocessed", "processed"])
+        print(notext_df)
+        all_features_df.to_csv(path_or_buf=all_path, index=False, columns=colnames_all)
+        notext_df.to_csv(path_or_buf=notext_path, index=False, columns=colnames_notext)
 
 
 if __name__ == "__main__":
     featselect = FeatureSelection()
-    featselect.merge_all()
-    featselect.remove_duplicate()
-    featselect.preprocess()
-    featselect.identify_frequent_words()
-    featselect.identify_relevant_words()
-    featselect.get_emolex_score()
-    #featselect.setup_intensity()
-    featselect.get_intensity_score()
+    #featselect.merge_all()
+    #featselect.remove_duplicate()
+    #featselect.preprocess()
+    #featselect.identify_frequent_words()
+    #featselect.identify_relevant_words()
+    #featselect.get_emolex_score()
+    #featselect.get_intensity_score()
+    featselect.id_toint()
