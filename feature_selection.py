@@ -21,15 +21,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.stem.snowball import SnowballStemmer
 
-# TODO rewrite so each step happens for 1 tweet at a time, instead of each step for all tweets
-# DONE validation sets majority vote, remove those without a majority
-# DONE remove tweets with label 3 (it means duplicate)
-# DONE remove tweets that are duplicate due to validation
-# DONE add tweets back in cuz im a dumbass
-# DONE data cleaning/preprocessing steps (ngram identification & lemmatization)
-# DONE lookup scores with EmoLex
-# DONE lookup anger intensity score
-
 class FeatureSelection(object):
     test_corpus = None
     base_folder = None
@@ -89,20 +80,14 @@ class FeatureSelection(object):
         additional_stopwords = additional_stopwords['stopword'].tolist()
         additional_stopwords_2 = pandas.read_csv(stop_words_2_path, sep=" ", names=["stopword"])
         additional_stopwords_2 = additional_stopwords_2['stopword'].tolist()
-        #print("additional", additional_stopwords['stopword'].tolist())
         all_stopwords = list(set(nltk_stopwords + additional_stopwords + additional_stopwords_2))
         self.__stop_words = all_stopwords
-        #print(len(all_stopwords), all_stopwords)
-        #print(len(nltk_stopwords), nltk_stopwords)
-        #print(len(additional_stopwords), additional_stopwords)
-        #print(self.__stop_words)
 
         self.__test_set = pandas.read_csv(file_path)
         self.__test_set.drop(columns=['path', '.', '_id', 'brush', 'annotation.0'], inplace=True)
     
         self.__validation_set = pandas.read_csv(validation_path)
         self.__validation_set_1 = pandas.read_csv(validation_path_1)
-        #print(self.__validation_set_1)
         
 
     # Returns the majority vote for the validation sets
@@ -110,23 +95,21 @@ class FeatureSelection(object):
         validation_df = df
         validation_df['custom_id'] = pandas.Series(validation_df['custom_id'], dtype="string")
         validation_df['document'] = pandas.Series(validation_df['document'], dtype="string")
-        #print(type(validation_df['custom_id']))
+
         mode_df = validation_df.mode(axis=1, numeric_only=True)
         mode_df.rename(columns={mode_df.columns[0]: 'first'}, inplace=True)
         mode_df.rename(columns={mode_df.columns[1]: 'second'}, inplace=True)
         mode_df.rename(columns={mode_df.columns[2]: 'third'}, inplace=True)
-        #print("mode",mode_df)
+
         mode_df = mode_df.join(validation_df['document'])
         mode_df = mode_df.join(validation_df['custom_id'])
         mode_df = mode_df[mode_df['second'].isnull()]
         mode_df = mode_df[['first', 'custom_id']]
-        #print(mode_df)
+
         validation_df['majority'] = validation_df.mode(axis=1, numeric_only=True)[0]
-        #print(validation_df)
 
         majority_df = mode_df.merge(validation_df, on='custom_id')
         majority_df.drop(columns='first', inplace=True)
-        #print("majority",majority_df)
         return majority_df
 
     def get_merged_validation(self):
@@ -134,18 +117,16 @@ class FeatureSelection(object):
         majority_df_1 = self.majority_vote(self.__validation_set_1)
         self.__merge_validation = pandas.concat([majority_df, majority_df_1])
         self.__merge_validation = self.__merge_validation[['custom_id', 'majority', 'document']]
-        #print(self.__merge_validation)
+
 
     def merge_all(self):
         self.get_merged_validation()
         self.__merge_validation.rename(columns={"majority":"annotation"}, inplace=True)
         self.__test_set = self.__test_set[['custom_id', 'annotation', 'document']]
         self.__all_data = pandas.concat([self.__merge_validation, self.__test_set])
-        #print(self.__all_data)
-        
+
+
     # Removes rows with value NaN & 3 from the original set
-    # Test set: 25 tweets after this function
-    # First 3 test tweets contain duplicates with the validation set
     def remove_duplicate(self):
         self.__all_data.dropna(inplace=True)
         self.__all_data = self.__all_data[self.__all_data['annotation'] != 3.0]
@@ -202,7 +183,7 @@ class FeatureSelection(object):
         tokenized = nltk.word_tokenize(self.__current_document)
         print(list(ngrams(tokenized, 2)))
         self.__bigrams.append(ngrams(tokenized, 2))
-        #print(list(self.__bigrams)[:10])
+
 
     def count_ngrams(self, ngrams):
         ngram_frequency = collections.Counter(ngrams)
@@ -233,9 +214,8 @@ class FeatureSelection(object):
     # Convert document column to list, preprocess, convert back to dataframe and join full dataframe
     def preprocess(self):
         documents = self.__all_data['document'].to_list()
-        #print("docs", documents)
+
         for tweet in tqdm(documents):
-            #print(tweet)
             self.__current_document = tweet
             self.__current_document = self.remove_links()
             self.__current_document = self.__current_document.lower()
@@ -245,17 +225,15 @@ class FeatureSelection(object):
             self.__current_document = self.remove_emoji()
             self.__current_document = self.remove_double_space()
             self.__current_document = self.remove_stopwords()
-            #print(self.__current_document, "\n")
+
             self.__preprocessed_docs.append(self.__current_document)
 
         # Merge processed tweets with rest of the dataframe
         self.__preprocessed_docs = pandas.DataFrame(self.__preprocessed_docs, columns=['processed'])
         self.__tweet_ids = self.__all_data[['custom_id']]
         self.__preprocessed_docs = self.__preprocessed_docs.join(self.__tweet_ids)
-        #print(self.__preprocessed_docs)
-        #print(self.__all_data)
+        
         self.__all_data.rename(columns={'document':'unprocessed'}, inplace=True)
-        #print(self.__all_data)
         self.__all_data = self.__all_data.merge(self.__preprocessed_docs, on='custom_id')
         print(self.__all_data)
         self.save_features('preprocess')
@@ -263,12 +241,9 @@ class FeatureSelection(object):
     # Returns a list of N most frequent terms with their counts
     def identify_frequent_words(self):
         self.__corpus = self.__all_data['processed']
-        #print(corpus)
         for sentence in tqdm(self.__corpus):
-            #print(sentence)
             tokens = nltk.word_tokenize(sentence)
             for token in tokens:
-                #print(word)
                 if token not in self.wordfreq.keys():
                     self.wordfreq[token] = 1
                 else:
@@ -279,20 +254,16 @@ class FeatureSelection(object):
         self.freq_df = pandas.DataFrame(self.freq_dict.items(), columns=["word", "count"])
         self.most_freq_dict = dict(islice(self.freq_dict.items(), 0,29))
         print(self.most_freq_dict)
-        #print(self.most_freq_dict)
 
         # Returns just the N most common words as a list
         self.freq_list = sorted(self.wordfreq, key=self.wordfreq.get, reverse=True)
-        #print(self.freq_list)
         self.most_freq_list = heapq.nlargest(20, self.wordfreq, key=self.wordfreq.get)
-        #print(self.most_freq_list)
         self.save_words('frequent')
 
     # Returns a list of the N most relevant terms with their TF-IDF scores
     def identify_relevant_words(self):
         docs = self.__all_data['processed']
         docs = [' '.join(list(docs))]
-        #print(' '.join(list(docs)))
         tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,2), use_idf=True)
         tfidf_vectorizer_vectors = tfidf_vectorizer.fit_transform(docs)
         words_df = pandas.DataFrame(tfidf_vectorizer.get_feature_names(), columns=["word"])
@@ -311,7 +282,6 @@ class FeatureSelection(object):
 
     def setup_emolex(self):
         self.emolex_translation_df = pandas.read_excel(self.emolex_translation)
-        #self.emolex_translation_df = self.emolex_translation_df.rename(columns={"Unnamed: 0": "index"})
         self.emolex_translation_df.columns = self.emolex_header
         print(self.emolex_translation_df.head())
 
@@ -401,14 +371,11 @@ class FeatureSelection(object):
                 anger_intensity = 0
             print("intensity score:", anger_intensity)
             intensity_list.append(anger_intensity)
-            #print("sum", collect_scores_df)
-            #collect_scores_df = collect_scores_df / num_words
-            #print("score:", collect_scores_df)
+            
         intensity_df = pandas.DataFrame(intensity_list, columns=['intensity'])
         intensity_df['intensity'] = intensity_df['intensity'].fillna(0)
         self.__all_data = self.__all_data.join(intensity_df)
         self.save_features('all')
-        #print(self.__all_data.head(20))
 
     def id_toint(self):
         all_path = (self.base_folder / "data/features/all_features.csv").resolve()
@@ -417,21 +384,40 @@ class FeatureSelection(object):
         colnames_notext = ["custom_id","annotation","anger","anticipation","disgust","fear","joy","negative","positive","sadness","surprise","trust","intensity"]
         all_features_df = pandas.read_csv(all_path)
         all_features_df['custom_id'] = all_features_df['custom_id'].astype(int)
-        #all_features_df = all_features_df.drop(columns="Unnamed: 0")
-        print(all_features_df)
+        #print(all_features_df)
         notext_df = all_features_df.drop(columns=["unprocessed", "processed"])
-        print(notext_df)
+        #print(notext_df)
         all_features_df.to_csv(path_or_buf=all_path, index=False, columns=colnames_all)
         notext_df.to_csv(path_or_buf=notext_path, index=False, columns=colnames_notext)
+
+    def validated_features(self):
+        val_feature_df = pandas.DataFrame()
+        feature_path = (self.base_folder / "data/features/all_features.csv").resolve()
+        all_features_df = pandas.read_csv(feature_path)
+        val_df = all_features_df.merge(self.__validation_set, on='custom_id')
+        val_df_1 = all_features_df.merge(self.__validation_set_1, on='custom_id')
+        val_feature_df = pandas.concat([val_df, val_df_1])
+        val_feature_df.drop(columns=["label_0", "label_1", "document", "label_2"], inplace=True)
+        notext_val_feature_df = val_feature_df.drop(columns=["unprocessed", "processed"])
+        val_feature_path = (self.base_folder / "data/features/validated_features.csv").resolve()
+        notext_val_feature_path = (self.base_folder / "data/features/notext_validated_features.csv").resolve()
+        colnames_all = ["custom_id","annotation","unprocessed","processed","anger","anticipation","disgust","fear","joy","negative","positive","sadness","surprise","trust","intensity"]
+        colnames_notext = ["custom_id","annotation","anger","anticipation","disgust","fear","joy","negative","positive","sadness","surprise","trust","intensity"]
+        val_feature_df.to_csv(path_or_buf=val_feature_path, index=False, columns=colnames_all)
+        notext_val_feature_df.to_csv(path_or_buf=notext_val_feature_path, index=False, columns=colnames_notext)
+        print(val_feature_df)
+        for col in val_feature_df.columns:
+            print(col)
 
 
 if __name__ == "__main__":
     featselect = FeatureSelection()
-    #featselect.merge_all()
-    #featselect.remove_duplicate()
-    #featselect.preprocess()
-    #featselect.identify_frequent_words()
-    #featselect.identify_relevant_words()
-    #featselect.get_emolex_score()
-    #featselect.get_intensity_score()
+    featselect.merge_all()
+    featselect.remove_duplicate()
+    featselect.preprocess()
+    featselect.identify_frequent_words()
+    featselect.identify_relevant_words()
+    featselect.get_emolex_score()
+    featselect.get_intensity_score()
     featselect.id_toint()
+    featselect.validated_features()

@@ -62,12 +62,6 @@ set1_tweet_id = set1_annotator0['custom_id'].dropna()
 set0_documents = set0_annotator0['document']
 set1_documents = set1_annotator0['document']
 
-"""id_list = list(set0_tweet_id)
-int_id_list = []
-for id in id_list:
-    int_id_list.append(int(id))
-int_id_list.sort()"""
-
 
 set0_annotator0 = set0_annotator0['annotation'].to_frame()
 set0_annotator0.columns = ['label_0']
@@ -82,7 +76,6 @@ set1_annotator1 = set1_annotator1['annotation'].to_frame()
 set1_annotator1.columns = ['label_1']
 
 labelled_set = pandas.concat([udt_labelled_set, sheet_labelled_set])
-#labelled_set.head()
 
 # Merge labels from both volunteers for each validation set
 merged_df = set0_annotator0.join(set0_annotator1)
@@ -108,29 +101,22 @@ original_and_validation_df = original_and_validation_df.sort_values(by='custom_i
 original_and_validation_df_1 = pandas.concat([merged_df_1, original_set], ignore_index=True)
 original_and_validation_df_1 = original_and_validation_df_1.sort_values(by='custom_id')
 
-#print(original_and_validation_df)
-
 
 duplicated_column = original_and_validation_df[original_and_validation_df.duplicated(['custom_id'], keep=False)]
 duplicated_column = duplicated_column.sort_values(['custom_id', 'annotation'])
-#print("dup", duplicated_column)
+
 original_annotations = duplicated_column[['custom_id','document', 'annotation']].dropna()
-#print("here", original_annotations)
-#print(duplicated_column)
+
 
 duplicated_column_1 = original_and_validation_df_1[original_and_validation_df_1.duplicated(['custom_id'], keep=False)]
 duplicated_column_1 = duplicated_column_1.sort_values(['custom_id', 'annotation'])
 original_annotations_1 = duplicated_column_1[['custom_id','document', 'annotation']].dropna()
 
-#print(type(original_annotations), original_annotations)
 duplicated_column = duplicated_column.drop(columns='annotation')
-#print(duplicated_column)
 duplicated_column.dropna(inplace=True)
-#print("clean", duplicated_column)
 duplicated_column_1 = duplicated_column_1.drop(columns='annotation')
 duplicated_column_1.dropna(inplace=True)
 print(duplicated_column_1)
-#print("duplicate clean", duplicate_clean)
 
 all_labels_df = duplicated_column.merge(original_annotations)
 all_labels_df.rename(columns={"annotation": "label_2"}, inplace=True)
@@ -138,7 +124,6 @@ labels_only = all_labels_df.drop(columns='custom_id')
 all_labels_df_1 = duplicated_column_1.merge(original_annotations_1)
 all_labels_df_1.rename(columns={"annotation": "label_2"}, inplace=True)
 labels_only_1 = all_labels_df_1.drop(columns='custom_id')
-#print("len", len(all_labels_df))
 print("all_labels", all_labels_df)
 
 # Exclude duplicate tweets (marked with label 3)
@@ -148,7 +133,6 @@ print(all_labels_df, all_labels_df_1)
 
 merge_labels_df = all_labels_df.replace(to_replace=1.0, value=0.0)
 merge_labels_df_1 = all_labels_df_1.replace(to_replace=1.0, value=0.0)
-#print(merge_labels_df, merge_labels_df_1)
 
 # Gather all labels in one column
 label_0_df = all_labels_df[['label_0', 'custom_id']]
@@ -222,9 +206,7 @@ krippendorff_df.to_csv(path_or_buf=write_to, index=False)
 krippendorff_df_1.to_csv(path_or_buf=write_to_1, index=False)
 krippendorff_merge.to_csv(path_or_buf=merge_write, index=False)
 krippendorff_merge_1.to_csv(path_or_buf=merge_write_1, index=False)
-#print(krippendorff_df_1)
 
-#print(krippendorff_df)
 krippendorff_alpha = simpledorff.calculate_krippendorffs_alpha_for_df(krippendorff_df, experiment_col='custom_id',annotator_col='annotator',class_col='label')
 krippendorff_alpha_1 = simpledorff.calculate_krippendorffs_alpha_for_df(krippendorff_df_1, experiment_col='custom_id', annotator_col='annotator', class_col='label')
 print("Validation set 0:",krippendorff_alpha, "Validation set 1:", krippendorff_alpha_1)

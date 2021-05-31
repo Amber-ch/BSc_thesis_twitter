@@ -3,14 +3,9 @@ import os
 from pathlib import Path
 import pandas
 import glob
-from google_trans_new import google_translator
 import numpy as np
 from tqdm import tqdm
 import re
-
-#importing other python files:
-#from folder.subfolder.file import class
-
 
 class HateBaseFilter(object):
     ## Attributes
@@ -36,7 +31,6 @@ class HateBaseFilter(object):
 
     ## Constructor
     def __init__(self):
-
         # Set path to Dutch Hatebase lexicon
         data_folder = Path(__file__).parent
         hatebase_path = (data_folder / "data/hatebase/hatebase_dutch_full_manual_filtering.csv").resolve()
@@ -57,7 +51,6 @@ class HateBaseFilter(object):
         self.__davidson_lexicon = self.__davidson_lexicon.keyword.to_list()
         del self.__davidson_lexicon[0]
         self.__full_lexicon = list(set(self.__hatebase_lexicon + self.__davidson_lexicon))
-    
 
         # Set column names for the tweet files
         self.__tweet_columns = ["id_str", "full_text", "text_translation"]
@@ -83,12 +76,6 @@ class HateBaseFilter(object):
 
     def set_filename(self, value):
         self.__filename = value
-
-    # uses Google translate API to give the English translation of a Dutch tweet
-    def get_translation(self, value):
-        translation = self.__translator.translate(value, lang_src='nl', lang_tgt='en')
-        return translation
-
 
     # returns a pandas dataframe containing all the tweets from a .csv file
     def get_all_tweets(self):
@@ -159,25 +146,14 @@ class HateBaseFilter(object):
                 if '"' in tweet:
                     tweet = str(tweet).replace('"', '')
                 clean_tweets.append(tweet)
-            #    elif '"' in tweet:
-            #        tweet = str(tweet).replace('"', '')
-            #    elif "''" in tweet:
-            #        tweet = str(tweet).replace("''", '')
-                #print(tweet)
-                #tweet_text = str(tweet_text[0]).replace('"', '')
-                #clean_tweets.append(tweet)
             self.__full_text = []
             self.__full_text = clean_tweets
-            #print(self.__full_text)
 
         if(len(self.__tweet_id) != len(self.__full_text)):
             print("Warning: number of tweet IDs do not correspond with number of texts")
                 
 
-
-
-    # return a .csv file of the tweets ran through the hatebase filter (ID + full text)
-    # reads a .csv file with tweet IDs, full text, and translation. Returns a .csv file with the tweets/translations that contain keywords from the lexicon
+    # reads a .csv file with tweet IDs, full text, and translation. Returns a .csv file with the tweets that contain keywords from the lexicon
     def get_hate_tweets(self):
         index = 0
         for tweet in self.__full_text:
@@ -186,13 +162,10 @@ class HateBaseFilter(object):
                     text_plus_id = []
                     self.__filter_full_text.append(tweet)
                     self.__filter_tweet_id.append(self.__tweet_id[index])
-                    # TODO write keywords to .csv file so we can count them later
                     self.__filter_keywords.append(keyword)
             index = index + 1
 
-        #for tweet in self.__filter_full_text:
-        #    tweet.replace('"', '')
-        print(self.__filter_full_text)
+        #print(self.__filter_full_text)
 
         self.__filtered_tweets = pandas.DataFrame(list(zip(self.__filter_tweet_id, self.__filter_full_text)), columns=['id_str', 'full_text'])
         self.__filtered_tweets.drop_duplicates(inplace=True)
@@ -288,12 +261,8 @@ class HateBaseFilter(object):
 
         combined_csv = pandas.concat([pandas.read_csv(f) for f in all_filenames ])
         print(combined_csv)
-        #combined_df = pandas.DataFrame(zip([pandas.read_csv(f) for f in all_filenames]))
-        #print(combined_df)
-        #export to csv
         combined_csv.to_csv(filename, index=False, encoding='utf-8-sig')
         
-
 
     def print_lexicon(self):
         print(self.__full_lexicon)

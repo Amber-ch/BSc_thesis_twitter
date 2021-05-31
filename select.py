@@ -8,6 +8,7 @@ from tqdm import tqdm
 import re
 import random
 
+# Selects 1000 random tweets from the data set and splits it over 2 subsets of 500 tweets
 class DataSelector(object):
     ##attributes
     __all_tweets = None
